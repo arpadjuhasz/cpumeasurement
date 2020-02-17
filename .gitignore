@@ -1,6 +1,9 @@
-CPUMeasurementService/bin
-CPUMeasurementService/obj
-CPUMeasurementBackend/bin
-CPUMeasurementBackend/obj
-CPUMeasurementFrontend/bin
-CPUMeasurementFrontend/obj
+CPUMeasurementService/bin/
+CPUMeasurementService/obj/
+CPUMeasurementBackend/bin/
+CPUMeasurementBackend/obj/
+CPUMeasurementFrontend/bin/
+CPUMeasurementFrontend/obj/
+CPUMeasurementCore/bin/
+CPUMeasurementCore/obj/
+.vs/
