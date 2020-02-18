@@ -6,4 +6,6 @@ CPUMeasurementFrontend/bin/
 CPUMeasurementFrontend/obj/
 CPUMeasurementCore/bin/
 CPUMeasurementCore/obj/
+CPUMeasurementCommon/bin/
+CPUMeasurementCommon/obj/
 .vs/

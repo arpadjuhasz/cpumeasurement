@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUMeasurementFrontend", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUMeasurementBackend", "CPUMeasurementBackend\CPUMeasurementBackend.csproj", "{98EAD475-BC4C-417C-A1E6-8F69E8E6287E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPUMeasurementService", "CPUMeasurementService\CPUMeasurementService.csproj", "{E5627D98-8F29-44C0-B495-A80880DE8BBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUMeasurementService", "CPUMeasurementService\CPUMeasurementService.csproj", "{E5627D98-8F29-44C0-B495-A80880DE8BBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPUMeasurementCommon", "CPUMeasurementCommon\CPUMeasurementCommon.csproj", "{858A7FDC-5BCE-4F04-8709-699863CAA463}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E5627D98-8F29-44C0-B495-A80880DE8BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5627D98-8F29-44C0-B495-A80880DE8BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5627D98-8F29-44C0-B495-A80880DE8BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{858A7FDC-5BCE-4F04-8709-699863CAA463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{858A7FDC-5BCE-4F04-8709-699863CAA463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858A7FDC-5BCE-4F04-8709-699863CAA463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{858A7FDC-5BCE-4F04-8709-699863CAA463}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

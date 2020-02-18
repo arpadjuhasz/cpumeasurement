@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using CPUMeasurementBackend.Repository;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -16,20 +18,21 @@ namespace CPUMeasurementBackend.Service
         private readonly IPAddress IPAddress = IPAddress.Parse("192.168.0.16");
         private readonly TcpListener TcpListener;
         private readonly short Port;
-
-        public CPUMeasurementListener()
+        private IConfiguration Configuration;
+        
+        public CPUMeasurementListener(IConfiguration configuration)
         {
-            this.Port = 1337;
+            
+            this.Port = configuration.GetValue<short>("Port");
             this.TcpListener = new TcpListener(IPAddress, this.Port);
+            this.Configuration = configuration;
+            
+            
             
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            /*while (true && !cancellationToken.cancellationToken)
-            {
-                Console.WriteLine("Foo Service");
-            }*/
             while (true && !cancellationToken.IsCancellationRequested) { 
             await Task.Run(() => { this.Start(); });
             }
@@ -41,7 +44,7 @@ namespace CPUMeasurementBackend.Service
             await Task.Run(() => { this.Stop(); });
         }
 
-        public void Start()
+        public async Task Start()
         {
             this.TcpListener.Start();
             Console.WriteLine($"Listening on {IPAddress}:{Port}", IPAddress.ToString(), this.Port);
@@ -54,7 +57,7 @@ namespace CPUMeasurementBackend.Service
                     while (message != null)
                     {
                         byte[] buffer = new byte[1024];
-                        clientTask.Result.GetStream().Read(buffer, 0, buffer.Length);
+                        await clientTask.Result.GetStream().ReadAsync(buffer, 0, buffer.Length);
                         message = Encoding.ASCII.GetString(buffer);
 
                         try
@@ -63,16 +66,19 @@ namespace CPUMeasurementBackend.Service
                             if (jsonObject != null)
                             {
                                 CPUMeasurementPacket cpuPacket = jsonObject.ToObject<CPUMeasurementPacket>();
+                            
+                                Console.WriteLine(message);
+                                var repository = new CPUMeasurementRepository(this.Configuration);
+                                await repository.SaveCPUPacket(cpuPacket, ((IPEndPoint)clientTask.Result.Client.RemoteEndPoint).Address);
                             }
-
-                            Console.WriteLine(message);
                         }
-                        catch (Exception)
+                        catch (Exception e)
                         {
                             clientTask.Result.Client.Send(Encoding.ASCII.GetBytes("400"));
                         }
+                        clientTask.Result.GetStream().Dispose();
                     }
-                    clientTask.Result.GetStream().Dispose();
+                    //clientTask.Result.GetStream().Dispose();
                 }
 
             }

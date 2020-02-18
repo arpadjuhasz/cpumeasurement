@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CPUMeasurementBackend.Repository;
 using CPUMeasurementBackend.Service;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +25,7 @@ namespace CPUMeasurementBackend
                 {
                     webBuilder.UseStartup<Startup>();
                 })
+                
                 .ConfigureServices(services =>
                 {
                     services.AddHostedService<CPUMeasurementListener>();
