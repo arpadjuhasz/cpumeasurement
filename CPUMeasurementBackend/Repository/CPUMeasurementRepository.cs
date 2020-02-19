@@ -1,4 +1,5 @@
 ﻿using CPUMeasurementBackend.Service;
+using CPUMeasurementCommon;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace CPUMeasurementBackend.Repository
         {
             using (var connection = new SqlConnection(this.ConnectionString))
             { 
-                string sql = "INSERT INTO cpu_data (received, temperature, temperature_unit_id, average_load, average_load_unit_id,  ip_address) VALUES (@received, @temperature, @temperature_unit_id, @average_load, @average_load_unit_id, @ip_address)";
+                string sql = "INSERT INTO cpu_data (received, temperature, temperature_unit_id, average_load,  ip_address) VALUES (@received, @temperature, @temperature_unit_id, @average_load, @ip_address)";
                 
                 SqlCommand command = new SqlCommand(sql, connection);
                 
@@ -30,7 +31,6 @@ namespace CPUMeasurementBackend.Repository
                 command.Parameters.AddWithValue("temperature", packet.Temperature);
                 command.Parameters.AddWithValue("temperature_unit_id", (int)packet.TemperatureMeasurementUnit);
                 command.Parameters.AddWithValue("average_load", packet.AverageLoad);
-                command.Parameters.AddWithValue("average_load_unit_id", (int)packet.AverageLoadMeasurementUnit);
                 command.Parameters.AddWithValue("ip_address", senderIpAddress.ToString());
                 
                 connection.Open();

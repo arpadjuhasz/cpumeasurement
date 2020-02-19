@@ -1,4 +1,5 @@
 ﻿using CPUMeasurementBackend.Repository;
+using CPUMeasurementCommon;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Linq;
@@ -78,7 +79,6 @@ namespace CPUMeasurementBackend.Service
                         }
                         clientTask.Result.GetStream().Dispose();
                     }
-                    //clientTask.Result.GetStream().Dispose();
                 }
 
             }

@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUMeasurementCore", "CPUMeasurementCore\CPUMeasurementCore.csproj", "{D872D6CB-5011-4A45-A787-A3CFCA066257}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUMeasurementFrontend", "CPUMeasurementFrontend\CPUMeasurementFrontend.csproj", "{2FB01624-2CE5-4167-87C7-A9B5F1220D8D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUMeasurementBackend", "CPUMeasurementBackend\CPUMeasurementBackend.csproj", "{98EAD475-BC4C-417C-A1E6-8F69E8E6287E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUMeasurementService", "CPUMeasurementService\CPUMeasurementService.csproj", "{E5627D98-8F29-44C0-B495-A80880DE8BBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPUMeasurementCommon", "CPUMeasurementCommon\CPUMeasurementCommon.csproj", "{858A7FDC-5BCE-4F04-8709-699863CAA463}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUMeasurementCommon", "CPUMeasurementCommon\CPUMeasurementCommon.csproj", "{858A7FDC-5BCE-4F04-8709-699863CAA463}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D872D6CB-5011-4A45-A787-A3CFCA066257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D872D6CB-5011-4A45-A787-A3CFCA066257}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D872D6CB-5011-4A45-A787-A3CFCA066257}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D872D6CB-5011-4A45-A787-A3CFCA066257}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2FB01624-2CE5-4167-87C7-A9B5F1220D8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2FB01624-2CE5-4167-87C7-A9B5F1220D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FB01624-2CE5-4167-87C7-A9B5F1220D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
