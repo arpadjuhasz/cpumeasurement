@@ -51,7 +51,7 @@ namespace CPUMeasurementService
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return Task.CompletedTask;
         }
 
         private void SendCPUMeasurementPacket(object state)
