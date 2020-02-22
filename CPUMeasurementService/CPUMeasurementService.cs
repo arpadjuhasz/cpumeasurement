@@ -1,6 +1,7 @@
 ﻿using CPUMeasurementCommon;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using OpenHardwareMonitor.Hardware;
 using System;
@@ -22,12 +23,14 @@ namespace CPUMeasurementService
         private IPAddress _serverIPAddress;
         private short _serverPort;
         private readonly int _runIntervalInMinutes;
+        private readonly ILogger<CPUMeasurementService> _logger;
 
-        public CPUMeasurementService(IConfiguration configuration)
+        public CPUMeasurementService(IConfiguration configuration, ILogger<CPUMeasurementService> logger)
         {
             this._configuration = configuration;
             this._runIntervalInMinutes = this._configuration.GetValue<int>("runIntervalInMinutes");
             this._serverPort = this._configuration.GetValue<short>("serverPort");
+            this._logger = logger;
             try
             {
                 this._serverIPAddress = IPAddress.Parse(this._configuration.GetValue<string>("serverIPAddress"));
@@ -65,11 +68,21 @@ namespace CPUMeasurementService
 
                 Byte[] data = Encoding.ASCII.GetBytes(message);
                 stream.Write(data, 0, data.Length);
+
+                byte[] responseData = new byte[256];
+                int responseBytes = stream.Read(responseData, 0, responseData.Length);
+                string responseMessage = Encoding.ASCII.GetString(responseData, 0, responseData.Length);
+                ResponseStatusCode responseStatusCode = ResponseStatus.GetReponseStatusCode(responseMessage);
+                switch (responseStatusCode)
+                {
+                    case ResponseStatusCode.REPONSEFORMATERROR: this._logger.LogError("Unknows response code!"); break;
+                    case ResponseStatusCode.ERROR: this._logger.LogError("Error occured!"); break;
+                }
                 client.Dispose();
             }
             catch (Exception)
-            { 
-                // TCP client connection exception comes here.
+            {
+                this._logger.LogError($"Connection failed. Host: {_serverIPAddress}:{_serverPort}", this._serverIPAddress.ToString(), this._serverPort);
             }
         }
 

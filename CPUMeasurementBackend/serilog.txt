@@ -1,0 +1,25 @@
+2020-02-21 21:32:34.081 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-21 21:32:34.090 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-21 21:32:34.091 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-21 21:32:34.092 +01:00 [INF] Hosting environment: Development
+2020-02-21 21:32:34.093 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementBackend
+2020-02-21 21:32:34.970 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-21 21:32:34.994 +01:00 [INF] Request finished in 26.7162ms 404 
+2020-02-21 21:32:35.067 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
+2020-02-21 21:32:35.068 +01:00 [INF] Request finished in 0.5763ms 0 
+2020-02-21 21:32:41.183 +01:00 [INF] Application is shutting down...
+2020-02-21 21:38:06.620 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-21 21:38:06.628 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-21 21:38:07.139 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-21 21:38:07.166 +01:00 [INF] Request finished in 30.3272ms 404 
+2020-02-22 11:54:43.601 +01:00 [INF] Done 1337
+2020-02-22 11:55:11.846 +01:00 [INF] Application is shutting down...
+2020-02-22 11:58:34.208 +01:00 [INF] Done 1337
+2020-02-22 11:58:34.510 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-22 11:58:34.512 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-22 11:58:35.380 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-22 11:58:35.406 +01:00 [INF] Request finished in 29.0818ms 404 
+2020-02-22 12:00:18.892 +01:00 [INF] Application is shutting down...
+2020-02-22 12:00:21.380 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-22 12:00:21.381 +01:00 [INF] Hosting environment: Development
+2020-02-22 12:00:21.382 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementBackend

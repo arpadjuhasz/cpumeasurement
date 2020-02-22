@@ -6,16 +6,16 @@ namespace CPUMeasurementCommon
 {
     public class Temperature
     {
-        private double _value { get; set; }
+        private double? _value { get; set; }
         private MeasurementUnit _measurementUnit { get; set; }
 
-        public double Value { get { return this._value; } }
+        public double? Value { get { return this._value; } }
         public MeasurementUnit MeasurementUnit { get { return this._measurementUnit; } }
 
-        public Temperature(double value, MeasurementUnit measurementUnit)
+        public Temperature(double? value, MeasurementUnit measurementUnit)
         {
             this._value = value;
-            this._measurementUnit = MeasurementUnit;
+            this._measurementUnit = measurementUnit;
         }
 
         public Temperature InCelsius()
@@ -26,21 +26,24 @@ namespace CPUMeasurementCommon
         public Temperature InKelvin()
         {
             var temperature = this.convertToCelsius();
-            return new Temperature(temperature.Value+273.15, MeasurementUnit.KELVIN);
+            var inKelvin = (this._value.HasValue ? temperature.Value + 273.15 : null);
+            return new Temperature(inKelvin, MeasurementUnit.KELVIN);
         }
 
         public Temperature InFahrenheit()
         {
             var temperature = this.convertToCelsius();
-            return new Temperature(((temperature.Value*1.8) + 32), MeasurementUnit.KELVIN);
+            var inFahrenheit = (this._value.HasValue ? ((temperature.Value * 1.8) + 32) : null);
+            return new Temperature(inFahrenheit, MeasurementUnit.FAHRENHEIT);
         }
 
         private Temperature convertToCelsius()
         {
+            double? inCelsius = null;
             switch (this._measurementUnit)
             {
-                case MeasurementUnit.KELVIN:  return new Temperature(this._value - 273.15, MeasurementUnit.CELSIUS);
-                case MeasurementUnit.FAHRENHEIT: return new Temperature( ((this._value-32)/1800), MeasurementUnit.CELSIUS);
+                case MeasurementUnit.KELVIN: inCelsius = (this._value.HasValue ? this._value - 273.15 : null); return new Temperature(inCelsius, MeasurementUnit.CELSIUS);
+                case MeasurementUnit.FAHRENHEIT: inCelsius = (this._value.HasValue ? ((this._value - 32) / 1.8) : null); return new Temperature(inCelsius, MeasurementUnit.CELSIUS);
                 default: return this;
             }
         }

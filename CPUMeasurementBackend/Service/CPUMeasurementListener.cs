@@ -2,6 +2,7 @@
 using CPUMeasurementCommon;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -16,26 +17,26 @@ namespace CPUMeasurementBackend.Service
 {
     public class CPUMeasurementListener : IHostedService
     {
-        private readonly IPAddress IPAddress = IPAddress.Parse("192.168.0.16");
-        private readonly TcpListener TcpListener;
-        private readonly short Port;
-        private IConfiguration Configuration;
+        private readonly IPAddress _ipAddress;
+        private readonly TcpListener _tcpListener;
+        private readonly short _port;
+        private IConfiguration _configuration;
+        private ILogger _logger;
         
-        public CPUMeasurementListener(IConfiguration configuration)
+        public CPUMeasurementListener(IConfiguration configuration, ILogger<CPUMeasurementListener> logger)
         {
             
-            this.Port = configuration.GetValue<short>("Port");
-            this.TcpListener = new TcpListener(IPAddress, this.Port);
-            this.Configuration = configuration;
-            
-            
-            
+            this._port = configuration.GetValue<short>("Port");
+            this._ipAddress = IPAddress.Parse(configuration.GetValue<string>("IPAddress"));
+            this._tcpListener = new TcpListener(_ipAddress, this._port);
+            this._configuration = configuration;
+            this._logger = logger;
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
             while (true && !cancellationToken.IsCancellationRequested) { 
-            await Task.Run(() => { this.Start(); });
+            await Task.Run(() =>  { this.Start(); });
             }
 
         }
@@ -47,11 +48,10 @@ namespace CPUMeasurementBackend.Service
 
         public async Task Start()
         {
-            this.TcpListener.Start();
-            Console.WriteLine($"Listening on {IPAddress}:{Port}", IPAddress.ToString(), this.Port);
+            this._tcpListener.Start();
             while (true)
             {
-                var clientTask = TcpListener.AcceptTcpClientAsync();
+                var clientTask = _tcpListener.AcceptTcpClientAsync();
                 string message = String.Empty;
                 if (clientTask.Result != null)
                 {
@@ -60,7 +60,7 @@ namespace CPUMeasurementBackend.Service
                         byte[] buffer = new byte[1024];
                         await clientTask.Result.GetStream().ReadAsync(buffer, 0, buffer.Length);
                         message = Encoding.ASCII.GetString(buffer);
-
+                        var clientIPAddress = ((IPEndPoint)clientTask.Result.Client.RemoteEndPoint).Address;
                         try
                         {
                             var jsonObject = JObject.Parse(message);//.ToObject<CPUPacket>();
@@ -68,13 +68,13 @@ namespace CPUMeasurementBackend.Service
                             {
                                 CPUMeasurementPacket cpuPacket = jsonObject.ToObject<CPUMeasurementPacket>();
                             
-                                Console.WriteLine(message);
-                                var repository = new CPUMeasurementRepository(this.Configuration);
-                                await repository.SaveCPUPacket(cpuPacket, ((IPEndPoint)clientTask.Result.Client.RemoteEndPoint).Address);
+                                var repository = new CPUMeasurementRepository(this._configuration);
+                                await repository.SaveCPUPacket(cpuPacket, clientIPAddress);
                             }
                         }
                         catch (Exception e)
                         {
+                            this._logger.LogError(string.Format($"Failed to save the data from client! IPAddress: {clientIPAddress}, Message: {message}", message, clientIPAddress.ToString()));
                             clientTask.Result.Client.Send(Encoding.ASCII.GetBytes("400"));
                         }
                         clientTask.Result.GetStream().Dispose();
@@ -86,7 +86,7 @@ namespace CPUMeasurementBackend.Service
 
         public void Stop()
         {
-            this.TcpListener.Stop();
+            this._tcpListener.Stop();
         }
     }
 }

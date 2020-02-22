@@ -24,12 +24,12 @@ namespace CPUMeasurementBackend.Repository
             using (var connection = new SqlConnection(this.ConnectionString))
             { 
                 string sql = "INSERT INTO cpu_data (received, temperature, temperature_unit_id, average_load,  ip_address) VALUES (@received, @temperature, @temperature_unit_id, @average_load, @ip_address)";
-                
+                var temperature = (new Temperature(packet.Temperature, packet.TemperatureMeasurementUnit)).InCelsius();
                 SqlCommand command = new SqlCommand(sql, connection);
                 
                 command.Parameters.AddWithValue("received", DateTime.UtcNow);
-                command.Parameters.AddWithValue("temperature", packet.Temperature);
-                command.Parameters.AddWithValue("temperature_unit_id", (int)packet.TemperatureMeasurementUnit);
+                command.Parameters.AddWithValue("temperature", temperature.Value);
+                command.Parameters.AddWithValue("temperature_unit_id", (int)temperature.MeasurementUnit);
                 command.Parameters.AddWithValue("average_load", packet.AverageLoad);
                 command.Parameters.AddWithValue("ip_address", senderIpAddress.ToString());
                 
