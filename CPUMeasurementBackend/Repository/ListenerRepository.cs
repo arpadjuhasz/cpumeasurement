@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace CPUMeasurementBackend.Repository
 {
-    public class CPUMeasurementRepository : IRepository
+    public class ListenerRepository : IRepository
     {
         public string ConnectionString { get; set; }
         
-        public  CPUMeasurementRepository(IConfiguration configuration)
+        public  ListenerRepository(IConfiguration configuration)
         {
             this.ConnectionString = configuration.GetValue<string>("CPUMeasurementConnectionString");
         }

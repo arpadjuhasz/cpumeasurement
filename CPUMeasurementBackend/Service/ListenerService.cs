@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace CPUMeasurementBackend.Service
 {
-    public class CPUMeasurementListener : IHostedService
+    public class ListenerService : IHostedService
     {
         private readonly IPAddress _ipAddress;
         private readonly TcpListener _tcpListener;
@@ -23,7 +23,7 @@ namespace CPUMeasurementBackend.Service
         private IConfiguration _configuration;
         private ILogger _logger;
         
-        public CPUMeasurementListener(IConfiguration configuration, ILogger<CPUMeasurementListener> logger)
+        public ListenerService(IConfiguration configuration, ILogger<ListenerService> logger)
         {
             
             this._port = configuration.GetValue<short>("Port");
@@ -68,7 +68,7 @@ namespace CPUMeasurementBackend.Service
                             {
                                 CPUMeasurementPacket cpuPacket = jsonObject.ToObject<CPUMeasurementPacket>();
                             
-                                var repository = new CPUMeasurementRepository(this._configuration);
+                                var repository = new ListenerRepository(this._configuration);
                                 await repository.SaveCPUPacket(cpuPacket, clientIPAddress);
                             }
                         }

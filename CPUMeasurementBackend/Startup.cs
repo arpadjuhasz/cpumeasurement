@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CPUMeasurementBackend.Repository;
 using CPUMeasurementBackend.Service;
+using CPUMeasurementBackend.WebService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,8 @@ namespace CPUMeasurementBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<CPUDataRepository>();
+            services.AddScoped<CPUDataService>();
             
             
         }

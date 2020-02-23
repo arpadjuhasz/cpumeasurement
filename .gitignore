@@ -10,3 +10,5 @@ CPUMeasurementCommon/bin/
 CPUMeasurementCommon/obj/
 .vs/
 /CPUMeasurementService/Properties/PublishProfiles
+/CPUMeasurementBackend/Properties/PublishProfiles/FolderProfile.pubxml
+/CPUMeasurementBackend/Properties/PublishProfiles/FolderProfile.pubxml.user
