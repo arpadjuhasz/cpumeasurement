@@ -131,3 +131,33 @@ System.InvalidCastException: Unable to cast object of type 'System.Double' to ty
 2020-02-24 00:19:56.824 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
 2020-02-24 00:19:56.826 +01:00 [INF] Request finished in 240.149ms 200 application/json; charset=utf-8
 2020-02-24 00:20:52.364 +01:00 [INF] Application is shutting down...
+2020-02-24 11:04:14.951 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-24 11:04:14.961 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-24 11:04:15.578 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-24 11:04:15.613 +01:00 [INF] Request finished in 37.0563ms 404 
+2020-02-24 11:04:29.862 +01:00 [INF] Application is shutting down...
+2020-02-24 11:30:53.635 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-24 11:30:53.643 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-24 11:30:54.527 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-24 11:30:54.562 +01:00 [INF] Request finished in 38.0866ms 404 
+2020-02-24 11:30:54.631 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
+2020-02-24 11:30:54.632 +01:00 [INF] Request finished in 1.5568ms 0 
+2020-02-24 11:31:08.774 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
+2020-02-24 11:31:08.778 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
+2020-02-24 11:31:08.815 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
+2020-02-24 11:31:09.015 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementBackend.Repository.Poco.CPUData, CPUMeasurementBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-24 11:31:09.034 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 214.4101ms
+2020-02-24 11:31:09.035 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
+2020-02-24 11:31:09.037 +01:00 [INF] Request finished in 264.2715ms 200 application/json; charset=utf-8
+2020-02-24 11:54:55.215 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-24 11:54:55.223 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-24 11:54:56.136 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-24 11:54:56.167 +01:00 [INF] Request finished in 32.7059ms 404 
+2020-02-24 11:55:11.551 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
+2020-02-24 11:55:11.556 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
+2020-02-24 11:55:11.596 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
+2020-02-24 11:55:11.770 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementBackend.Repository.Poco.CPUData, CPUMeasurementBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-24 11:55:11.789 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 187.921ms
+2020-02-24 11:55:11.791 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
+2020-02-24 11:55:11.793 +01:00 [INF] Request finished in 242.1755ms 200 application/json; charset=utf-8
+2020-02-24 11:55:15.429 +01:00 [INF] Application is shutting down...

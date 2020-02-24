@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUMeasurementService", "CP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUMeasurementCommon", "CPUMeasurementCommon\CPUMeasurementCommon.csproj", "{858A7FDC-5BCE-4F04-8709-699863CAA463}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CPUMeasurementDatabase", "CPUMeasurementDatabase\CPUMeasurementDatabase.sqlproj", "{BDBA22EF-D736-43BA-BE76-9924AE50B485}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,12 @@ Global
 		{858A7FDC-5BCE-4F04-8709-699863CAA463}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{858A7FDC-5BCE-4F04-8709-699863CAA463}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{858A7FDC-5BCE-4F04-8709-699863CAA463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDBA22EF-D736-43BA-BE76-9924AE50B485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDBA22EF-D736-43BA-BE76-9924AE50B485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDBA22EF-D736-43BA-BE76-9924AE50B485}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BDBA22EF-D736-43BA-BE76-9924AE50B485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDBA22EF-D736-43BA-BE76-9924AE50B485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDBA22EF-D736-43BA-BE76-9924AE50B485}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

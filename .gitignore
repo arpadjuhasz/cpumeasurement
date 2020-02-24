@@ -3,11 +3,16 @@ CPUMeasurementService/obj/
 CPUMeasurementBackend/bin/
 CPUMeasurementBackend/obj/
 CPUMeasurementBackend/appsettings.json
+CPUMeasurementBackend/cpumeasurementbackend.log
+CPUMeasurementBackend/cpumeasurementlistener.log
 CPUMeasurementFrontend/bin/
 CPUMeasurementFrontend/obj/
 CPUMeasurementFrontend/appsettings.json
+CPUMeasurementFrontend/cpumeasurementfrontend.log
 CPUMeasurementCommon/bin/
 CPUMeasurementCommon/obj/
+CPUMeasurementDatabase/bin/
+CPUMeasurementDatabase/obj/
 .vs/
 /CPUMeasurementService/Properties/PublishProfiles
 /CPUMeasurementBackend/Properties/PublishProfiles/FolderProfile.pubxml
