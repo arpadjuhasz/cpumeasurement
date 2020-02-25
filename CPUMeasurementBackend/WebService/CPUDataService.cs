@@ -1,8 +1,7 @@
 ﻿using CPUMeasurementBackend.Repository;
-using CPUMeasurementBackend.Repository.Poco;
+using CPUMeasurementCommon.DataObjects;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CPUMeasurementBackend.WebService
@@ -16,9 +15,10 @@ namespace CPUMeasurementBackend.WebService
             this._cpuDataRepository = cpuDataRepository;
         }
 
-        public async  Task<List<CPUData>> GetList()
+        public async  Task<List<CPUData>> GetList(DateTime? date)
         {
-            return (await this._cpuDataRepository.GetCPUData());
+            return (await this._cpuDataRepository.GetCPUData(date));
+            
         }
     }
 }

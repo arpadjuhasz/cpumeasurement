@@ -1,4 +1,4 @@
-﻿using CPUMeasurementBackend.Service;
+﻿using CPUMeasurementBackend.HostedService;
 using CPUMeasurementCommon;
 using Microsoft.Extensions.Configuration;
 using System;

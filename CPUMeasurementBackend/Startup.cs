@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CPUMeasurementBackend.Repository;
-using CPUMeasurementBackend.Service;
+using CPUMeasurementBackend.HostedService;
 using CPUMeasurementBackend.WebService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

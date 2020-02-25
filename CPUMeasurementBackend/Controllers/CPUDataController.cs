@@ -18,9 +18,9 @@ namespace CPUMeasurementBackend.Controllers
         }
 
         [HttpGet()]
-        public async Task<IActionResult> GetCPUData()
+        public async Task<IActionResult> GetCPUData([FromQuery]DateTime? date)
         {
-            return  Ok(await this._cpuDataService.GetList());
+            return  Ok(await this._cpuDataService.GetList(date));
         }
     }
 }

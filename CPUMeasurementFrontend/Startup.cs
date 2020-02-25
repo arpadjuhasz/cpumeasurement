@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using CPUMeasurementFrontend.Data;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using CPUMeasurementFrontend.Data;
+using System.Net.Http;
 
 namespace CPUMeasurementFrontend
 {
@@ -29,6 +24,7 @@ namespace CPUMeasurementFrontend
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddScoped<CPUDataHttpClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

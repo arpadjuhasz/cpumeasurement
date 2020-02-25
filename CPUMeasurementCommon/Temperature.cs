@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,13 +10,21 @@ namespace CPUMeasurementCommon
         private double? _value { get; set; }
         private MeasurementUnit _measurementUnit { get; set; }
 
-        public double? Value { get { return this._value; } }
-        public MeasurementUnit MeasurementUnit { get { return this._measurementUnit; } }
+        [JsonProperty("value")]
+        public double? Value { get { return this._value; } set { this._value = value; } }
+
+        [JsonProperty("measurementUnit")]
+        public MeasurementUnit MeasurementUnit { get { return this._measurementUnit; } set { this._measurementUnit = value; } }
 
         public Temperature(double? value, MeasurementUnit measurementUnit)
         {
             this._value = value;
             this._measurementUnit = measurementUnit;
+        }
+
+        public Temperature()
+        { 
+            // Keep it for JSON de/serialization!
         }
 
         public Temperature InCelsius()
