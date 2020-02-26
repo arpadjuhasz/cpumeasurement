@@ -24,7 +24,8 @@ namespace CPUMeasurementService
                     builder.AddConfiguration(configuration.GetSection("Logging"))
                     .AddSerilog(new LoggerConfiguration().WriteTo.File("cpumeasurementservice.log").CreateLogger());
                 });
-                services.AddHostedService<CPUMeasurementService>();
+                services.AddHostedService<MeasurementService>();
+                services.AddHostedService<ManagementService>();
             });
         
     }

@@ -19,17 +19,17 @@ namespace CPUMeasurementBackend.Repository
             this.ConnectionString = configuration.GetValue<string>("CPUMeasurementConnectionString");
         }
 
-        public async Task<int> SaveCPUPacket(CPUMeasurementPacket packet, IPAddress senderIpAddress)
+        public async Task<int> SaveCPUPacket(CPUDataPacket packet, IPAddress senderIpAddress)
         {
             using (var connection = new SqlConnection(this.ConnectionString))
             { 
                 string sql = "INSERT INTO cpu_data (received, temperature, temperature_unit_id, average_load,  ip_address) VALUES (@received, @temperature, @temperature_unit_id, @average_load, @ip_address)";
-                var temperature = (new Temperature(packet.Temperature, packet.TemperatureMeasurementUnit)).InCelsius();
+                
                 SqlCommand command = new SqlCommand(sql, connection);
                 
                 command.Parameters.AddWithValue("received", DateTime.UtcNow);
-                command.Parameters.AddWithValue("temperature", temperature.Value);
-                command.Parameters.AddWithValue("temperature_unit_id", (int)temperature.MeasurementUnit);
+                command.Parameters.AddWithValue("temperature", packet.Temperature.Value);
+                command.Parameters.AddWithValue("temperature_unit_id", (int)packet.Temperature.MeasurementUnit);
                 command.Parameters.AddWithValue("average_load", packet.AverageLoad);
                 command.Parameters.AddWithValue("ip_address", senderIpAddress.ToString());
                 

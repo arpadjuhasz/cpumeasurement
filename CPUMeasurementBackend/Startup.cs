@@ -32,6 +32,7 @@ namespace CPUMeasurementBackend
             services.AddControllers();
             services.AddScoped<CPUDataRepository>();
             services.AddScoped<CPUDataService>();
+            services.AddScoped<ManagementService>();
             
             
         }

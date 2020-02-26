@@ -66,7 +66,7 @@ namespace CPUMeasurementBackend.HostedService
                             var jsonObject = JObject.Parse(message);//.ToObject<CPUPacket>();
                             if (jsonObject != null)
                             {
-                                CPUMeasurementPacket cpuPacket = jsonObject.ToObject<CPUMeasurementPacket>();
+                                CPUDataPacket cpuPacket = jsonObject.ToObject<CPUDataPacket>();
                             
                                 var repository = new ListenerRepository(this._configuration);
                                 await repository.SaveCPUPacket(cpuPacket, clientIPAddress);

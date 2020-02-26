@@ -1,333 +1,251 @@
-2020-02-24 00:03:24.653 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 00:03:24.662 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 00:03:25.494 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 00:03:25.525 +01:00 [INF] Request finished in 33.0651ms 404 
-2020-02-24 00:03:39.963 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 00:03:39.967 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:03:40.007 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 00:03:40.230 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementBackend.Repository.Poco.CPUData, CPUMeasurementBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2020-02-24 00:03:40.244 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 230.5071ms
-2020-02-24 00:03:40.246 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:03:40.248 +01:00 [INF] Request finished in 285.2097ms 200 application/json; charset=utf-8
-2020-02-24 00:09:20.529 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 00:09:20.529 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:09:20.530 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 00:11:00.814 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 00:11:00.824 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 00:11:01.571 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 00:11:01.607 +01:00 [INF] Request finished in 38.8991ms 404 
-2020-02-24 00:11:18.157 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 00:11:18.162 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:11:18.198 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 00:14:35.129 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 00:14:35.138 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 00:14:36.000 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 00:14:36.041 +01:00 [INF] Request finished in 45.519ms 404 
-2020-02-24 00:14:36.111 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
-2020-02-24 00:14:36.112 +01:00 [INF] Request finished in 1.6176ms 404 
-2020-02-24 00:14:47.428 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 00:14:47.432 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:14:47.468 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 00:14:53.976 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 6503.2621ms
-2020-02-24 00:14:53.978 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:14:54.084 +01:00 [ERR] An unhandled exception has occurred while executing the request.
-System.InvalidCastException: Unable to cast object of type 'System.Double' to type 'System.String'.
-   at System.Data.SqlClient.SqlBuffer.get_String()
-   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
-   at CPUMeasurementBackend.Repository.CPUDataRepository.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Repository\CPUDataRepository.cs:line 41
-   at CPUMeasurementBackend.WebService.CPUDataService.GetList() in I:\github\cpumeasurement\CPUMeasurementBackend\WebService\CPUDataService.cs:line 21
-   at CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Controllers\CPUDataController.cs:line 23
+2020-02-26 13:52:25.473 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 13:52:25.482 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 13:52:26.189 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 13:52:26.224 +01:00 [INF] Request finished in 37.4155ms 404 
+2020-02-26 13:52:40.678 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 13:52:40.680 +01:00 [INF] Request finished in 1.5584ms 404 
+2020-02-26 13:54:12.026 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 13:54:12.027 +01:00 [INF] Request finished in 1.2707ms 404 
+2020-02-26 13:55:33.772 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 13:55:33.781 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 13:55:34.683 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 13:55:34.716 +01:00 [INF] Request finished in 35.5278ms 404 
+2020-02-26 13:55:44.835 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 13:55:44.840 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 13:55:44.878 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 13:55:44.943 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 60.8434ms
+2020-02-26 13:55:44.945 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 13:55:44.996 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at CPUMeasurementBackend.WebService.ManagementService.GetConnectedClients() in I:\github\cpumeasurement\CPUMeasurementBackend\WebService\ManagementService.cs:line 21
+   at CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients() in I:\github\cpumeasurement\CPUMeasurementBackend\Controllers\ManagementController.cs:line 23
    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2020-02-24 00:14:54.152 +01:00 [INF] Request finished in 6724.5415ms 500 text/html; charset=utf-8
-2020-02-24 00:16:12.735 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 00:16:12.743 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 00:16:13.552 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 00:16:13.597 +01:00 [INF] Request finished in 48.6377ms 404 
-2020-02-24 00:16:27.904 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 00:16:27.908 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:16:27.946 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 00:16:28.182 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 231.1827ms
-2020-02-24 00:16:28.184 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:16:28.235 +01:00 [ERR] An unhandled exception has occurred while executing the request.
-System.InvalidCastException: Unable to cast object of type 'System.Double' to type 'System.String'.
-   at System.Data.SqlClient.SqlBuffer.get_String()
-   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
-   at CPUMeasurementBackend.Repository.CPUDataRepository.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Repository\CPUDataRepository.cs:line 41
-   at CPUMeasurementBackend.WebService.CPUDataService.GetList() in I:\github\cpumeasurement\CPUMeasurementBackend\WebService\CPUDataService.cs:line 21
-   at CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Controllers\CPUDataController.cs:line 23
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2020-02-24 00:16:28.280 +01:00 [INF] Request finished in 376.9552ms 500 text/html; charset=utf-8
-2020-02-24 00:17:32.458 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 00:17:32.468 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 00:17:33.409 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 00:17:33.441 +01:00 [INF] Request finished in 35.9038ms 404 
-2020-02-24 00:17:47.168 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 00:17:47.174 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:17:47.211 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 00:17:47.441 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 225.334ms
-2020-02-24 00:17:47.442 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:17:47.493 +01:00 [ERR] An unhandled exception has occurred while executing the request.
-System.InvalidCastException: Unable to cast object of type 'System.Double' to type 'System.String'.
-   at System.Data.SqlClient.SqlBuffer.get_String()
-   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
-   at CPUMeasurementBackend.Repository.CPUDataRepository.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Repository\CPUDataRepository.cs:line 41
-   at CPUMeasurementBackend.WebService.CPUDataService.GetList() in I:\github\cpumeasurement\CPUMeasurementBackend\WebService\CPUDataService.cs:line 21
-   at CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Controllers\CPUDataController.cs:line 23
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2020-02-24 00:17:47.539 +01:00 [INF] Request finished in 370.2288ms 500 text/html; charset=utf-8
-2020-02-24 00:18:19.242 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 00:18:19.243 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:18:19.244 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 00:18:47.484 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 00:18:47.497 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 00:18:48.298 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 00:18:48.338 +01:00 [INF] Request finished in 43.974ms 404 
-2020-02-24 00:18:55.991 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 00:18:55.996 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:18:56.032 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 00:19:15.111 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementBackend.Repository.Poco.CPUData, CPUMeasurementBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2020-02-24 00:19:15.130 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 19092.7211ms
-2020-02-24 00:19:15.131 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:19:15.133 +01:00 [INF] Request finished in 19142.5833ms 200 application/json; charset=utf-8
-2020-02-24 00:19:45.719 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 00:19:45.729 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 00:19:46.600 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 00:19:46.637 +01:00 [INF] Request finished in 40.3762ms 404 
-2020-02-24 00:19:56.586 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 00:19:56.590 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:19:56.626 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 00:19:56.804 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementBackend.Repository.Poco.CPUData, CPUMeasurementBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2020-02-24 00:19:56.822 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 191.2772ms
-2020-02-24 00:19:56.824 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 00:19:56.826 +01:00 [INF] Request finished in 240.149ms 200 application/json; charset=utf-8
-2020-02-24 00:20:52.364 +01:00 [INF] Application is shutting down...
-2020-02-24 11:04:14.951 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 11:04:14.961 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 11:04:15.578 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 11:04:15.613 +01:00 [INF] Request finished in 37.0563ms 404 
-2020-02-24 11:04:29.862 +01:00 [INF] Application is shutting down...
-2020-02-24 11:30:53.635 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 11:30:53.643 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 11:30:54.527 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 11:30:54.562 +01:00 [INF] Request finished in 38.0866ms 404 
-2020-02-24 11:30:54.631 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
-2020-02-24 11:30:54.632 +01:00 [INF] Request finished in 1.5568ms 0 
-2020-02-24 11:31:08.774 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 11:31:08.778 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 11:31:08.815 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 11:31:09.015 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementBackend.Repository.Poco.CPUData, CPUMeasurementBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2020-02-24 11:31:09.034 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 214.4101ms
-2020-02-24 11:31:09.035 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 11:31:09.037 +01:00 [INF] Request finished in 264.2715ms 200 application/json; charset=utf-8
-2020-02-24 11:54:55.215 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 11:54:55.223 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 11:54:56.136 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 11:54:56.167 +01:00 [INF] Request finished in 32.7059ms 404 
-2020-02-24 11:55:11.551 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 11:55:11.556 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 11:55:11.596 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 11:55:11.770 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementBackend.Repository.Poco.CPUData, CPUMeasurementBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2020-02-24 11:55:11.789 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 187.921ms
-2020-02-24 11:55:11.791 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 11:55:11.793 +01:00 [INF] Request finished in 242.1755ms 200 application/json; charset=utf-8
-2020-02-24 11:55:15.429 +01:00 [INF] Application is shutting down...
-2020-02-24 17:09:00.672 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 17:09:00.681 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 17:09:01.434 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 17:09:01.469 +01:00 [INF] Request finished in 37.4218ms 404 
-2020-02-24 17:09:25.340 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 17:09:25.345 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 17:09:25.381 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 17:09:25.633 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 247.8299ms
-2020-02-24 17:09:25.635 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 17:09:25.694 +01:00 [ERR] An unhandled exception has occurred while executing the request.
-System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
-   at System.Data.SqlClient.SqlDataReader.GetFieldValueFromSqlBufferInternal[T](SqlBuffer data, _SqlMetaData metaData)
-   at System.Data.SqlClient.SqlDataReader.GetFieldValueInternal[T](Int32 i)
-   at System.Data.SqlClient.SqlDataReader.GetFieldValue[T](Int32 i)
-   at CPUMeasurementBackend.Repository.CPUDataRepository.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Repository\CPUDataRepository.cs:line 41
-   at CPUMeasurementBackend.WebService.CPUDataService.GetList() in I:\github\cpumeasurement\CPUMeasurementBackend\WebService\CPUDataService.cs:line 21
-   at CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Controllers\CPUDataController.cs:line 23
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2020-02-24 17:09:25.773 +01:00 [INF] Request finished in 433.5139ms 500 text/html; charset=utf-8
-2020-02-24 17:10:00.404 +01:00 [INF] Application is shutting down...
-2020-02-24 17:57:47.032 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 17:57:47.041 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 17:57:47.794 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 17:57:47.829 +01:00 [INF] Request finished in 38.2007ms 404 
-2020-02-24 17:58:03.280 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 17:58:03.285 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 17:58:03.321 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 17:58:03.555 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 229.4122ms
-2020-02-24 17:58:03.557 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 17:58:03.607 +01:00 [ERR] An unhandled exception has occurred while executing the request.
-System.InvalidCastException: Unable to cast object of type 'System.Data.SqlTypes.SqlDouble' to type 'System.Nullable`1[System.Double]'.
-   at CPUMeasurementBackend.Repository.Repository.GetNullableFieldValue[T](Object fieldValue) in I:\github\cpumeasurement\CPUMeasurementBackend\Repository\Repository.cs:line 20
-   at CPUMeasurementBackend.Repository.CPUDataRepository.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Repository\CPUDataRepository.cs:line 41
-   at CPUMeasurementBackend.WebService.CPUDataService.GetList() in I:\github\cpumeasurement\CPUMeasurementBackend\WebService\CPUDataService.cs:line 21
-   at CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Controllers\CPUDataController.cs:line 23
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2020-02-24 17:58:03.661 +01:00 [INF] Request finished in 380.8362ms 500 text/html; charset=utf-8
-2020-02-24 17:59:14.607 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 17:59:14.607 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 17:59:14.608 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 17:59:14.657 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 48.9887ms
-2020-02-24 17:59:14.658 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 17:59:14.662 +01:00 [ERR] An unhandled exception has occurred while executing the request.
-System.InvalidCastException: Unable to cast object of type 'System.Data.SqlTypes.SqlDouble' to type 'System.Nullable`1[System.Double]'.
-   at CPUMeasurementBackend.Repository.Repository.GetNullableFieldValue[T](Object fieldValue) in I:\github\cpumeasurement\CPUMeasurementBackend\Repository\Repository.cs:line 20
-   at CPUMeasurementBackend.Repository.CPUDataRepository.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Repository\CPUDataRepository.cs:line 41
-   at CPUMeasurementBackend.WebService.CPUDataService.GetList() in I:\github\cpumeasurement\CPUMeasurementBackend\WebService\CPUDataService.cs:line 21
-   at CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData() in I:\github\cpumeasurement\CPUMeasurementBackend\Controllers\CPUDataController.cs:line 23
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2020-02-24 17:59:14.678 +01:00 [INF] Request finished in 71.7645ms 500 text/html; charset=utf-8
-2020-02-24 17:59:23.921 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 17:59:23.932 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 17:59:24.777 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 17:59:24.811 +01:00 [INF] Request finished in 37.5579ms 404 
-2020-02-24 17:59:29.289 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 17:59:29.294 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 17:59:29.329 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 17:59:29.501 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementBackend.Repository.Poco.CPUDataGet, CPUMeasurementBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2020-02-24 17:59:29.523 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 189.1493ms
-2020-02-24 17:59:29.525 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 17:59:29.526 +01:00 [INF] Request finished in 237.6672ms 200 application/json; charset=utf-8
-2020-02-24 18:00:38.800 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-24 18:00:38.800 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 18:00:38.800 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData() on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-24 18:00:38.806 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementBackend.Repository.Poco.CPUDataGet, CPUMeasurementBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2020-02-24 18:00:38.807 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 6.151ms
-2020-02-24 18:00:38.807 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-24 18:00:38.807 +01:00 [INF] Request finished in 7.3653ms 200 application/json; charset=utf-8
-2020-02-24 18:00:38.835 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
-2020-02-24 18:00:38.835 +01:00 [INF] Request finished in 0.3859ms 404 
-2020-02-24 18:01:27.882 +01:00 [INF] Application is shutting down...
-2020-02-24 20:50:36.220 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-24 20:50:36.228 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-24 20:50:36.857 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-24 20:50:36.890 +01:00 [INF] Request finished in 35.6912ms 404 
-2020-02-24 20:50:36.958 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
-2020-02-24 20:50:36.959 +01:00 [INF] Request finished in 1.1617ms 404 
-2020-02-25 19:15:47.815 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-25 19:15:47.825 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-25 19:15:48.422 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-25 19:15:48.456 +01:00 [INF] Request finished in 36.4506ms 404 
-2020-02-25 19:15:48.529 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
-2020-02-25 19:15:48.530 +01:00 [INF] Request finished in 1.2139ms 0 
-2020-02-25 19:15:57.969 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-25 19:15:57.974 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-25 19:15:58.017 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData(System.Nullable`1[System.DateTime]) on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-25 19:15:58.310 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 288.4117ms
-2020-02-25 19:15:58.311 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-25 19:15:58.369 +01:00 [ERR] An unhandled exception has occurred while executing the request.
-System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
-   at System.Data.SqlTypes.SqlDateTime.FromTimeSpan(TimeSpan value)
-   at System.Data.SqlTypes.SqlDateTime.FromDateTime(DateTime value)
-   at System.Data.SqlTypes.SqlDateTime..ctor(DateTime value)
-   at System.Data.SqlClient.MetaType.FromDateTime(DateTime dateTime, Byte cb)
-   at System.Data.SqlClient.TdsParser.WriteUnterminatedValue(Object value, MetaType type, Byte scale, Int32 actualLength, Int32 encodingByteSize, Int32 offset, TdsParserStateObject stateObj, Int32 paramSize, Boolean isDataFeed)
-   at System.Data.SqlClient.TdsParser.WriteValue(Object value, MetaType type, Byte scale, Int32 actualLength, Int32 encodingByteSize, Int32 offset, TdsParserStateObject stateObj, Int32 paramSize, Boolean isDataFeed)
-   at System.Data.SqlClient.TdsParser.TDSExecuteRPCAddParameter(TdsParserStateObject stateObj, SqlParameter param, MetaType mt, Byte options)
-   at System.Data.SqlClient.TdsParser.TdsExecuteRPC(_SqlRPC[] rpcArray, Int32 timeout, Boolean inSchema, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj, Boolean isCommandProc, Boolean sync, TaskCompletionSource`1 completion, Int32 startRpc, Int32 startParam)
-   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
-   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
-   at System.Data.SqlClient.SqlCommand.BeginExecuteReader(AsyncCallback callback, Object stateObject, CommandBehavior behavior)
-   at System.Data.SqlClient.SqlCommand.<>c__DisplayClass130_0.<ExecuteReaderAsync>b__1(CommandBehavior commandBehavior, AsyncCallback callback, Object stateObject)
-   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1](Func`4 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, Object state, TaskCreationOptions creationOptions)
-   at System.Threading.Tasks.TaskFactory`1.FromAsync[TArg1](Func`4 beginMethod, Func`2 endMethod, TArg1 arg1, Object state)
-   at System.Data.SqlClient.SqlCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
 --- End of stack trace from previous location where exception was thrown ---
-   at CPUMeasurementBackend.Repository.CPUDataRepository.GetCPUData(Nullable`1 date) in I:\github\cpumeasurement\CPUMeasurementBackend\Repository\CPUDataRepository.cs:line 40
-   at CPUMeasurementBackend.WebService.CPUDataService.GetList(Nullable`1 date) in I:\github\cpumeasurement\CPUMeasurementBackend\WebService\CPUDataService.cs:line 20
-   at CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData(Nullable`1 date) in I:\github\cpumeasurement\CPUMeasurementBackend\Controllers\CPUDataController.cs:line 23
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
    at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2020-02-25 19:15:58.431 +01:00 [INF] Request finished in 462.1282ms 500 text/html; charset=utf-8
-2020-02-25 19:18:36.667 +01:00 [INF] Now listening on: https://localhost:5001
-2020-02-25 19:18:36.677 +01:00 [INF] Now listening on: http://localhost:5000
-2020-02-25 19:18:37.437 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
-2020-02-25 19:18:37.474 +01:00 [INF] Request finished in 38.2995ms 404 
-2020-02-25 19:18:42.811 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
-2020-02-25 19:18:42.816 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-25 19:18:42.860 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData(System.Nullable`1[System.DateTime]) on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-25 19:18:43.056 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.CPUData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2020-02-25 19:18:43.079 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 213.2504ms
-2020-02-25 19:18:43.080 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-25 19:18:43.082 +01:00 [INF] Request finished in 271.9146ms 200 application/json; charset=utf-8
-2020-02-25 19:19:04.613 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata?date=2020-02-25  
-2020-02-25 19:19:04.614 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-25 19:19:04.614 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData(System.Nullable`1[System.DateTime]) on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
-2020-02-25 19:19:04.653 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.CPUData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2020-02-25 19:19:04.653 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 39.364ms
-2020-02-25 19:19:04.654 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
-2020-02-25 19:19:04.654 +01:00 [INF] Request finished in 41.0352ms 200 application/json; charset=utf-8
-2020-02-25 19:19:17.033 +01:00 [INF] Application is shutting down...
+2020-02-26 13:55:45.047 +01:00 [INF] Request finished in 212.0141ms 500 text/html; charset=utf-8
+2020-02-26 13:56:09.296 +01:00 [INF] Application is shutting down...
+2020-02-26 13:56:43.625 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 13:56:43.634 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 13:56:44.413 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 13:56:44.445 +01:00 [INF] Request finished in 35.4857ms 404 
+2020-02-26 13:57:05.500 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 13:57:05.506 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 13:57:05.541 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 13:58:05.357 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 13:58:05.365 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 13:58:06.158 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 13:58:06.190 +01:00 [INF] Request finished in 34.7695ms 404 
+2020-02-26 13:58:16.805 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 13:58:16.810 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 13:58:16.845 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 13:58:28.211 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 13:58:28.224 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 11374.4957ms
+2020-02-26 13:58:28.225 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 13:58:28.225 +01:00 [INF] Request finished in 11420.7863ms 200 application/json; charset=utf-8
+2020-02-26 13:58:53.350 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 13:58:53.351 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 13:58:53.352 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 13:59:07.547 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 13:59:07.548 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 14195.8426ms
+2020-02-26 13:59:07.548 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 13:59:07.548 +01:00 [INF] Request finished in 14198.6653ms 200 application/json; charset=utf-8
+2020-02-26 14:37:34.696 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 14:37:34.704 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 14:37:35.680 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 14:37:35.714 +01:00 [INF] Request finished in 36.8438ms 404 
+2020-02-26 14:37:47.371 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 14:37:47.376 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:37:47.412 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 14:37:47.417 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 14:37:47.429 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 12.8124ms
+2020-02-26 14:37:47.430 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:37:47.431 +01:00 [INF] Request finished in 59.5266ms 200 application/json; charset=utf-8
+2020-02-26 14:38:06.751 +01:00 [INF] Application is shutting down...
+2020-02-26 14:40:41.229 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 14:40:41.238 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 14:40:42.116 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 14:40:42.148 +01:00 [INF] Request finished in 34.3462ms 404 
+2020-02-26 14:40:50.504 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 14:40:50.509 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:40:50.545 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 14:40:50.551 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 14:40:50.562 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 12.32ms
+2020-02-26 14:40:50.563 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:40:50.563 +01:00 [INF] Request finished in 58.9484ms 200 application/json; charset=utf-8
+2020-02-26 14:41:14.672 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 14:41:14.681 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 14:41:15.483 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 14:41:15.516 +01:00 [INF] Request finished in 34.6363ms 404 
+2020-02-26 14:43:18.567 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 14:43:18.575 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 14:43:19.116 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 14:43:19.147 +01:00 [INF] Request finished in 34.4007ms 404 
+2020-02-26 14:43:28.905 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 14:43:28.912 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:43:28.952 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 14:43:28.958 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 14:43:28.979 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 21.3446ms
+2020-02-26 14:43:28.980 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:43:29.023 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Sockets.SocketException (10045): A művelet nem támogatott a hivatkozott objektum típusa esetén.
+   at System.Net.IPAddress.get_ScopeId()
+   at System.Text.Json.JsonPropertyInfoNotNullable`4.OnWrite(WriteStackFrame& current, Utf8JsonWriter writer)
+   at System.Text.Json.JsonPropertyInfo.Write(WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.JsonSerializer.Write(Utf8JsonWriter writer, Int32 originalWriterDepth, Int32 flushThreshold, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteAsyncCore(Stream utf8Json, Object value, Type inputType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|27_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-26 14:43:29.056 +01:00 [INF] Request finished in 151.0777ms 500 text/html; charset=utf-8
+2020-02-26 14:44:27.223 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 14:44:27.231 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 14:44:28.141 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 14:44:28.174 +01:00 [INF] Request finished in 35.3971ms 404 
+2020-02-26 14:44:34.735 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 14:44:34.740 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:44:34.774 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 14:45:22.092 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 14:45:22.111 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 47331.6658ms
+2020-02-26 14:45:22.113 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:45:22.155 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Sockets.SocketException (10045): A művelet nem támogatott a hivatkozott objektum típusa esetén.
+   at System.Net.IPAddress.get_ScopeId()
+   at System.Text.Json.JsonPropertyInfoNotNullable`4.OnWrite(WriteStackFrame& current, Utf8JsonWriter writer)
+   at System.Text.Json.JsonPropertyInfo.Write(WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.JsonSerializer.Write(Utf8JsonWriter writer, Int32 originalWriterDepth, Int32 flushThreshold, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteAsyncCore(Stream utf8Json, Object value, Type inputType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|27_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-26 14:45:22.188 +01:00 [INF] Request finished in 47453.4038ms 500 text/html; charset=utf-8
+2020-02-26 14:45:41.021 +01:00 [INF] Application is shutting down...
+2020-02-26 14:46:39.248 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 14:46:39.257 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 14:46:40.098 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 14:46:40.139 +01:00 [INF] Request finished in 43.7525ms 404 
+2020-02-26 14:46:47.606 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 14:46:47.611 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:46:47.646 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 14:47:19.040 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 14:47:19.089 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 31437.9743ms
+2020-02-26 14:47:19.095 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:47:19.140 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Sockets.SocketException (10045): A művelet nem támogatott a hivatkozott objektum típusa esetén.
+   at System.Net.IPAddress.get_ScopeId()
+   at System.Text.Json.JsonPropertyInfoNotNullable`4.OnWrite(WriteStackFrame& current, Utf8JsonWriter writer)
+   at System.Text.Json.JsonPropertyInfo.Write(WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.JsonSerializer.Write(Utf8JsonWriter writer, Int32 originalWriterDepth, Int32 flushThreshold, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteAsyncCore(Stream utf8Json, Object value, Type inputType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|27_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-26 14:47:19.173 +01:00 [INF] Request finished in 31567.1325ms 500 text/html; charset=utf-8
+2020-02-26 14:58:05.898 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 14:58:05.906 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 14:58:06.807 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 14:58:06.842 +01:00 [INF] Request finished in 37.5745ms 404 
+2020-02-26 14:58:15.144 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 14:58:15.149 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:58:15.185 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 14:58:15.191 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 14:58:15.209 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 19.1764ms
+2020-02-26 14:58:15.210 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 14:58:15.250 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Sockets.SocketException (10045): A művelet nem támogatott a hivatkozott objektum típusa esetén.
+   at System.Net.IPAddress.get_ScopeId()
+   at System.Text.Json.JsonPropertyInfoNotNullable`4.OnWrite(WriteStackFrame& current, Utf8JsonWriter writer)
+   at System.Text.Json.JsonPropertyInfo.Write(WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.JsonSerializer.Write(Utf8JsonWriter writer, Int32 originalWriterDepth, Int32 flushThreshold, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteAsyncCore(Stream utf8Json, Object value, Type inputType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|27_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-26 14:58:15.284 +01:00 [INF] Request finished in 139.3971ms 500 text/html; charset=utf-8
+2020-02-26 14:58:49.563 +01:00 [INF] Application is shutting down...
+2020-02-26 15:04:08.463 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 15:04:08.472 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 15:04:09.271 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 15:04:09.312 +01:00 [INF] Request finished in 43.7748ms 404 
+2020-02-26 15:04:16.856 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 15:04:16.861 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 15:04:16.898 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 15:04:16.904 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 15:04:16.923 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 20.4863ms
+2020-02-26 15:04:16.924 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 15:04:16.967 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Sockets.SocketException (10045): A művelet nem támogatott a hivatkozott objektum típusa esetén.
+   at System.Net.IPAddress.get_ScopeId()
+   at System.Text.Json.JsonPropertyInfoNotNullable`4.OnWrite(WriteStackFrame& current, Utf8JsonWriter writer)
+   at System.Text.Json.JsonPropertyInfo.Write(WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.JsonSerializer.Write(Utf8JsonWriter writer, Int32 originalWriterDepth, Int32 flushThreshold, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteAsyncCore(Stream utf8Json, Object value, Type inputType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|27_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-26 15:04:16.998 +01:00 [INF] Request finished in 142.7243ms 500 text/html; charset=utf-8
+2020-02-26 15:05:13.880 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-26 15:05:13.889 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-26 15:05:14.728 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-26 15:05:14.766 +01:00 [INF] Request finished in 40.5265ms 404 
+2020-02-26 15:05:17.890 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 15:05:17.895 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 15:05:17.930 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 15:05:17.936 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 15:05:17.949 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 14.5322ms
+2020-02-26 15:05:17.950 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 15:05:17.951 +01:00 [INF] Request finished in 60.8992ms 200 application/json; charset=utf-8
+2020-02-26 15:05:38.708 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 15:05:38.709 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 15:05:38.710 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 15:05:38.710 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 15:05:38.711 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.1973ms
+2020-02-26 15:05:38.711 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 15:05:38.711 +01:00 [INF] Request finished in 3.4322ms 200 application/json; charset=utf-8
+2020-02-26 15:05:43.389 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 15:05:43.390 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 15:05:43.390 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 15:05:43.391 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 15:05:43.392 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.5574ms
+2020-02-26 15:05:43.392 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 15:05:43.392 +01:00 [INF] Request finished in 3.2155ms 200 application/json; charset=utf-8
+2020-02-26 15:20:09.008 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-26 15:20:09.008 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 15:20:09.009 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-26 15:20:09.009 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-26 15:20:09.010 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 0.7379ms
+2020-02-26 15:20:09.010 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-26 15:20:09.010 +01:00 [INF] Request finished in 1.8305ms 200 application/json; charset=utf-8
