@@ -10,11 +10,11 @@ namespace CPUMeasurementBackend.HostedService
 {
     public class Management
     {
-        public ConcurrentDictionary<IPAddress, ClientData> ConnectedClients { get; set; }
+        public ConcurrentDictionary<IPAddress, ClientData> ConnectedClients = new ConcurrentDictionary<IPAddress, ClientData>();
 
         public Management()
         {
-            this.ConnectedClients = new ConcurrentDictionary<IPAddress, ClientData>();
+            
         }
     }
 }

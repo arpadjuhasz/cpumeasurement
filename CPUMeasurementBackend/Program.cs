@@ -25,7 +25,8 @@ namespace CPUMeasurementBackend
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                }).ConfigureServices((hostContext, services) =>
+                })
+                .ConfigureServices((hostContext, services) =>
                 {
                     IConfiguration configuration = hostContext.Configuration;
                     services.AddLogging(builder =>
@@ -33,11 +34,10 @@ namespace CPUMeasurementBackend
                         builder.AddConfiguration(configuration.GetSection("Logging"))
                           .AddSerilog(new LoggerConfiguration().WriteTo.File("cpumeasurementlistener.log").CreateLogger());
                     });
-                    services.AddHostedService<ListenerService>();
+                    services.AddHostedService<MeasurementListenerService>();
                     services.AddSingleton<Management>();
                     services.AddHostedService<ManagementListenerService>();
-
-                });
+            });
 
                 
     }

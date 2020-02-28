@@ -10,25 +10,27 @@ namespace CPUMeasurementService
 {
     public class ComputerDiagnostic
     {
-        public Temperature Temperature { get; set; }
-        public double? AverageLoad { get; set; }
+        public ClientPacket ClientPacket { get; set; }
 
-        public string CPUName { get; set; }
-        public string ComputerName { get; set; }
-        private Computer Computer { get; set; }
-
+        public CPUDataPacket CPUDataPacket { get; set; }
+        
         public ComputerDiagnostic()
-        { }
-
-        public CPUDataPacket GetCPUDataPacket()
         {
-                this.Computer = new Computer();
-            try
-            {     
-                this.Computer.Open();
-                this.Computer.CPUEnabled = true;
+            this.CPUDataPacket = new CPUDataPacket();
+            this.ClientPacket = new ClientPacket();
+            this.Update();
+        }
 
-                var cpu = Computer.Hardware.FirstOrDefault(x => x.HardwareType == HardwareType.CPU);
+        public ComputerDiagnostic Update()
+        {
+            Computer computer = new Computer();
+            try
+            {
+                computer.CPUEnabled = true;
+                computer.Open();
+
+
+                var cpu = computer.Hardware.FirstOrDefault(x => x.HardwareType == HardwareType.CPU);
 
                 var loadValues = new List<double>();
                 var temperatureValues = new List<double?>();
@@ -41,52 +43,17 @@ namespace CPUMeasurementService
                         case SensorType.Temperature: temperatureValues.Add(sensor.Value); break;
                     }
                 }
-                this.Temperature = new Temperature(temperatureValues.Average(), MeasurementUnit.FAHRENHEIT);
-                this.AverageLoad = loadValues.Average();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
+                CPUDataPacket.Temperature = new Temperature(temperatureValues.Average(), MeasurementUnit.FAHRENHEIT).InCelsius();
+                CPUDataPacket.AverageLoad = loadValues.Average();
+
+                this.ClientPacket.CPUName = cpu.Name;
+                this.ClientPacket.ComputerName = Environment.MachineName;
             }
             finally
             {
-                this.Computer.Close();
+                computer.Close();
             }
-            CPUDataPacket packet = new CPUDataPacket();
-            packet.Temperature = this.Temperature.InCelsius();
-            packet.AverageLoad = this.AverageLoad;
-
-            return packet;
-        }
-
-        public ClientPacket GetClientPacket()
-        {
-            this.Computer = new Computer();
-            try
-            {
-                this.Computer.Open();
-                this.Computer.CPUEnabled = true;
-
-                var cpu = Computer.Hardware.FirstOrDefault(x => x.HardwareType == HardwareType.CPU);
-
-                this.CPUName = cpu.Name;
-                this.ComputerName = Environment.MachineName;
-            }
-            catch (Exception)
-            { }
-            finally
-            {
-                this.Computer.Close();
-            }
-            return new ClientPacket
-            {
-                ComputerName = this.ComputerName,
-                CPUName = this.CPUName,
-                IntervalInSeconds = 300
-                
-            
-            };
-            
+            return this;
         }
     }
 }

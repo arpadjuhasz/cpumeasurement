@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace CPUMeasurementService
 {
-    public class MeasurementService : IHostedService
+    public class MeasurementService : BackgroundService //IHostedService
     {
         private Timer _timer;
 
@@ -24,13 +24,15 @@ namespace CPUMeasurementService
         private short _serverPort;
         private readonly int _runIntervalInMinutes;
         private readonly ILogger<MeasurementService> _logger;
+        private readonly ComputerDiagnostic _computerDiagnostic;
 
-        public MeasurementService(IConfiguration configuration, ILogger<MeasurementService> logger)
+        public MeasurementService(IConfiguration configuration, ILogger<MeasurementService> logger, ComputerDiagnostic computerDiagnostic)
         {
             this._configuration = configuration;
             this._runIntervalInMinutes = this._configuration.GetValue<int>("runIntervalInMinutes");
             this._serverPort = this._configuration.GetValue<short>("serverPort");
             this._logger = logger;
+            this._computerDiagnostic = computerDiagnostic;
             try
             {
                 this._serverIPAddress = IPAddress.Parse(this._configuration.GetValue<string>("serverIPAddress"));
@@ -45,21 +47,25 @@ namespace CPUMeasurementService
             }
         }
 
-        public Task StartAsync(CancellationToken cancellationToken)
-        {
-            this._timer = new Timer(SendCPUMeasurementPacket, null, TimeSpan.Zero, TimeSpan.FromMinutes(this._runIntervalInMinutes));
+        //public async Task StartAsync(CancellationToken cancellationToken)
+        //{
+        //    //this._timer = new Timer(SendCPUDataPacket, null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
+
+        //    //await Task.CompletedTask;
+        //    await this.SendCPUDataPacketAsync();
+        //        await Task.Delay(5000);
             
-            return Task.CompletedTask;
-        }
 
-        public Task StopAsync(CancellationToken cancellationToken)
-        {
-            return Task.CompletedTask;
-        }
+        //}
 
-        private void SendCPUMeasurementPacket(object state)
+        //public Task StopAsync(CancellationToken cancellationToken)
+        //{
+        //    return Task.CompletedTask;
+        //}
+
+        private void SendCPUDataPacket(object state)
         {
-            var packet = (new ComputerDiagnostic()).GetCPUDataPacket();
+            var packet = this._computerDiagnostic.Update().CPUDataPacket;
             try
             {
                 string message = JObject.FromObject(packet).ToString();
@@ -71,11 +77,12 @@ namespace CPUMeasurementService
 
                 byte[] responseData = new byte[256];
                 int responseBytes = stream.Read(responseData, 0, responseData.Length);
+                
                 string responseMessage = Encoding.ASCII.GetString(responseData, 0, responseData.Length);
                 ResponseStatusCode responseStatusCode = ResponseStatus.GetReponseStatusCode(responseMessage);
                 switch (responseStatusCode)
                 {
-                    case ResponseStatusCode.REPONSEFORMATERROR: this._logger.LogError("Unknows response code!"); break;
+                    case ResponseStatusCode.REPONSEFORMATERROR: this._logger.LogError("Unknown response code!"); break;
                     case ResponseStatusCode.ERROR: this._logger.LogError("Error occured!"); break;
                 }
                 client.Dispose();
@@ -84,8 +91,51 @@ namespace CPUMeasurementService
             {
                 this._logger.LogError($"Connection failed. Host: {_serverIPAddress}:{_serverPort}", this._serverIPAddress.ToString(), this._serverPort);
             }
+            
         }
 
-        
+        public async Task SendCPUDataPacketAsync()
+        {
+            var packet = this._computerDiagnostic.Update().CPUDataPacket;
+            try
+            {
+                string message = JObject.FromObject(packet).ToString();
+                TcpClient client = new TcpClient(this._serverIPAddress.ToString(), this._serverPort);
+                NetworkStream stream = client.GetStream();
+
+                Byte[] data = Encoding.ASCII.GetBytes(message);
+                stream.Write(data, 0, data.Length);
+
+                
+                byte[] responseBuffer = new byte[1024];
+                int responseBytes = client.GetStream().Read(responseBuffer, 0, responseBuffer.Length);
+
+                byte[] filteredBytes = responseBuffer[0..responseBytes];
+
+                string responseMessage = Encoding.ASCII.GetString(filteredBytes);
+                ResponseStatusCode responseStatusCode = ResponseStatus.GetReponseStatusCode(responseMessage);
+                switch (responseStatusCode)
+                {
+                    case ResponseStatusCode.REPONSEFORMATERROR: this._logger.LogError("Unknown response code!"); break;
+                    case ResponseStatusCode.ERROR: this._logger.LogError("Error occured!"); break;
+                }
+                client.Dispose();
+            }
+            catch (Exception)
+            {
+                this._logger.LogError($"Connection failed. Host: {_serverIPAddress}:{_serverPort}", this._serverIPAddress.ToString(), this._serverPort);
+            }
+            
+
+        }
+
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            while (true)
+            {
+                await this.SendCPUDataPacketAsync();
+                await Task.Delay(5000);
+            }
+        }
     }
 }

@@ -26,6 +26,7 @@ namespace CPUMeasurementService
                 });
                 services.AddHostedService<MeasurementService>();
                 services.AddHostedService<ManagementService>();
+                services.AddSingleton<ComputerDiagnostic>();
             });
         
     }
