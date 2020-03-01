@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>dotnet-CPUMeasurementService-C2B7ED45-EE5E-4F6C-BC27-7D8F6F98E29B</UserSecretsId>
     <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
+    
   </PropertyGroup>
 
   <ItemGroup>

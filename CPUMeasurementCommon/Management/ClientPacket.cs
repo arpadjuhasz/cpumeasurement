@@ -10,6 +10,6 @@ namespace CPUMeasurementCommon.Management
 
         public string CPUName { get; set; }
 
-        public int IntervalInSeconds { get; set; }
+        public int MeasurementIntervalInSeconds { get; set; }
     }
 }

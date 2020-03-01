@@ -19,72 +19,40 @@ namespace CPUMeasurementService
 {
     class ManagementService : IHostedService
     {
-        private readonly IConfiguration _configuration;
+        
         private readonly ILogger<ManagementService> _logger;
         private readonly IPAddress _serverIPAddress;
         private Timer _timer { get; set; }
-        private readonly short _serverPort;
+        private readonly int _serverManagementPort;
         private readonly ComputerDiagnostic _computerDiagnostic;
+        private readonly ClientConfigurationReader _configuratoinReader;
 
-        public ManagementService(IConfiguration configuration, ILogger<ManagementService> logger, ComputerDiagnostic computerDiagnostic)
+        public ManagementService(ILogger<ManagementService> logger, ComputerDiagnostic computerDiagnostic, ClientConfigurationReader configurationReader)
         {
-            this._configuration = configuration;
-            this._logger = logger;
-            this._serverPort = this._configuration.GetValue<short>("serverManagementPort");
+            this._logger = logger;this._configuratoinReader = configurationReader;
+            this._serverManagementPort = this._configuratoinReader.Configuration.ServerManagementPort;
             this._computerDiagnostic = computerDiagnostic;
             try
             {
-                this._serverIPAddress = IPAddress.Parse(this._configuration.GetValue<string>("serverIPAddress"));
+                this._serverIPAddress = IPAddress.Parse(this._configuratoinReader.Configuration.ServerIPAddress);
             }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
-            this._logger.LogInformation("Started successfully!");
-            
         }
 
         private void SendClientPacket(object state)
         {
             ClientPacket packet = this._computerDiagnostic.ClientPacket;
+            packet.MeasurementIntervalInSeconds = this._configuratoinReader.Configuration.MeasurementIntervalInSeconds;
+            Socket s  = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 
-            //try
-            //{
-            //while (true || !cancellationToken.IsCancellationRequested)
-            //{ 
-            //string message = JObject.FromObject(packet).ToString();
-            //TcpClient client = new TcpClient(this._serverIPAddress.ToString(), this._serverPort);
-            //NetworkStream stream = client.GetStream();
-
-            //Byte[] data = Encoding.ASCII.GetBytes(message);
-            //stream.Write(data, 0, data.Length);
-
-            //byte[] responseData = new byte[256];
-            //int responseBytes = stream.Read(responseData, 0, responseData.Length);
-            //string responseMessage = Encoding.ASCII.GetString(responseData, 0, responseData.Length);
-            //ResponseStatusCode responseStatusCode = ResponseStatus.GetReponseStatusCode(responseMessage);
-            //switch (responseStatusCode)
-            //{
-            //    case ResponseStatusCode.REPONSEFORMATERROR: this._logger.LogError("Unknows response code!"); break;
-            //    case ResponseStatusCode.ERROR: this._logger.LogError("Error occured!"); break;
-            //}
-            //client.Dispose();
-            //    }
-            //    catch (Exception)
-            //    {
-            //        this._logger.LogError($"Connection failed. Host: {_serverIPAddress}:{_serverPort}", this._serverIPAddress.ToString(), this._serverPort);
-            //    }
-            //}
-            Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-
-            IPAddress broadcast = IPAddress.Parse("192.168.0.255");
-
-            byte[] sendbuf = Encoding.ASCII.GetBytes("foo");
-            IPEndPoint ep = new IPEndPoint(broadcast, 6765);
-
+            IPAddress broadcast = this._serverIPAddress;
+            byte[] sendbuf = Encoding.ASCII.GetBytes(JObject.FromObject(packet).ToString());
+            IPEndPoint ep = new IPEndPoint(broadcast, this._serverManagementPort);
             s.SendTo(sendbuf, ep);
-
-            Console.WriteLine("Message sent to the broadcast address");
+            this._logger.LogInformation(JObject.FromObject(packet).ToString());
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)

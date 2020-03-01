@@ -1,447 +1,101 @@
-2020-02-27 20:36:57.860 +01:00 [INF] Started successfully!
-2020-02-27 20:37:00.249 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 20:37:11.482 +01:00 [INF] Application is shutting down...
-2020-02-27 20:43:17.846 +01:00 [INF] Started successfully!
-2020-02-27 20:43:17.868 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 20:43:17.890 +01:00 [INF] Hosting environment: Development
-2020-02-27 20:43:17.892 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 20:43:20.221 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 20:44:19.975 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 20:44:42.182 +01:00 [INF] Application is shutting down...
-2020-02-27 20:44:52.029 +01:00 [INF] Started successfully!
-2020-02-27 20:44:52.050 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 20:44:52.069 +01:00 [INF] Hosting environment: Development
-2020-02-27 20:44:52.071 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 20:44:54.384 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 20:50:41.391 +01:00 [INF] Started successfully!
-2020-02-27 20:50:43.761 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 20:50:43.768 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 20:50:43.769 +01:00 [INF] Hosting environment: Development
-2020-02-27 20:50:43.771 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 20:51:33.894 +01:00 [INF] Application is shutting down...
-2020-02-27 20:51:48.764 +01:00 [INF] Started successfully!
-2020-02-27 20:51:51.229 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 20:51:55.879 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 20:51:55.881 +01:00 [INF] Hosting environment: Development
-2020-02-27 20:51:55.883 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 20:52:02.990 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 20:52:10.117 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 20:55:32.508 +01:00 [INF] Started successfully!
-2020-02-27 20:55:34.920 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 20:55:34.927 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 20:55:34.929 +01:00 [INF] Hosting environment: Development
-2020-02-27 20:55:34.931 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 20:55:42.060 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 20:55:49.210 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 20:55:53.566 +01:00 [INF] Application is shutting down...
-2020-02-27 20:55:56.326 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 22:26:37.728 +01:00 [ERR] Unknows response code!
-2020-02-27 22:26:37.739 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 22:26:37.742 +01:00 [INF] Hosting environment: Development
-2020-02-27 22:26:37.744 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 22:28:18.323 +01:00 [INF] Application is shutting down...
-2020-02-27 22:42:53.152 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 22:42:53.164 +01:00 [INF] Hosting environment: Development
-2020-02-27 22:42:53.165 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 22:50:35.520 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 22:50:35.529 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 22:50:35.530 +01:00 [INF] Hosting environment: Development
-2020-02-27 22:50:35.532 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 22:50:42.710 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 22:50:49.835 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 22:50:56.985 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 22:51:04.136 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-27 23:03:31.849 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 23:03:31.859 +01:00 [INF] Hosting environment: Development
-2020-02-27 23:03:31.861 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 23:05:42.435 +01:00 [ERR] Unknows response code!
-2020-02-27 23:15:57.276 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 23:15:57.287 +01:00 [INF] Hosting environment: Development
-2020-02-27 23:15:57.288 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 23:15:57.849 +01:00 [ERR] Unknows response code!
-2020-02-27 23:16:21.263 +01:00 [INF] Application is shutting down...
-2020-02-27 23:22:03.788 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 23:22:03.799 +01:00 [INF] Hosting environment: Development
-2020-02-27 23:22:03.801 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 23:22:04.435 +01:00 [ERR] Unknows response code!
-2020-02-27 23:22:57.338 +01:00 [INF] Application is shutting down...
-2020-02-27 23:23:16.475 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 23:23:16.485 +01:00 [INF] Hosting environment: Development
-2020-02-27 23:23:16.487 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 23:26:47.190 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 23:26:47.200 +01:00 [INF] Hosting environment: Development
-2020-02-27 23:26:47.204 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 23:26:54.058 +01:00 [INF] Application is shutting down...
-2020-02-27 23:27:21.055 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 23:27:21.065 +01:00 [INF] Hosting environment: Development
-2020-02-27 23:27:21.067 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 23:27:21.601 +01:00 [ERR] Unknows response code!
-2020-02-27 23:28:18.220 +01:00 [INF] Application is shutting down...
-2020-02-27 23:35:27.684 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-27 23:35:27.694 +01:00 [INF] Hosting environment: Development
-2020-02-27 23:35:27.695 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-27 23:35:28.330 +01:00 [ERR] Unknows response code!
-2020-02-27 23:35:32.753 +01:00 [ERR] Unknows response code!
-2020-02-27 23:35:37.767 +01:00 [ERR] Unknows response code!
-2020-02-27 23:35:42.774 +01:00 [ERR] Unknows response code!
-2020-02-27 23:35:47.759 +01:00 [ERR] Unknows response code!
-2020-02-27 23:35:52.767 +01:00 [ERR] Unknows response code!
-2020-02-27 23:35:57.772 +01:00 [ERR] Unknows response code!
-2020-02-27 23:36:02.767 +01:00 [ERR] Unknows response code!
-2020-02-27 23:36:07.798 +01:00 [ERR] Unknows response code!
-2020-02-27 23:36:08.975 +01:00 [INF] Application is shutting down...
-2020-02-28 00:23:14.899 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 00:23:14.910 +01:00 [INF] Hosting environment: Development
-2020-02-28 00:23:14.912 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 00:23:17.230 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 00:23:21.981 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 00:23:25.197 +01:00 [ERR] Unknows response code!
-2020-02-28 00:23:29.986 +01:00 [ERR] Unknows response code!
-2020-02-28 00:23:35.005 +01:00 [ERR] Unknows response code!
-2020-02-28 00:23:39.970 +01:00 [ERR] Unknows response code!
-2020-02-28 00:23:44.977 +01:00 [ERR] Unknows response code!
-2020-02-28 00:23:49.973 +01:00 [ERR] Unknows response code!
-2020-02-28 00:23:54.985 +01:00 [ERR] Unknows response code!
-2020-02-28 00:23:59.981 +01:00 [ERR] Unknows response code!
-2020-02-28 00:24:04.969 +01:00 [ERR] Unknows response code!
-2020-02-28 00:24:09.974 +01:00 [ERR] Unknows response code!
-2020-02-28 00:24:14.967 +01:00 [ERR] Unknows response code!
-2020-02-28 00:24:19.989 +01:00 [ERR] Unknows response code!
-2020-02-28 00:24:21.355 +01:00 [INF] Application is shutting down...
-2020-02-28 00:39:21.271 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 00:39:28.401 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 00:39:35.732 +01:00 [ERR] Unknown response code!
-2020-02-28 00:39:40.851 +01:00 [ERR] Unknown response code!
-2020-02-28 00:39:45.951 +01:00 [ERR] Unknown response code!
-2020-02-28 00:39:51.070 +01:00 [ERR] Unknown response code!
-2020-02-28 00:39:56.179 +01:00 [ERR] Unknown response code!
-2020-02-28 00:40:01.290 +01:00 [ERR] Unknown response code!
-2020-02-28 00:40:06.388 +01:00 [ERR] Unknown response code!
-2020-02-28 00:40:11.500 +01:00 [ERR] Unknown response code!
-2020-02-28 00:40:16.624 +01:00 [ERR] Unknown response code!
-2020-02-28 00:40:21.755 +01:00 [ERR] Unknown response code!
-2020-02-28 00:40:26.859 +01:00 [ERR] Unknown response code!
-2020-02-28 00:40:31.967 +01:00 [ERR] Unknown response code!
-2020-02-28 00:40:37.074 +01:00 [ERR] Unknown response code!
-2020-02-28 00:40:42.173 +01:00 [ERR] Unknown response code!
-2020-02-28 00:40:47.280 +01:00 [ERR] Unknown response code!
-2020-02-28 00:40:52.409 +01:00 [ERR] Unknown response code!
-2020-02-28 00:43:58.371 +01:00 [ERR] Unknown response code!
-2020-02-28 00:44:03.381 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 00:44:03.385 +01:00 [INF] Hosting environment: Development
-2020-02-28 00:44:03.387 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 00:45:53.256 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 00:45:53.261 +01:00 [ERR] Unknown response code!
-2020-02-28 00:45:53.266 +01:00 [INF] Hosting environment: Development
-2020-02-28 00:45:53.267 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 00:45:54.567 +01:00 [ERR] Unknown response code!
-2020-02-28 00:45:55.831 +01:00 [ERR] Unknown response code!
-2020-02-28 00:45:57.356 +01:00 [ERR] Unknown response code!
-2020-02-28 00:45:58.191 +01:00 [ERR] Unknown response code!
-2020-02-28 00:45:58.897 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:02.729 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:02.833 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:02.934 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:03.031 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:03.124 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:03.231 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:03.366 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:03.461 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:03.560 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:03.657 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:03.752 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:03.854 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:03.996 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:04.104 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:04.206 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:04.306 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:04.401 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:04.497 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:04.601 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:04.696 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:04.792 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:04.893 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:04.987 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:05.087 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:05.181 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:05.279 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:05.373 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:05.466 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:05.563 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:05.659 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:05.752 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:05.845 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:05.939 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:06.048 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:06.140 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:06.295 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:06.388 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:06.481 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:06.649 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:06.751 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:06.856 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:06.950 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:07.046 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:07.139 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:07.230 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:07.354 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:07.446 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:07.539 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:07.631 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:07.726 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:07.818 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:07.939 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:08.030 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:08.122 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:08.218 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:08.315 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:08.408 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:08.500 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:08.613 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:08.705 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:08.800 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:08.895 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:08.991 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:09.082 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:09.174 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:09.266 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:09.359 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:09.452 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:09.557 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:09.651 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:09.746 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:09.864 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:09.957 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:10.049 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:10.158 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:10.251 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:10.343 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:10.434 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:10.536 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:10.629 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:10.721 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:10.819 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:10.913 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:11.005 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:11.102 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:11.204 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:11.299 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:11.391 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:11.483 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:11.582 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:11.675 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:11.766 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:11.958 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:12.049 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:12.142 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:12.234 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:12.325 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:12.433 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:12.525 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:12.617 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:12.712 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:12.803 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:12.896 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:12.999 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:13.121 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:13.220 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:13.312 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:13.403 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:13.516 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:13.606 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:13.698 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:13.789 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:13.881 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:13.971 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:14.072 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:14.189 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:14.281 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:14.371 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:14.499 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:14.590 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:14.683 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:14.777 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:14.866 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:14.959 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:15.049 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:15.177 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:15.267 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:15.363 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:15.455 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:15.556 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:15.646 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:15.746 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:15.838 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:15.955 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:16.027 +01:00 [INF] Application is shutting down...
-2020-02-28 00:46:16.050 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:16.142 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:16.234 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:16.331 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:16.448 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:16.541 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:16.632 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:16.723 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:16.814 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:16.919 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:17.013 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:17.153 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:17.273 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:17.393 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:17.486 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:17.599 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:17.690 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:17.784 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:17.877 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:17.974 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:18.066 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:18.156 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:18.248 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:18.341 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:18.459 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:18.580 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:18.671 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:18.770 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:18.869 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:18.989 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:19.082 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:19.173 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:19.264 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:19.355 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:19.446 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:19.538 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:19.640 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:19.731 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:19.824 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:19.916 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:20.009 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:20.102 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:20.201 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:20.292 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:20.408 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:20.499 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:20.591 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:20.683 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:20.776 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:20.868 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:20.961 +01:00 [ERR] Unknown response code!
-2020-02-28 00:46:52.437 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 00:46:52.447 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 00:46:52.448 +01:00 [INF] Hosting environment: Development
-2020-02-28 00:46:52.450 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 00:46:59.570 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 00:47:06.686 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 00:47:13.797 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 00:47:20.913 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 00:47:28.021 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 00:47:33.372 +01:00 [ERR] Unknown response code!
-2020-02-28 00:47:38.493 +01:00 [ERR] Unknown response code!
-2020-02-28 00:47:43.593 +01:00 [ERR] Unknown response code!
-2020-02-28 00:48:02.144 +01:00 [ERR] Unknown response code!
-2020-02-28 00:48:07.249 +01:00 [ERR] Unknown response code!
-2020-02-28 00:48:12.346 +01:00 [ERR] Unknown response code!
-2020-02-28 00:48:17.454 +01:00 [ERR] Unknown response code!
-2020-02-28 00:48:22.584 +01:00 [ERR] Unknown response code!
-2020-02-28 00:48:27.795 +01:00 [ERR] Unknown response code!
-2020-02-28 00:48:30.265 +01:00 [INF] Application is shutting down...
-2020-02-28 00:48:32.909 +01:00 [ERR] Unknown response code!
-2020-02-28 11:15:12.875 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 11:15:12.887 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 11:15:12.889 +01:00 [INF] Hosting environment: Development
-2020-02-28 11:15:12.890 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 11:15:20.018 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 11:15:26.947 +01:00 [ERR] Unknown response code!
-2020-02-28 11:15:32.065 +01:00 [ERR] Unknown response code!
-2020-02-28 11:15:37.181 +01:00 [ERR] Unknown response code!
-2020-02-28 11:15:42.287 +01:00 [ERR] Unknown response code!
-2020-02-28 11:15:47.402 +01:00 [ERR] Unknown response code!
-2020-02-28 11:15:52.506 +01:00 [ERR] Unknown response code!
-2020-02-28 11:15:57.609 +01:00 [ERR] Unknown response code!
-2020-02-28 11:16:02.717 +01:00 [ERR] Unknown response code!
-2020-02-28 11:16:07.821 +01:00 [ERR] Unknown response code!
-2020-02-28 11:16:12.918 +01:00 [ERR] Unknown response code!
-2020-02-28 11:17:01.877 +01:00 [ERR] Unknown response code!
-2020-02-28 11:54:22.826 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 11:54:22.837 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 11:54:22.838 +01:00 [INF] Hosting environment: Development
-2020-02-28 11:54:22.840 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 11:54:29.963 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 11:54:37.094 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 11:54:44.211 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 11:54:51.361 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 11:54:58.494 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 11:55:05.609 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 11:55:12.717 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 11:55:19.843 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 11:55:26.947 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 12:25:09.987 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 12:25:09.997 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 12:25:09.998 +01:00 [INF] Hosting environment: Development
-2020-02-28 12:25:10.000 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 12:27:43.856 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 12:27:43.866 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 12:27:43.867 +01:00 [INF] Hosting environment: Development
-2020-02-28 12:27:43.869 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 12:27:50.989 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 12:28:30.172 +01:00 [ERR] Unknown response code!
-2020-02-28 12:28:48.210 +01:00 [ERR] Unknown response code!
-2020-02-28 12:28:53.319 +01:00 [ERR] Unknown response code!
-2020-02-28 12:40:07.658 +01:00 [ERR] Unknown response code!
-2020-02-28 12:40:07.668 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 12:40:07.672 +01:00 [INF] Hosting environment: Development
-2020-02-28 12:40:07.673 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 12:40:14.728 +01:00 [ERR] Unknown response code!
-2020-02-28 12:40:19.829 +01:00 [ERR] Unknown response code!
-2020-02-28 12:40:24.939 +01:00 [ERR] Unknown response code!
-2020-02-28 12:40:30.055 +01:00 [ERR] Unknown response code!
-2020-02-28 12:40:35.167 +01:00 [ERR] Unknown response code!
-2020-02-28 12:40:40.277 +01:00 [ERR] Unknown response code!
-2020-02-28 12:42:47.739 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 12:42:47.749 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 12:42:47.751 +01:00 [INF] Hosting environment: Development
-2020-02-28 12:42:47.752 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 15:45:45.039 +01:00 [INF] Started successfully!
-2020-02-28 15:45:47.508 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 15:45:47.515 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 15:45:47.517 +01:00 [INF] Hosting environment: Development
-2020-02-28 15:45:47.519 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 15:45:54.693 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 15:48:10.357 +01:00 [INF] Application is shutting down...
-2020-02-28 15:58:57.401 +01:00 [INF] Started successfully!
-2020-02-28 15:58:59.780 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 15:58:59.787 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 15:58:59.789 +01:00 [INF] Hosting environment: Development
-2020-02-28 15:58:59.790 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 15:59:06.914 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 15:59:14.045 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:00:11.282 +01:00 [INF] Application is shutting down...
-2020-02-28 16:01:25.333 +01:00 [INF] Started successfully!
-2020-02-28 16:01:27.673 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:01:27.680 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 16:01:27.681 +01:00 [INF] Hosting environment: Development
-2020-02-28 16:01:27.683 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 16:01:34.795 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:01:41.915 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:01:49.049 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:01:56.177 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:02:25.393 +01:00 [INF] Started successfully!
-2020-02-28 16:02:27.752 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:02:27.759 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 16:02:27.761 +01:00 [INF] Hosting environment: Development
-2020-02-28 16:02:27.763 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 16:02:34.897 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:03:38.487 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:03:40.440 +01:00 [INF] Application is shutting down...
-2020-02-28 16:05:35.794 +01:00 [INF] Started successfully!
-2020-02-28 16:05:38.171 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:05:38.178 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 16:05:38.180 +01:00 [INF] Hosting environment: Development
-2020-02-28 16:05:38.181 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
-2020-02-28 16:05:45.314 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:06:13.800 +01:00 [INF] Application is shutting down...
-2020-02-28 16:06:18.213 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:14:03.077 +01:00 [INF] Started successfully!
-2020-02-28 16:14:05.445 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
-2020-02-28 16:14:05.452 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-02-28 16:14:05.454 +01:00 [INF] Hosting environment: Development
-2020-02-28 16:14:05.455 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
+2020-02-29 22:53:22.951 +01:00 [ERR] Configuration file was corrupted! All setting were overwritten to default values!
+2020-02-29 22:53:22.972 +01:00 [INF] Started successfully!
+2020-02-29 22:53:25.113 +01:00 [ERR] Connection failed. Host: 127.0.0.1:1401
+2020-02-29 22:53:25.121 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-29 22:53:25.124 +01:00 [INF] Hosting environment: Development
+2020-02-29 22:53:25.126 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
+2020-02-29 22:53:32.239 +01:00 [ERR] Connection failed. Host: 127.0.0.1:1401
+2020-02-29 22:53:39.367 +01:00 [ERR] Connection failed. Host: 127.0.0.1:1401
+2020-02-29 22:53:40.412 +01:00 [INF] Application is shutting down...
+2020-02-29 22:58:50.166 +01:00 [INF] Started successfully!
+2020-02-29 22:58:52.356 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 22:58:52.363 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-29 22:58:52.366 +01:00 [INF] Hosting environment: Development
+2020-02-29 22:58:52.368 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
+2020-02-29 22:58:59.477 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 22:59:06.597 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 22:59:13.724 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 22:59:20.853 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 22:59:27.977 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 22:59:35.096 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 22:59:42.222 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 22:59:49.341 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 22:59:56.464 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:00:03.584 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:00:10.703 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:00:17.812 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:00:24.920 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:00:32.043 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:00:39.162 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:00:46.291 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:00:53.416 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:01:00.543 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:01:07.652 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:01:14.771 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:01:21.897 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:01:29.017 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:01:36.124 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:01:43.233 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:01:50.378 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:01:57.503 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:02:04.634 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:02:11.763 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:02:18.912 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:02:26.044 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:02:29.726 +01:00 [INF] Application is shutting down...
+2020-02-29 23:02:33.160 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:09:40.920 +01:00 [INF] Started successfully!
+2020-02-29 23:09:43.127 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:09:43.134 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-29 23:09:43.137 +01:00 [INF] Hosting environment: Development
+2020-02-29 23:09:43.139 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
+2020-02-29 23:09:45.302 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:09:47.532 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:09:49.706 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:09:51.889 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:09:54.067 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:09:56.241 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:09:58.418 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:09:59.879 +01:00 [INF] Application is shutting down...
+2020-02-29 23:10:00.623 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:10:02.795 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:14:01.461 +01:00 [INF] Started successfully!
+2020-02-29 23:14:03.662 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:14:03.669 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-29 23:14:03.672 +01:00 [INF] Hosting environment: Development
+2020-02-29 23:14:03.674 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
+2020-02-29 23:14:05.851 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:14:08.029 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:14:10.221 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:14:12.392 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:14:14.566 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:14:16.750 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:14:18.937 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:14:21.107 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:14:21.411 +01:00 [INF] Application is shutting down...
+2020-02-29 23:14:23.277 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:14:25.457 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:17:54.097 +01:00 [INF] Started successfully!
+2020-02-29 23:17:56.277 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:17:56.284 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-29 23:17:56.288 +01:00 [INF] Hosting environment: Development
+2020-02-29 23:17:56.289 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
+2020-02-29 23:17:58.463 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:18:00.637 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:18:02.811 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:18:05.008 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:18:07.177 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:18:09.349 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:22:12.789 +01:00 [INF] Started successfully!
+2020-02-29 23:22:14.989 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:22:14.997 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-29 23:22:15.000 +01:00 [INF] Hosting environment: Development
+2020-02-29 23:22:15.002 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
+2020-02-29 23:23:17.122 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:24:29.425 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-02-29 23:25:33.131 +01:00 [INF] Application is shutting down...
+2020-02-29 23:30:54.006 +01:00 [INF] Started successfully!
+2020-02-29 23:30:54.425 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-29 23:30:54.429 +01:00 [INF] Hosting environment: Development
+2020-02-29 23:30:54.431 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
+2020-02-29 23:32:32.548 +01:00 [INF] Application is shutting down...

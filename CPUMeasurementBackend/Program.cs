@@ -34,9 +34,9 @@ namespace CPUMeasurementBackend
                         builder.AddConfiguration(configuration.GetSection("Logging"))
                           .AddSerilog(new LoggerConfiguration().WriteTo.File("cpumeasurementlistener.log").CreateLogger());
                     });
-                    services.AddHostedService<MeasurementListenerService>();
+                    services.AddHostedService<MeasurementListener>();
                     services.AddSingleton<Management>();
-                    services.AddHostedService<ManagementListenerService>();
+                    services.AddHostedService<ManagementListener>();
             });
 
                 

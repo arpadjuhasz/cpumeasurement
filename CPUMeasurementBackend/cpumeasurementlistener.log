@@ -150,3 +150,336 @@
 2020-02-28 16:55:43.202 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 13.3602ms
 2020-02-28 16:55:43.203 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
 2020-02-28 16:55:43.205 +01:00 [INF] Request finished in 94.2385ms 200 application/json; charset=utf-8
+2020-02-29 12:28:21.754 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-29 12:28:21.771 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-29 12:28:22.885 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-29 12:28:22.931 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 12:28:22.991 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-29 12:28:22.998 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-29 12:28:23.016 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 19.5206ms
+2020-02-29 12:28:23.017 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 12:28:23.018 +01:00 [INF] Request finished in 136.3148ms 200 application/json; charset=utf-8
+2020-02-29 12:28:54.210 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-29 12:28:54.211 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 12:28:54.212 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-29 12:28:54.212 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-29 12:28:54.217 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 5.3868ms
+2020-02-29 12:28:54.217 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 12:28:54.217 +01:00 [INF] Request finished in 7.4855ms 200 application/json; charset=utf-8
+2020-02-29 12:30:46.672 +01:00 [INF] Application is shutting down...
+2020-02-29 13:42:55.641 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-29 13:42:55.651 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-29 13:42:56.686 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-29 13:42:56.726 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 13:42:56.779 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-29 13:42:56.785 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-29 13:42:56.800 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 16.3271ms
+2020-02-29 13:42:56.801 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 13:42:56.802 +01:00 [INF] Request finished in 119.4322ms 200 application/json; charset=utf-8
+2020-02-29 13:42:56.838 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
+2020-02-29 13:42:56.839 +01:00 [INF] Request finished in 1.425ms 0 
+2020-02-29 14:37:56.998 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-29 14:37:57.006 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-29 14:37:57.902 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-29 14:37:57.936 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:37:57.973 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-29 14:37:57.980 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-29 14:37:57.994 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 15.5728ms
+2020-02-29 14:37:57.995 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:37:57.997 +01:00 [INF] Request finished in 97.9103ms 200 application/json; charset=utf-8
+2020-02-29 14:37:58.114 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
+2020-02-29 14:37:58.116 +01:00 [INF] Request finished in 1.5951ms 0 
+2020-02-29 14:38:14.571 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-29 14:38:14.572 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:38:14.573 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-29 14:38:14.574 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-29 14:38:14.587 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 13.5582ms
+2020-02-29 14:38:14.587 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:38:14.686 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Sockets.SocketException (10045): A művelet nem támogatott a hivatkozott objektum típusa esetén.
+   at System.Net.IPAddress.get_ScopeId()
+   at System.Text.Json.JsonPropertyInfoNotNullable`4.OnWrite(WriteStackFrame& current, Utf8JsonWriter writer)
+   at System.Text.Json.JsonPropertyInfo.Write(WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.JsonSerializer.Write(Utf8JsonWriter writer, Int32 originalWriterDepth, Int32 flushThreshold, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteAsyncCore(Stream utf8Json, Object value, Type inputType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|27_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-29 14:38:14.750 +01:00 [INF] Request finished in 179.4453ms 500 text/html; charset=utf-8
+2020-02-29 14:38:32.934 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/cpudata  
+2020-02-29 14:38:32.934 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
+2020-02-29 14:38:32.945 +01:00 [INF] Route matched with {action = "GetCPUData", controller = "CPUData"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCPUData(System.Nullable`1[System.DateTime]) on controller CPUMeasurementBackend.Controllers.CPUDataController (CPUMeasurementBackend).
+2020-02-29 14:38:32.984 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.CPUData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-29 14:38:32.992 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend) in 47.4417ms
+2020-02-29 14:38:32.993 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.CPUDataController.GetCPUData (CPUMeasurementBackend)'
+2020-02-29 14:38:32.995 +01:00 [INF] Request finished in 61.5145ms 200 application/json; charset=utf-8
+2020-02-29 14:38:41.005 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-29 14:38:41.006 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:38:41.006 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-29 14:38:41.009 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-29 14:38:41.010 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 4.1477ms
+2020-02-29 14:38:41.011 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:38:41.015 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Sockets.SocketException (10045): A művelet nem támogatott a hivatkozott objektum típusa esetén.
+   at System.Net.IPAddress.get_ScopeId()
+   at System.Text.Json.JsonPropertyInfoNotNullable`4.OnWrite(WriteStackFrame& current, Utf8JsonWriter writer)
+   at System.Text.Json.JsonPropertyInfo.Write(WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.JsonSerializer.Write(Utf8JsonWriter writer, Int32 originalWriterDepth, Int32 flushThreshold, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteAsyncCore(Stream utf8Json, Object value, Type inputType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|27_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-29 14:38:41.021 +01:00 [INF] Request finished in 15.5409ms 500 text/html; charset=utf-8
+2020-02-29 14:45:49.295 +01:00 [INF] Now listening on: https://localhost:5001
+2020-02-29 14:45:49.305 +01:00 [INF] Now listening on: http://localhost:5000
+2020-02-29 14:45:50.213 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-29 14:45:50.241 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:45:50.267 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-29 14:45:50.273 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-29 14:45:50.289 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 17.1652ms
+2020-02-29 14:45:50.290 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:45:50.292 +01:00 [INF] Request finished in 81.5756ms 200 application/json; charset=utf-8
+2020-02-29 14:46:02.986 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-29 14:46:02.987 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:46:02.987 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-29 14:46:02.988 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-29 14:46:02.988 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 0.9667ms
+2020-02-29 14:46:02.989 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:46:02.989 +01:00 [INF] Request finished in 2.9729ms 200 application/json; charset=utf-8
+2020-02-29 14:50:58.557 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-02-29 14:50:58.557 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:50:58.557 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-02-29 14:50:58.558 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-29 14:50:58.559 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.3215ms
+2020-02-29 14:50:58.559 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-02-29 14:50:58.559 +01:00 [INF] Request finished in 2.3951ms 200 application/json; charset=utf-8
+2020-03-01 00:31:36.515 +01:00 [INF] Now listening on: https://localhost:5001
+2020-03-01 00:31:36.526 +01:00 [INF] Now listening on: http://localhost:5000
+2020-03-01 00:31:37.393 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 00:31:37.425 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:31:37.461 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 00:31:37.467 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 00:31:37.479 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 14.0281ms
+2020-03-01 00:31:37.480 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:31:37.482 +01:00 [INF] Request finished in 90.7601ms 200 application/json; charset=utf-8
+2020-03-01 00:31:52.576 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 00:31:52.578 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:31:52.578 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 00:31:52.578 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 00:31:52.579 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 0.9224ms
+2020-03-01 00:31:52.579 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:31:52.579 +01:00 [INF] Request finished in 2.9929ms 200 application/json; charset=utf-8
+2020-03-01 00:32:11.080 +01:00 [INF] Application is shutting down...
+2020-03-01 00:34:58.880 +01:00 [INF] Now listening on: https://localhost:5001
+2020-03-01 00:34:58.889 +01:00 [INF] Now listening on: http://localhost:5000
+2020-03-01 00:34:59.805 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 00:34:59.845 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:34:59.889 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 00:34:59.897 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 00:34:59.912 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 17.8043ms
+2020-03-01 00:34:59.914 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:34:59.915 +01:00 [INF] Request finished in 114.1895ms 200 application/json; charset=utf-8
+2020-03-01 00:35:21.552 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 00:35:21.553 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:35:21.554 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 00:35:21.554 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 00:35:21.555 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 0.9389ms
+2020-03-01 00:35:21.555 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:35:21.555 +01:00 [INF] Request finished in 3.214ms 200 application/json; charset=utf-8
+2020-03-01 00:36:24.866 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 00:36:24.867 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:36:24.867 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 00:36:24.869 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 00:36:24.869 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.6392ms
+2020-03-01 00:36:24.869 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:36:24.870 +01:00 [INF] Request finished in 3.6423ms 200 application/json; charset=utf-8
+2020-03-01 00:36:37.828 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 00:36:37.829 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:36:37.829 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 00:36:37.829 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 00:36:37.830 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 0.6841ms
+2020-03-01 00:36:37.830 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:36:37.830 +01:00 [INF] Request finished in 1.7101ms 200 application/json; charset=utf-8
+2020-03-01 00:36:37.867 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
+2020-03-01 00:36:37.867 +01:00 [INF] Request finished in 0.4439ms 404 
+2020-03-01 00:47:40.919 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 00:47:40.919 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:47:40.920 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 00:47:40.921 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 00:47:40.921 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 0.9705ms
+2020-03-01 00:47:40.921 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:47:40.922 +01:00 [INF] Request finished in 2.5701ms 200 application/json; charset=utf-8
+2020-03-01 00:48:00.327 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 00:48:00.327 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:48:00.328 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 00:48:00.328 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 00:48:00.328 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 0.7734ms
+2020-03-01 00:48:00.328 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:48:00.329 +01:00 [INF] Request finished in 1.8694ms 200 application/json; charset=utf-8
+2020-03-01 00:48:31.741 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 00:48:31.742 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:48:31.742 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 00:49:01.777 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 00:49:01.783 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 30040.6968ms
+2020-03-01 00:49:01.783 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:49:01.783 +01:00 [INF] Request finished in 30041.9467ms 200 application/json; charset=utf-8
+2020-03-01 00:49:18.844 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 00:49:18.845 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:49:18.845 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 00:49:20.344 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 00:49:20.345 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1499.54ms
+2020-03-01 00:49:20.345 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:49:20.345 +01:00 [INF] Request finished in 1500.8031ms 200 application/json; charset=utf-8
+2020-03-01 00:49:58.115 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 00:49:58.116 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 00:49:58.116 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:01:13.378 +01:00 [INF] Now listening on: https://localhost:5001
+2020-03-01 01:01:13.390 +01:00 [INF] Now listening on: http://localhost:5000
+2020-03-01 01:01:14.175 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:01:14.206 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:01:14.243 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:01:23.299 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:01:23.313 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 9065.6886ms
+2020-03-01 01:01:23.314 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:01:23.316 +01:00 [INF] Request finished in 9143.3711ms 200 application/json; charset=utf-8
+2020-03-01 01:01:31.781 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:01:31.783 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:01:31.783 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:01:31.784 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:01:31.784 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.0285ms
+2020-03-01 01:01:31.784 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:01:31.784 +01:00 [INF] Request finished in 3.1757ms 200 application/json; charset=utf-8
+2020-03-01 01:02:04.669 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:02:04.670 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:04.672 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:02:04.674 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:02:04.675 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.7162ms
+2020-03-01 01:02:04.675 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:04.675 +01:00 [INF] Request finished in 7.3657ms 200 application/json; charset=utf-8
+2020-03-01 01:02:06.355 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:02:06.356 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:06.356 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:02:06.357 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:02:06.358 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.1622ms
+2020-03-01 01:02:06.358 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:06.358 +01:00 [INF] Request finished in 3.0242ms 200 application/json; charset=utf-8
+2020-03-01 01:02:07.356 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:02:07.356 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:07.357 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:02:07.357 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:02:07.358 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 0.7996ms
+2020-03-01 01:02:07.358 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:07.358 +01:00 [INF] Request finished in 2.0621ms 200 application/json; charset=utf-8
+2020-03-01 01:02:08.704 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:02:08.705 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:08.705 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:02:08.705 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:02:08.706 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.0484ms
+2020-03-01 01:02:08.706 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:08.706 +01:00 [INF] Request finished in 2.4803ms 200 application/json; charset=utf-8
+2020-03-01 01:02:09.804 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:02:09.805 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:09.805 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:02:09.806 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:02:09.806 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 0.9773ms
+2020-03-01 01:02:09.806 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:09.807 +01:00 [INF] Request finished in 2.2596ms 200 application/json; charset=utf-8
+2020-03-01 01:02:10.488 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:02:10.489 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:10.490 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:02:10.491 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:02:10.492 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.8022ms
+2020-03-01 01:02:10.492 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:02:10.492 +01:00 [INF] Request finished in 4.2519ms 200 application/json; charset=utf-8
+2020-03-01 01:03:13.013 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:03:13.013 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:03:13.014 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:03:13.014 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:03:13.014 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 0.6927ms
+2020-03-01 01:03:13.015 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:03:13.015 +01:00 [INF] Request finished in 1.5558ms 200 application/json; charset=utf-8
+2020-03-01 01:03:21.751 +01:00 [INF] Application is shutting down...
+2020-03-01 01:03:47.313 +01:00 [INF] Now listening on: https://localhost:5001
+2020-03-01 01:03:47.321 +01:00 [INF] Now listening on: http://localhost:5000
+2020-03-01 01:03:48.101 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:03:48.136 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:03:48.173 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:03:48.179 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:03:48.195 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 17.3401ms
+2020-03-01 01:03:48.197 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:03:48.198 +01:00 [INF] Request finished in 99.8441ms 200 application/json; charset=utf-8
+2020-03-01 01:04:07.173 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:04:07.176 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:04:07.176 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:04:07.177 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:04:07.181 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 4.4296ms
+2020-03-01 01:04:07.181 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:04:07.181 +01:00 [INF] Request finished in 7.7709ms 200 application/json; charset=utf-8
+2020-03-01 01:04:31.089 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:04:31.089 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:04:31.090 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:04:31.091 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:04:31.092 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.8771ms
+2020-03-01 01:04:31.092 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:04:31.093 +01:00 [INF] Request finished in 4.0372ms 200 application/json; charset=utf-8
+2020-03-01 01:04:34.111 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:04:34.112 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:04:34.112 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:04:34.113 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:04:34.113 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.0495ms
+2020-03-01 01:04:34.114 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:04:34.114 +01:00 [INF] Request finished in 2.5278ms 200 application/json; charset=utf-8
+2020-03-01 01:04:38.875 +01:00 [INF] Application is shutting down...
+2020-03-01 01:12:38.557 +01:00 [INF] Now listening on: https://localhost:5001
+2020-03-01 01:12:38.564 +01:00 [INF] Now listening on: http://localhost:5000
+2020-03-01 01:12:39.518 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 01:12:39.550 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:12:39.585 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 01:12:39.591 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 01:12:39.604 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 14.4333ms
+2020-03-01 01:12:39.605 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 01:12:39.607 +01:00 [INF] Request finished in 91.1817ms 200 application/json; charset=utf-8
+2020-03-01 01:12:39.640 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
+2020-03-01 01:12:39.642 +01:00 [INF] Request finished in 1.4461ms 0 
+2020-03-01 13:53:57.967 +01:00 [INF] Now listening on: https://localhost:5001
+2020-03-01 13:53:57.977 +01:00 [INF] Now listening on: http://localhost:5000
+2020-03-01 13:53:58.731 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 13:53:58.773 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 13:53:58.813 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 13:53:58.820 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 13:53:58.838 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 19.3752ms
+2020-03-01 13:53:58.839 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 13:53:58.841 +01:00 [INF] Request finished in 118.3012ms 200 application/json; charset=utf-8
+2020-03-01 13:53:58.890 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
+2020-03-01 13:53:58.891 +01:00 [INF] Request finished in 1.8265ms 0 
+2020-03-01 13:56:03.677 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 13:56:03.678 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 13:56:03.678 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 13:56:03.678 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 13:56:03.679 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 0.8918ms
+2020-03-01 13:56:03.679 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 13:56:03.679 +01:00 [INF] Request finished in 2.0935ms 200 application/json; charset=utf-8
+2020-03-01 13:56:15.136 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 13:56:15.137 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 13:56:15.138 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 13:56:15.139 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 13:56:15.139 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.6016ms
+2020-03-01 13:56:15.140 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 13:56:15.140 +01:00 [INF] Request finished in 3.4854ms 200 application/json; charset=utf-8
+2020-03-01 13:56:24.684 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5001/management  
+2020-03-01 13:56:24.685 +01:00 [INF] Executing endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 13:56:24.685 +01:00 [INF] Route matched with {action = "GetConnectedClients", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetConnectedClients() on controller CPUMeasurementBackend.Controllers.ManagementController (CPUMeasurementBackend).
+2020-03-01 13:56:24.686 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CPUMeasurementCommon.DataObjects.ClientData, CPUMeasurementCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-03-01 13:56:24.687 +01:00 [INF] Executed action CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend) in 1.2467ms
+2020-03-01 13:56:24.687 +01:00 [INF] Executed endpoint 'CPUMeasurementBackend.Controllers.ManagementController.GetConnectedClients (CPUMeasurementBackend)'
+2020-03-01 13:56:24.687 +01:00 [INF] Request finished in 3.1427ms 200 application/json; charset=utf-8

@@ -15,53 +15,31 @@ using System.Threading.Tasks;
 
 namespace CPUMeasurementService
 {
-    public class MeasurementService : BackgroundService //IHostedService
+    public class MeasurementService : BackgroundService
     {
-        private Timer _timer;
-
-        private readonly IConfiguration _configuration;
-        private IPAddress _serverIPAddress;
-        private short _serverPort;
-        private readonly int _runIntervalInMinutes;
+private IPAddress _serverIPAddress;
+        private int _serverMeasurementPort;
         private readonly ILogger<MeasurementService> _logger;
         private readonly ComputerDiagnostic _computerDiagnostic;
+        private readonly ClientConfigurationReader _configurationReader;
 
-        public MeasurementService(IConfiguration configuration, ILogger<MeasurementService> logger, ComputerDiagnostic computerDiagnostic)
+        public MeasurementService(ILogger<MeasurementService> logger, ComputerDiagnostic computerDiagnostic, ClientConfigurationReader configurationReader)
         {
-            this._configuration = configuration;
-            this._runIntervalInMinutes = this._configuration.GetValue<int>("runIntervalInMinutes");
-            this._serverPort = this._configuration.GetValue<short>("serverPort");
+            this._configurationReader = configurationReader;
+
+            this._serverMeasurementPort = this._configurationReader.Configuration.ServerMeasurementPort;
             this._logger = logger;
             this._computerDiagnostic = computerDiagnostic;
             try
             {
-                this._serverIPAddress = IPAddress.Parse(this._configuration.GetValue<string>("serverIPAddress"));
+                this._serverIPAddress = IPAddress.Parse(this._configurationReader.Configuration.ServerIPAddress);
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
-            }
-            if (this._runIntervalInMinutes <= 0)
-            {
-                this._runIntervalInMinutes = 5;
+                this._logger.LogError("Invalid server IP address in the client_configuration.json file!");
+                this._configurationReader.Configuration.ServerIPAddress = "127.0.0.1";
             }
         }
-
-        //public async Task StartAsync(CancellationToken cancellationToken)
-        //{
-        //    //this._timer = new Timer(SendCPUDataPacket, null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
-
-        //    //await Task.CompletedTask;
-        //    await this.SendCPUDataPacketAsync();
-        //        await Task.Delay(5000);
-            
-
-        //}
-
-        //public Task StopAsync(CancellationToken cancellationToken)
-        //{
-        //    return Task.CompletedTask;
-        //}
 
         private void SendCPUDataPacket(object state)
         {
@@ -69,7 +47,7 @@ namespace CPUMeasurementService
             try
             {
                 string message = JObject.FromObject(packet).ToString();
-                TcpClient client = new TcpClient(this._serverIPAddress.ToString(), this._serverPort);
+                TcpClient client = new TcpClient(this._serverIPAddress.ToString(), this._serverMeasurementPort);
                 NetworkStream stream = client.GetStream();
 
                 Byte[] data = Encoding.ASCII.GetBytes(message);
@@ -89,7 +67,7 @@ namespace CPUMeasurementService
             }
             catch (Exception)
             {
-                this._logger.LogError($"Connection failed. Host: {_serverIPAddress}:{_serverPort}", this._serverIPAddress.ToString(), this._serverPort);
+                this._logger.LogError($"Connection failed. Host: {_serverIPAddress}:{_serverMeasurementPort}");
             }
             
         }
@@ -100,7 +78,7 @@ namespace CPUMeasurementService
             try
             {
                 string message = JObject.FromObject(packet).ToString();
-                TcpClient client = new TcpClient(this._serverIPAddress.ToString(), this._serverPort);
+                TcpClient client = new TcpClient(this._serverIPAddress.ToString(), this._serverMeasurementPort);
                 NetworkStream stream = client.GetStream();
 
                 Byte[] data = Encoding.ASCII.GetBytes(message);
@@ -123,7 +101,7 @@ namespace CPUMeasurementService
             }
             catch (Exception)
             {
-                this._logger.LogError($"Connection failed. Host: {_serverIPAddress}:{_serverPort}", this._serverIPAddress.ToString(), this._serverPort);
+                this._logger.LogError($"Connection failed. Host: {_serverIPAddress.ToString()}:{_serverMeasurementPort}");
             }
             
 
@@ -134,7 +112,7 @@ namespace CPUMeasurementService
             while (true)
             {
                 await this.SendCPUDataPacketAsync();
-                await Task.Delay(5000);
+                await Task.Delay(this._configurationReader.Configuration.MeasurementIntervalInSeconds*1000);
             }
         }
     }

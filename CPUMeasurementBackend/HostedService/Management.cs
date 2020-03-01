@@ -16,5 +16,16 @@ namespace CPUMeasurementBackend.HostedService
         {
             
         }
+
+        public void RemoveNotRespondingClients()
+        {
+            foreach (var item in this.ConnectedClients)
+            {
+                if (item.Value.LastUpdate.AddSeconds(5) < DateTime.UtcNow)
+                {
+                    this.ConnectedClients.TryRemove(item.Key, out ClientData value);
+                }
+            }
+        }
     }
 }

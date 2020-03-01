@@ -8,16 +8,14 @@ namespace CPUMeasurementCommon.DataObjects
 {
     public class ClientData
     {
-        //public IPAddress IPAddress { get; set; }
-
-        //public string IP { get { return IPAddress.ToString(); } }
-
-        public string MAC { get; set; }
-
         public string ComputerName { get; set; }
 
         public string CPUName { get; set; }
 
-        public int IntervalInSeconds { get; set; }
+        public int RunIntervalInSeconds { get; set; }
+
+        public DateTime LastUpdate { get; set; }
+
+        public string IPv4Address { get; set; }
     }
 }

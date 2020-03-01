@@ -18,6 +18,7 @@ namespace CPUMeasurementBackend.WebService
 
         public async Task<List<ClientData>> GetConnectedClients()
         {
+            this._management.RemoveNotRespondingClients();
             List<ClientData> result = this._management.ConnectedClients.Values.ToList();
             return result;
         }
