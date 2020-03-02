@@ -19,3 +19,11 @@ CPUMeasurementService/Properties/PublishProfiles
 CPUMeasurementBackend/Properties/PublishProfiles/FolderProfile.pubxml
 CPUMeasurementBackend/Properties/PublishProfiles/FolderProfile.pubxml.user
 CPUMeasurementBackend/Properties/PublishProfiles/Local Folder Publish.pubxml
+*.ide-wal
+*.jfm
+CPUMeasurementDatabase/CPUMeasurementDatabase.jfm
+.vs/CPUMeasurement/v16/Server/sqlite3/storage.ide-wal
+.vs/CPUMeasurement/v16/Server/sqlite3/storage.ide-shm
+.vs/CPUMeasurement/v16/Server/sqlite3/storage.ide
+.vs/CPUMeasurement/v16/.suo
+.vs/CPUMeasurement/DesignTimeBuild/.dtbcache

@@ -60,7 +60,6 @@ namespace CPUMeasurementBackend.HostedService
                                 await repository.SaveCPUPacket(cpuPacket, clientIPAddress);
 
                                 var bytes = Encoding.ASCII.GetBytes(((int)ResponseStatusCode.SUCCESS).ToString());
-                                //clientTask.Result.GetStream().Write(bytes, 0, bytes.Length);
                                 await clientTask.Result.GetStream().WriteAsync(bytes, 0, bytes.Length);
 
                             }
@@ -73,7 +72,7 @@ namespace CPUMeasurementBackend.HostedService
                         }
                         catch (Exception)
                         {
-                            this._logger.LogError(string.Format($"Failed to save the data from client! IPAddress: {clientIPAddress}, Message: {message}", message, clientIPAddress.ToString()));
+                            this._logger.LogError($"Failed to save the data from client! IPAddress: {clientIPAddress.ToString()}, Message: {message}");
                             var bytes = Encoding.ASCII.GetBytes(ResponseStatusCode.ERROR.ToString());
                             clientTask.Result.GetStream().Write(bytes, 0, bytes.Length);
                         }
@@ -88,25 +87,9 @@ namespace CPUMeasurementBackend.HostedService
         {
             while (true)
             await Task.Run(() => { this.ReceiveCPUDataPacket(); });
-            //await this.ReceiveCPUDataPacket();
         }
 
-        //public async Task StartAsync(CancellationToken cancellationToken)
-        //{
-        //    while (true)
-        //   await Task.Run(() => { this.ReceiveCPUDataPacket(); });
-            
-        //}
-
-        //public void Stop()
-        //{
-        //    this._tcpListener.Stop();
-        //}
-
-        //public Task StopAsync(CancellationToken cancellationToken)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        
 
         
     }

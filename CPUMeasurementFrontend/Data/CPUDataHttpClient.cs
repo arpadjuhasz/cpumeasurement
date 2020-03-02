@@ -19,13 +19,13 @@ namespace CPUMeasurementFrontend.Data
         public async Task<T> GetJsonAsyncc<T>(string apiPath, string queryParams = "")
         {
             
-            return await this.GetJsonAsync<T>(string.Format($"{_hostName}{apiPath}{queryParams}", this._hostName, apiPath, queryParams));
+            return await this.GetJsonAsync<T>($"{_hostName}{apiPath}{queryParams}");
         }
 
         public async Task<T> PostJsonAsyncc<T>(string apiPath, object post)
         {
 
-            return await this.PostJsonAsync<T>(string.Format($"{_hostName}{apiPath}", this._hostName, apiPath), post);
+            return await this.PostJsonAsync<T>($"{_hostName}{apiPath}", post);
         }
     }
 }
