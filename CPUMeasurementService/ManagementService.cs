@@ -1,14 +1,8 @@
-﻿using CPUMeasurementCommon;
-using CPUMeasurementCommon.DataObjects;
-using CPUMeasurementCommon.Management;
-using Microsoft.Extensions.Configuration;
+﻿using CPUMeasurementCommon.Management;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
-using OpenHardwareMonitor.Hardware;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -26,12 +20,15 @@ namespace CPUMeasurementService
         private readonly int _serverManagementPort;
         private readonly ComputerDiagnostic _computerDiagnostic;
         private readonly ClientConfigurationReader _configuratoinReader;
+        private readonly CancelService _cancelService;
 
-        public ManagementService(ILogger<ManagementService> logger, ComputerDiagnostic computerDiagnostic, ClientConfigurationReader configurationReader)
+        public ManagementService(ILogger<ManagementService> logger, ComputerDiagnostic computerDiagnostic, ClientConfigurationReader configurationReader, CancelService cancelService)
         {
+            this._cancelService = cancelService;
             this._logger = logger;this._configuratoinReader = configurationReader;
             this._serverManagementPort = this._configuratoinReader.Configuration.ServerManagementPort;
             this._computerDiagnostic = computerDiagnostic;
+            
             try
             {
                 this._serverIPAddress = IPAddress.Parse(this._configuratoinReader.Configuration.ServerIPAddress);
@@ -46,13 +43,38 @@ namespace CPUMeasurementService
         {
             ClientPacket packet = this._computerDiagnostic.ClientPacket;
             packet.MeasurementIntervalInSeconds = this._configuratoinReader.Configuration.MeasurementIntervalInSeconds;
-            Socket s  = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 
-            IPAddress broadcast = this._serverIPAddress;
-            byte[] sendbuf = Encoding.ASCII.GetBytes(JObject.FromObject(packet).ToString());
-            IPEndPoint ep = new IPEndPoint(broadcast, this._serverManagementPort);
-            s.SendTo(sendbuf, ep);
-            this._logger.LogInformation(JObject.FromObject(packet).ToString());
+            try
+            {
+                string message = JObject.FromObject(packet).ToString();
+                TcpClient client = new TcpClient(this._serverIPAddress.ToString(), this._serverManagementPort);
+                NetworkStream stream = client.GetStream();
+
+                Byte[] data = Encoding.ASCII.GetBytes(message);
+                stream.Write(data, 0, data.Length);
+
+                byte[] responseData = new byte[256];
+                int responseBytes = stream.Read(responseData, 0, responseData.Length);
+                if (responseBytes > 1)
+                {
+                    var responseMessage = Encoding.ASCII.GetString(responseData);
+                    try
+                    {
+                        MeasurementIntervalUpdatePacket updatePacket = JObject.Parse(responseMessage).ToObject<MeasurementIntervalUpdatePacket>();
+                        this._configuratoinReader.SetMeasurementInterval(updatePacket.MeasurementIntervalInSeconds);
+                        this._cancelService.CancelationToken.ThrowIfCancellationRequested();
+                    }
+                    catch (Exception e)
+                    {
+                        this._logger.LogError(e.Message);
+                    }
+                }
+                client.Dispose();
+            }
+            catch (Exception)
+            {
+                this._logger.LogError($"Connection failed. Host: {_serverIPAddress.ToString()}:{_serverManagementPort}");
+            }
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)

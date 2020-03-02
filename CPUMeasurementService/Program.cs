@@ -28,6 +28,7 @@ namespace CPUMeasurementService
                 services.AddHostedService<ManagementService>();
                 services.AddSingleton<ComputerDiagnostic>();
                 services.AddSingleton<ClientConfigurationReader>();
+                services.AddSingleton<CancelService>();
             });
         
     }

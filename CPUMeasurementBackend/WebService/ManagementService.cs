@@ -1,8 +1,10 @@
 ﻿using CPUMeasurementBackend.HostedService;
 using CPUMeasurementCommon.DataObjects;
+using CPUMeasurementCommon.Management;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace CPUMeasurementBackend.WebService
@@ -22,5 +24,19 @@ namespace CPUMeasurementBackend.WebService
             List<ClientData> result = this._management.ConnectedClients.Values.ToList();
             return result;
         }
+
+        public void UpdateMeasurementInterval(string ip, MeasurementIntervalUpdate dto)
+        {
+            try
+            {
+                IPAddress clientAddress = IPAddress.Parse(ip);
+                this._management.UpdateMeasurementInterval(clientAddress, dto.MeasurementIntervalInSeconds);
+            }
+            catch (Exception)
+            { 
+            
+            }
+        }
+
     }
 }

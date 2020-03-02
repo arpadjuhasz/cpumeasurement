@@ -1,12 +1,8 @@
 ﻿using CPUMeasurementCommon;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
-using OpenHardwareMonitor.Hardware;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -22,9 +18,11 @@ private IPAddress _serverIPAddress;
         private readonly ILogger<MeasurementService> _logger;
         private readonly ComputerDiagnostic _computerDiagnostic;
         private readonly ClientConfigurationReader _configurationReader;
+        private readonly CancelService _cancelService;
 
-        public MeasurementService(ILogger<MeasurementService> logger, ComputerDiagnostic computerDiagnostic, ClientConfigurationReader configurationReader)
+        public MeasurementService(ILogger<MeasurementService> logger, ComputerDiagnostic computerDiagnostic, ClientConfigurationReader configurationReader, CancelService cancelService)
         {
+            this._cancelService = cancelService;
             this._configurationReader = configurationReader;
 
             this._serverMeasurementPort = this._configurationReader.Configuration.ServerMeasurementPort;
@@ -112,7 +110,9 @@ private IPAddress _serverIPAddress;
             while (true)
             {
                 await this.SendCPUDataPacketAsync();
-                await Task.Delay(this._configurationReader.Configuration.MeasurementIntervalInSeconds*1000);
+                await Task.Delay(this._configurationReader.Configuration.MeasurementIntervalInSeconds*1000, this._cancelService.CancelationToken);
+                this._cancelService.Renew();
+                
             }
         }
     }

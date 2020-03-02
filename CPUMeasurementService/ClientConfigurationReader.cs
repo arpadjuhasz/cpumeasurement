@@ -54,8 +54,20 @@ namespace CPUMeasurementService
         private void WriteDefaultSettings()
         {
             this.Configuration = new ClientConfiguration();
-            var configurationTextFormat = JObject.FromObject(this.Configuration).ToString();
-            File.WriteAllText(CLIENTCONFIGURATIONFILE, configurationTextFormat);
+            var configurationText = JObject.FromObject(this.Configuration).ToString();
+            File.WriteAllText(CLIENTCONFIGURATIONFILE, configurationText);
+        }
+
+        public void SetMeasurementInterval(int seconds)
+        {
+            this.Configuration.MeasurementIntervalInSeconds = seconds;
+            OverwriteConfiguration();
+        }
+
+        private void OverwriteConfiguration()
+        {
+            var configurationText = JObject.FromObject(this.Configuration).ToString();
+            File.WriteAllText(CLIENTCONFIGURATIONFILE, configurationText);
         }
 
     }

@@ -23,5 +23,19 @@ namespace CPUMeasurementBackend.Controllers
         {
             return Ok(await this._managementService.GetConnectedClients());
         }
+
+        [HttpPut("client/{ip}")]
+        public IActionResult UpdateMeasurementIntervalInSeconds(string ip,[FromBody]MeasurementIntervalUpdate dto)
+        {
+            this._managementService.UpdateMeasurementInterval(ip, dto);
+            return NoContent();
+        }
+
+        [HttpGet("client/{second}")]
+        public IActionResult UpdateMeasurementIntervalInSeconds(int second)
+        {
+            this._managementService.UpdateMeasurementInterval("192.168.0.80", new MeasurementIntervalUpdate {  MeasurementIntervalInSeconds = second });
+            return NoContent();
+        }
     }
 }

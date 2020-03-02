@@ -12,10 +12,14 @@ namespace CPUMeasurementCommon.DataObjects
 
         public string CPUName { get; set; }
 
-        public int RunIntervalInSeconds { get; set; }
+        public int MeasurementInterval { get; set; }
 
         public DateTime LastUpdate { get; set; }
 
         public string IPv4Address { get; set; }
+
+        public bool UpdateRequested { get; set; } = false;
+
+        public int? MeasurementIntervalRequested { get; set; }
     }
 }
