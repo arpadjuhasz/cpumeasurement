@@ -25,6 +25,8 @@ namespace CPUMeasurementFrontend
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddScoped<CPUDataHttpClient>();
+            services.AddScoped<CPUDataService>();
+            services.AddScoped<ManagementService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

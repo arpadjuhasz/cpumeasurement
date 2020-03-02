@@ -1,16 +1,15 @@
 ﻿@page "/cpudata"
-
-@using CPUMeasurementCommon.DataObjects
 @using CPUMeasurementFrontend.Data
-@inject CPUDataHttpClient Http
+@using CPUMeasurementCommon.DataObjects
+@inject CPUDataService service
 
 @code {
-    private CPUData[] _result;
+    private List<CPUData> _result;
     private DateTime _date = DateTime.Now;
 
-    protected override async Task OnInitializedAsync() => _result = await Http.GetJsonAsyncc<CPUData[]>("/cpudata");
+    protected override async Task OnInitializedAsync() => _result = await service.GetCPUData();
 
-    protected async Task GetCPUDataByDate() => _result = await Http.GetJsonAsyncc<CPUData[]>("/cpudata", $"?date={_date.ToString("yyyy-MM-dd")}");
+    protected async Task GetCPUDataByDate() => _result = await service.GetCPUDataByDate(_date);
 }
 
 <input type="date" @bind="@_date" />

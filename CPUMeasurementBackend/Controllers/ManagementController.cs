@@ -19,9 +19,9 @@ namespace CPUMeasurementBackend.Controllers
         }
 
         [HttpGet()]
-        public async Task<IActionResult> GetConnectedClients()
+        public async Task<List<ClientData>> GetConnectedClients()
         {
-            return Ok(await this._managementService.GetConnectedClients());
+            return await this._managementService.GetConnectedClients();
         }
 
         [HttpPut("client/{ip}")]
