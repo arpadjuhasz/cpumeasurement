@@ -12,11 +12,11 @@ namespace CPUMeasurementService
     {
         public ClientPacket ClientPacket { get; set; }
 
-        public CPUDataPacket CPUDataPacket { get; set; }
+        public MeasurementPacket CPUDataPacket { get; set; }
         
         public ComputerDiagnostic()
         {
-            this.CPUDataPacket = new CPUDataPacket();
+            this.CPUDataPacket = new MeasurementPacket();
             this.ClientPacket = new ClientPacket();
             this.Update();
         }
@@ -45,6 +45,8 @@ namespace CPUMeasurementService
                 }
                 CPUDataPacket.Temperature = new Temperature(temperatureValues.Average(), MeasurementUnit.FAHRENHEIT).InCelsius();
                 CPUDataPacket.AverageLoad = loadValues.Average();
+                CPUDataPacket.MeasurementDate = DateTime.UtcNow;
+                
 
                 this.ClientPacket.CPUName = cpu.Name;
                 this.ClientPacket.ComputerName = Environment.MachineName;

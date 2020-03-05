@@ -37,6 +37,7 @@ namespace CPUMeasurementBackend
                     services.AddHostedService<MeasurementListener>();
                     services.AddSingleton<Management>();
                     services.AddHostedService<ManagementListener>();
+                    services.AddScoped<CPUDataRepository>();
             });
 
                 

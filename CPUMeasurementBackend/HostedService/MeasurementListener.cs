@@ -1,5 +1,6 @@
 ﻿using CPUMeasurementBackend.Repository;
 using CPUMeasurementCommon;
+using CPUMeasurementCommon.DataObjects;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -26,7 +27,7 @@ namespace CPUMeasurementBackend.HostedService
         public MeasurementListener(IConfiguration configuration, ILogger<MeasurementListener> logger)
         {
             
-            this._port = configuration.GetValue<short>("Port");
+            this._port = configuration.GetValue<short>("MeasurementPort");
             this._ipAddress = IPAddress.Parse(configuration.GetValue<string>("IPAddress"));
             this._tcpListener = new TcpListener(_ipAddress, this._port);
             this._configuration = configuration;
@@ -54,10 +55,10 @@ namespace CPUMeasurementBackend.HostedService
                             var jsonObject = JObject.Parse(message);
                             if (jsonObject != null)
                             {
-                                CPUDataPacket cpuPacket = jsonObject.ToObject<CPUDataPacket>();
+                                MeasurementPacket cpuPacket = jsonObject.ToObject<MeasurementPacket>();
 
-                                var repository = new ListenerRepository(this._configuration);
-                                await repository.SaveCPUPacket(cpuPacket, clientIPAddress);
+                                var repository = new CPUDataRepository(this._configuration);
+                                await repository.SaveCPUPacket(CPUData.Create(cpuPacket, clientIPAddress));
 
                                 var bytes = Encoding.ASCII.GetBytes(((int)ResponseStatusCode.SUCCESS).ToString());
                                 await clientTask.Result.GetStream().WriteAsync(bytes, 0, bytes.Length);

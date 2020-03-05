@@ -14,9 +14,12 @@ namespace CPUMeasurementService
             this.CancelationToken = new CancellationToken();
         }
 
-        internal void Renew()
+        public void Renew()
         {
-            this.CancelationToken = new CancellationToken();
+            if (this.CancelationToken.IsCancellationRequested)
+            { 
+                this.CancelationToken = new CancellationToken();
+            }
         }
     }
 }

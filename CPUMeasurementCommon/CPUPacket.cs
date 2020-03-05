@@ -4,10 +4,14 @@ using System.Text;
 
 namespace CPUMeasurementCommon
 {
-    public class CPUDataPacket
+    public class MeasurementPacket
     {
         public double? AverageLoad { get; set; }
 
         public Temperature Temperature { get; set; }
+
+        public int MeasurementIntervalInSeconds { get; set; }
+
+        public DateTime MeasurementDate { get; set; }
     }
 }

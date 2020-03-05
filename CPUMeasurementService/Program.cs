@@ -18,6 +18,7 @@ namespace CPUMeasurementService
             .UseWindowsService()
             .ConfigureServices((hostContext, services) =>
             {
+                services.AddSingleton<CancelService>();
                 IConfiguration configuration = hostContext.Configuration;
                 services.AddLogging(builder =>
                 {
@@ -28,7 +29,7 @@ namespace CPUMeasurementService
                 services.AddHostedService<ManagementService>();
                 services.AddSingleton<ComputerDiagnostic>();
                 services.AddSingleton<ClientConfigurationReader>();
-                services.AddSingleton<CancelService>();
+                
             });
         
     }

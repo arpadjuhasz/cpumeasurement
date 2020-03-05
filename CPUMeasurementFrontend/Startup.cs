@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace CPUMeasurementFrontend
 {
@@ -23,10 +25,10 @@ namespace CPUMeasurementFrontend
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
-            services.AddScoped<CPUDataHttpClient>();
+            services.AddSingleton<HttpClient>(new HttpClient { BaseAddress = new Uri(Configuration.GetValue<string>("HostName")) }); ;
             services.AddScoped<CPUDataService>();
             services.AddScoped<ManagementService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

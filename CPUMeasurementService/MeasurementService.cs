@@ -73,6 +73,8 @@ private IPAddress _serverIPAddress;
         public async Task SendCPUDataPacketAsync()
         {
             var packet = this._computerDiagnostic.Update().CPUDataPacket;
+            packet.MeasurementIntervalInSeconds = this._configurationReader.Configuration.MeasurementIntervalInSeconds;
+            packet.MeasurementDate = DateTime.UtcNow;
             try
             {
                 string message = JObject.FromObject(packet).ToString();

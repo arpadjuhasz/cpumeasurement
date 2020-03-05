@@ -19,25 +19,26 @@ namespace CPUMeasurementBackend.Repository
             this.ConnectionString = configuration.GetValue<string>("CPUMeasurementConnectionString");
         }
 
-        public async Task<int> SaveCPUPacket(CPUDataPacket packet, IPAddress senderIpAddress)
-        {
-            using (var connection = new SqlConnection(this.ConnectionString))
-            { 
-                string sql = "INSERT INTO cpu_data (received, temperature, temperature_unit_id, average_load,  ip_address) VALUES (@received, @temperature, @temperature_unit_id, @average_load, @ip_address)";
+        //public async Task<int> SaveCPUPacket(CPUDataPacket packet, IPAddress senderIpAddress)
+        //{
+        //    using (var connection = new SqlConnection(this.ConnectionString))
+        //    { 
+        //        string sql = "INSERT INTO cpu_data (received, temperature, temperature_unit_id, average_load,  ip_address, measurement_interval_seconds) VALUES (@received, @temperature, @temperature_unit_id, @average_load, @ip_address, @measurement_interval_seconds)";
                 
-                SqlCommand command = new SqlCommand(sql, connection);
+        //        SqlCommand command = new SqlCommand(sql, connection);
                 
-                command.Parameters.AddWithValue("received", DateTime.UtcNow);
-                command.Parameters.AddWithValue("temperature", packet.Temperature.Value);
-                command.Parameters.AddWithValue("temperature_unit_id", (int)packet.Temperature.MeasurementUnit);
-                command.Parameters.AddWithValue("average_load", packet.AverageLoad);
-                command.Parameters.AddWithValue("ip_address", senderIpAddress.ToString());
+        //        command.Parameters.AddWithValue("received", DateTime.UtcNow);
+        //        command.Parameters.AddWithValue("temperature", packet.Temperature.Value);
+        //        command.Parameters.AddWithValue("temperature_unit_id", (int)packet.Temperature.MeasurementUnit);
+        //        command.Parameters.AddWithValue("average_load", packet.AverageLoad);
+        //        command.Parameters.AddWithValue("ip_address", senderIpAddress.ToString());
+        //        command.Parameters.AddWithValue("measurement_interval_seconds", packet.MeasurementIntervalInSeconds);
                 
-                connection.Open();
-                command.CommandText = sql;
-                return await command.ExecuteNonQueryAsync();
-            }
-        }
+        //        connection.Open();
+        //        command.CommandText = sql;
+        //        return await command.ExecuteNonQueryAsync();
+        //    }
+        //}
 
 
 

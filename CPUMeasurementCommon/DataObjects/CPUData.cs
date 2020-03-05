@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 
 namespace CPUMeasurementCommon.DataObjects
@@ -19,7 +20,24 @@ namespace CPUMeasurementCommon.DataObjects
         [JsonProperty("averageLoad")]
         public double? AverageLoad { get; set; }
 
-        [JsonProperty("upAddress")]
+        [JsonProperty("IPAddress")]
         public string IPAddress { get; set; }
+
+        public DateTime MeasurementDate { get; set; }
+
+        public int MeasurementIntervalInSeconds { get; set; }
+
+        public static CPUData Create(MeasurementPacket packet, IPAddress ipAddress)
+        {
+            return new CPUData
+            {
+                AverageLoad = packet.AverageLoad,
+                IPAddress = ipAddress.ToString(),
+                Received = DateTime.UtcNow,
+                Temperature = packet.Temperature,
+                MeasurementDate = packet.MeasurementDate,
+                MeasurementIntervalInSeconds = packet.MeasurementIntervalInSeconds
+            };
+        }
     }
 }

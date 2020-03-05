@@ -19,23 +19,16 @@ namespace CPUMeasurementBackend.Controllers
         }
 
         [HttpGet()]
-        public async Task<List<ClientData>> GetConnectedClients()
+        public async Task<IActionResult> GetConnectedClients()
         {
-            return await this._managementService.GetConnectedClients();
+            return Ok(await this._managementService.GetConnectedClients());
         }
 
         [HttpPut("client/{ip}")]
-        public IActionResult UpdateMeasurementIntervalInSeconds(string ip,[FromBody]MeasurementIntervalUpdate dto)
+        public async Task<IActionResult> UpdateMeasurementIntervalInSeconds(string ip,[FromBody]MeasurementIntervalUpdate dto)
         {
-            this._managementService.UpdateMeasurementInterval(ip, dto);
-            return NoContent();
-        }
-
-        [HttpGet("client/{second}")]
-        public IActionResult UpdateMeasurementIntervalInSeconds(int second)
-        {
-            this._managementService.UpdateMeasurementInterval("192.168.0.80", new MeasurementIntervalUpdate {  MeasurementIntervalInSeconds = second });
-            return NoContent();
+            this._managementService.UpdateMeasurementInterval(ip, new MeasurementIntervalUpdate { MeasurementIntervalInSeconds = dto.MeasurementIntervalInSeconds });
+            return Ok("asd"); 
         }
     }
 }
