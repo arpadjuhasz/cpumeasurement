@@ -477,3 +477,37 @@
 2020-03-02 16:45:10.106 +01:00 [INF] Application started. Press Ctrl+C to shut down.
 2020-03-02 16:45:10.116 +01:00 [INF] Hosting environment: Development
 2020-03-02 16:45:10.118 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
+2020-03-05 18:03:53.985 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-03-05 18:03:54.001 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-03-05 18:03:54.004 +01:00 [INF] Hosting environment: Development
+2020-03-05 18:03:54.006 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
+2020-03-05 18:03:56.032 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:03:57.020 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:03:58.018 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:03:59.029 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:00.022 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:01.051 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:02.050 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:03.036 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:03.111 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-03-05 18:04:04.026 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:05.024 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:06.022 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:07.021 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:08.018 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:09.018 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:10.017 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:11.041 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:12.020 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:12.198 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-03-05 18:04:13.022 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:14.019 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:15.020 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:16.025 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:16.504 +01:00 [INF] Application is shutting down...
+2020-03-05 18:04:17.025 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:18.023 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:19.022 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:20.021 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:21.015 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
+2020-03-05 18:04:21.275 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764

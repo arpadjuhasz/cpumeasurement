@@ -1,4 +1,21 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
+﻿@using CPUMeasurementFrontend.Data
+@inject AccountService  _accountService
+@inject NavigationManager  _navigationManager;
+
+@code {
+    private bool _isLoggedIn;
+    protected override async Task OnInitializedAsync()
+    {
+        _isLoggedIn = _accountService.IsLoggedIn();
+    }
+
+    private async Task LogoutAccount()
+    {
+        await _accountService.Logout();
+        _navigationManager.NavigateTo("login", true);
+    }
+}
+<div class="top-row pl-4 navbar navbar-dark">
     <a class="navbar-brand" href="">CPUMeasurementFrontend</a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
@@ -7,26 +24,34 @@
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="cpudata">
-                <span class="oi oi-plus" aria-hidden="true"></span> CPU Data
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="management">
-                <span class="oi oi-plus" aria-hidden="true"></span> Connected clients
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Account
-            </NavLink>
-        </li>
+        @if (_isLoggedIn)
+        {
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span class="oi oi-home" aria-hidden="true"></span> Home
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="cpudata">
+                    <span class="oi oi-plus" aria-hidden="true"></span> CPU Data
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="management">
+                    <span class="oi oi-plus" aria-hidden="true"></span>Management
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="account">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Account
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href @onclick="@LogoutAccount">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span>Log out
+                </NavLink>
+            </li>
+        }
     </ul>
 </div>
 

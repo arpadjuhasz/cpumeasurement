@@ -1,0 +1,40 @@
+﻿@page "/login"
+@using CPUMeasurementFrontend.Data;
+@using CPUMeasurementCommon.DataObjects;
+@inject AccountService _service;
+@inject NavigationManager _navigationManager;
+@code {
+    private string _username;
+    private string _password;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (_service.IsLoggedIn())
+        {
+            _navigationManager.NavigateTo("/", true);
+        }
+    }
+
+    protected async Task LoginAccount()
+    {
+        await _service.Login(_username, _password);
+        if (_service.IsLoggedIn())
+        {
+            _navigationManager.NavigateTo("/", true);
+        }
+    }
+}
+
+<form>
+    <div class="row">
+        <div class="col-md-6"><label>Username</label></div>
+        <div class="col-md-6"><input @bind="@_username" type="text" maxlength="256" placeholder="Username" /></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><label>Password</label></div>
+        <div class="col-md-6"><input @bind="@_password" type="password" maxlength="256" placeholder="Password" /></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><button @onclick="@LoginAccount" class="btn btn-info">Login</button></div>
+    </div>
+</form>

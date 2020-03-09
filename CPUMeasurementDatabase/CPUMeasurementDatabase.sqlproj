@@ -63,5 +63,9 @@
     <Build Include="dbo\Tables\measurement_unit.sql" />
     <Build Include="dbo\Tables\cpu_data.sql" />
     <Build Include="dbo\Tables\account.sql" />
+    <Build Include="dbo\Tables\Token.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="CPUMeasurementDatabase.refactorlog" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 ﻿using CPUMeasurementBackend.WebService;
 using CPUMeasurementCommon.DataObjects;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace CPUMeasurementBackend.Controllers
 {
     [Route("management")]
+    [Authorize]
     public class ManagementController : Controller
     {
         public readonly ManagementService _managementService;
@@ -28,7 +30,7 @@ namespace CPUMeasurementBackend.Controllers
         public async Task<IActionResult> UpdateMeasurementIntervalInSeconds(string ip,[FromBody]MeasurementIntervalUpdate dto)
         {
             this._managementService.UpdateMeasurementInterval(ip, new MeasurementIntervalUpdate { MeasurementIntervalInSeconds = dto.MeasurementIntervalInSeconds });
-            return Ok("asd"); 
+            return NoContent(); 
         }
     }
 }

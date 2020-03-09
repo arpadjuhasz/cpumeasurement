@@ -1,0 +1,20 @@
+﻿@page "/account"
+@using CPUMeasurementFrontend.Data
+@using CPUMeasurementCommon.DataObjects
+@inject NavigationManager navigationManager
+@inject HttpClient  httpClient
+@inject AccountService  _accountService
+
+@code {
+    private List<CPUData> _result;
+    private DateTime _date = DateTime.Now;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!_accountService.IsLoggedIn())
+        { 
+            navigationManager.NavigateTo("login", true);
+        }
+    }
+}
+<h1>Account</h1>

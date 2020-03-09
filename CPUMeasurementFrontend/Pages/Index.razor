@@ -1,5 +1,17 @@
 ﻿@page "/"
-
+@inject NavigationManager navigationManager
+@inject HttpClient  httpClient
+@code 
+{
+    protected override async Task OnInitializedAsync()
+    {
+        
+        if (httpClient.DefaultRequestHeaders.Authorization == null || string.IsNullOrEmpty(httpClient.DefaultRequestHeaders.Authorization.Parameter))
+        { 
+            navigationManager.NavigateTo("login", true);
+        }
+    }
+}
 <h1>CPU Measurement</h1>
 
 Welcome to CPU Measurement!

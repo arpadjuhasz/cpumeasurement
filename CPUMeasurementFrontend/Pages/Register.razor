@@ -1,0 +1,26 @@
+﻿@page "/register"
+@using CPUMeasurementFrontend.Data
+@using CPUMeasurementCommon.DataObjects
+
+@inject AccountService service
+
+
+@code {
+    
+private AccountGet _account;
+    private string _username;
+    private string _password;
+    private string _passwordAgain;
+    private string _name;
+
+    private async Task AddAccount() => _account = await service.AddAccount(this._username, this._password, this._passwordAgain, this._name);
+    
+}
+
+<form>
+    <label>Username</label><input type="text" maxlength="256" @bind="@_username" />
+    <label>Password</label><input type="password" maxlength="256" @bind="@_password" />
+    <label>Password again</label><input maxlength="256" type="password"  @bind="@_passwordAgain" />
+    <label>Name</label><input type="text" maxlength="256" @bind="@_name" />
+    <button @onclick="@AddAccount">Register</button>
+</form>

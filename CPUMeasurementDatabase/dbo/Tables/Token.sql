@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Token]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[Token] NVARCHAR(1000) NOT NULL,
+	[AccountId] INT NOT NULL,
+	CONSTRAINT [FK_AccountId] FOREIGN KEY (AccountId) REFERENCES account([Id])
+)

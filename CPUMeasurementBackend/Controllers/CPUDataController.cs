@@ -1,4 +1,5 @@
 ﻿using CPUMeasurementBackend.WebService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace CPUMeasurementBackend.Controllers
 {
+    
     [Route("cpudata")]
     public class CPUDataController : ControllerBase
     {
@@ -17,6 +19,7 @@ namespace CPUMeasurementBackend.Controllers
             this._cpuDataService = cpuDataService;
         }
 
+        [Authorize]
         [HttpGet()]
         public async Task<IActionResult> GetCPUData([FromQuery]DateTime? date)
         {

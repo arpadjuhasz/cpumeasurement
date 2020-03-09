@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 
 namespace CPUMeasurementFrontend
 {
@@ -28,6 +27,7 @@ namespace CPUMeasurementFrontend
             services.AddSingleton<HttpClient>(new HttpClient { BaseAddress = new Uri(Configuration.GetValue<string>("HostName")) }); ;
             services.AddScoped<CPUDataService>();
             services.AddScoped<ManagementService>();
+            services.AddScoped<AccountService>();
             
         }
 
