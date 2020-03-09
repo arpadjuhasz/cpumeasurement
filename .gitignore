@@ -1,3 +1,4 @@
+.vs/.
 CPUMeasurementService/bin/
 CPUMeasurementService/obj/
 CPUMeasurementBackend/bin/
@@ -36,3 +37,6 @@ CPUMeasurementDatabase/CPUMeasurementDatabase.jfm
 CPUMeasurementDatabase/CPUMeasurementDatabase.jfm
 CPUMeasurementDatabase/CPUMeasurementDatabase.jfm
 .vs/CPUMeasurement/v16/.suo
+CPUMeasurementDatabase/CPUMeasurementDatabase.refactorlog
+CPUMeasurementDatabase/CPUMeasurementDatabase.jfm
+.vs/CPUMeasurement/v16/Server/sqlite3/storage.ide
