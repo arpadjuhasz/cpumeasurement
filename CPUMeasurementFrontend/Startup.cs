@@ -25,7 +25,7 @@ namespace CPUMeasurementFrontend
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<HttpClient>(new HttpClient { BaseAddress = new Uri(Configuration.GetValue<string>("HostName")) }); ;
-            services.AddScoped<CPUDataService>();
+            services.AddScoped<MeasurementService>();
             services.AddScoped<ManagementService>();
             services.AddScoped<AccountService>();
             

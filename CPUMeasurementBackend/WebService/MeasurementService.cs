@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace CPUMeasurementBackend.WebService
 {
-    public class CPUDataService
+    public class MeasurementService
     {
         private readonly CPUDataRepository _cpuDataRepository;
 
-        public CPUDataService(CPUDataRepository cpuDataRepository)
+        public MeasurementService(CPUDataRepository cpuDataRepository)
         {
             this._cpuDataRepository = cpuDataRepository;
         }
 
-        public async  Task<List<CPUData>> GetList(DateTime? date)
+        public async  Task<List<CPUData>> GetList(DateTime? date, string ipAddress)
         {
-            return (await this._cpuDataRepository.GetCPUData(date));
+            return (await this._cpuDataRepository.GetCPUData(date, ipAddress));
             
         }
     }

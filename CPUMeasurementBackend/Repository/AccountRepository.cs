@@ -21,10 +21,10 @@ namespace CPUMeasurementBackend.Repository
 
         public async Task Delete(int id)
         {
-            string sql = @"BEGIN
-                        UPDATE accout SET Deleted = 1 WHERE Id = @Id;
-                        DELETE FROM Token WHERE AccountId = @Id
-                        COMMIT";
+            string sql = @"BEGIN TRAN Tr1;
+                        UPDATE account SET Deleted = 1 WHERE Id = @Id;
+                        DELETE FROM Token WHERE AccountId = @Id;
+                        COMMIT TRAN Tr1;";
             using (var connection = new SqlConnection(this.ConnectionString))
             {
                 var command = new SqlCommand(sql, connection);

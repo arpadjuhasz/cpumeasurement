@@ -1,0 +1,68 @@
+﻿@page "/measurement"
+@using CPUMeasurementFrontend.Data
+@using CPUMeasurementCommon.DataObjects
+@inject MeasurementService _measurementService
+@inject NavigationManager _navigationManager
+@inject AccountService  _accountService
+@code {
+    private List<CPUData> _result;
+    private DateTime? _date = DateTime.Now;
+    private string _ipAddress;
+    private bool _isDateChecked = false;
+    private bool _isIPAddressChecked = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (_accountService.IsLoggedIn())
+        {
+            _result = await _measurementService.GetCPUData();
+        }
+        else
+        {
+            _navigationManager.NavigateTo("login", true);
+        }
+    }
+
+    protected async Task GetCPUDataByDate()
+    {
+        if (!_isDateChecked)
+        { _date = null; }
+        if (!_isIPAddressChecked)
+        { _ipAddress = null; }
+        _result = await _measurementService.GetCPUDataByDate(_date, _ipAddress);
+    }
+}
+
+
+<label>With date </label><input  class="input-lg" type="checkbox" @bind="@_isDateChecked"><input type="date" @bind="@_date" /><br/>
+<label>With IP</label><input type="checkbox" @bind="@_isIPAddressChecked"><input type="text" @bind="@_ipAddress" /><br/>
+<button class="btn btn-info" @onclick="@GetCPUDataByDate">Filter</button>
+
+<table>
+    <thead>
+        <tr>
+            <td>Received</td>
+            <td>IPv4</td>
+            <td>Temperature</td>
+            <td>Avg. Load</td>
+            <td>Meas. Interval (s)</td>
+            <td>Meas. date</td>
+        </tr>
+    </thead>
+    @if (_result != null)
+    {
+        <tbody>
+            @foreach (var item in _result)
+            {
+            <tr>
+                <td>@item.Received.ToLocalTime()</td>
+                <td>@item.IPAddress</td>
+                <td>@item.Temperature.Value @item.Temperature.MeasurementUnit.ToString()[0]</td>
+                <td>@item.AverageLoad %</td>
+                <td>@item.MeasurementIntervalInSeconds</td>
+                <td>@item.MeasurementDate</td>
+            </tr>
+            }
+        </tbody>
+    }
+</table>

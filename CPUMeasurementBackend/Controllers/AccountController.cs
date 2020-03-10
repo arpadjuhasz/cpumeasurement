@@ -41,12 +41,15 @@ namespace CPUMeasurementBackend.Controllers
         [Authorize]
         public async Task<IActionResult> Logout()
         {
-            StringValues authorization = string.Empty;
-            HttpContext.Request.Headers.TryGetValue("Authorization", out authorization);
-            await this._accountService.Logout(authorization.ToString().Substring(7));
+            await this._accountService.Logout();
             return NoContent();
-            
+        }
 
+        [HttpDelete()]
+        public async Task<IActionResult> DeleteAccount()
+        {
+            await this._accountService.DeleteAccount();
+            return NoContent();
         }
 
         [HttpPost("register")]

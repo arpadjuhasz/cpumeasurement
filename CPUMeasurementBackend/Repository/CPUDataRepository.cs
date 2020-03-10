@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CPUMeasurementBackend.Repository
@@ -20,26 +21,43 @@ namespace CPUMeasurementBackend.Repository
             
         }
 
-        public async Task<List<CPUData>> GetCPUData(DateTime? date)
+        public async Task<List<CPUData>> GetCPUData(DateTime? date, string ipAddress)
         {
             List<CPUData> result = new List<CPUData>();
+            var paramAdded = false;
             using (var connection = new SqlConnection(this.ConnectionString))
             {
-                var sql = @"SELECT TOP (100) [id]
-      ,[Received]
-      ,[Temperature]
-      ,[TemperatureMeasurementUnit]
-      ,[AverageLoad]
-      ,[IPAddress]
-,[MeasurementDate]
-,[MeasurementIntervalInSeconds]
-  FROM [cpu_measurement].[dbo].[cpu_data] " + (date.HasValue ? " WHERE Received BETWEEN @dateFrom AND @dateTo" : string.Empty) + " ORDER BY received DESC";
-                SqlCommand command = new SqlCommand(sql, connection);
+                
+                    
+                    SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+                StringBuilder sqlBuilder = new StringBuilder();
+                sqlBuilder.Append("SELECT");
+                if (!date.HasValue && string.IsNullOrWhiteSpace(ipAddress))
+                {
+                    sqlBuilder.Append(" TOP (100) ");
+                }
+                sqlBuilder.Append("[Id],[Received],[Temperature],[TemperatureMeasurementUnit],[AverageLoad],[IPAddress],[MeasurementIntervalInSeconds],[MeasurementDate] FROM [dbo].[cpu_data] ");
                 if (date.HasValue)
                 {
+                    this.AddAnd(paramAdded, sqlBuilder);
+                    sqlBuilder.Append(" MeasurementDate BETWEEN @dateFrom AND @dateTo");
                     command.Parameters.AddWithValue("dateFrom", date.Value.ToUniversalTime());
                     command.Parameters.AddWithValue("dateTo", date.Value.AddDays(1).ToUniversalTime());
+                    paramAdded = true;
                 }
+
+                if (!string.IsNullOrWhiteSpace(ipAddress))
+                {
+                    this.AddAnd(paramAdded, sqlBuilder);
+                    sqlBuilder.Append(" IPAddress = @IPAddress");
+                    command.Parameters.AddWithValue("IPAddress", ipAddress);
+                    paramAdded = true;
+
+                }
+
+                sqlBuilder.Append(" ORDER BY Received DESC");
+                command.CommandText = sqlBuilder.ToString();
                 connection.Open();
                 SqlDataReader reader = await command.ExecuteReaderAsync();
                 while (reader.Read())
@@ -50,7 +68,9 @@ namespace CPUMeasurementBackend.Repository
                         Received = reader.GetDateTime(1),
                         Temperature = new Temperature(reader.GetNullableFieldValue<double?>(2), (MeasurementUnit)reader.GetInt32(3)),
                         AverageLoad = reader.GetNullableFieldValue<double?>(4),
-                        IPAddress = reader.GetString(5)
+                        IPAddress = reader.GetString(5),
+                        MeasurementIntervalInSeconds = reader.GetInt32(6),
+                        MeasurementDate = reader.GetDateTime(7)
                     };
                     result.Add(item);
                 }
@@ -78,7 +98,18 @@ namespace CPUMeasurementBackend.Repository
                 command.CommandText = sql;
                 return await command.ExecuteNonQueryAsync();
             }
+        }
 
+        private void AddAnd(bool paramAdded, StringBuilder sb)
+        {
+            if (paramAdded)
+            {
+                sb.Append(" AND ");
+            }
+            else
+            {
+                sb.Append(" WHERE");
+            }
         }
     }
 }

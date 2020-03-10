@@ -45,8 +45,15 @@ namespace CPUMeasurementBackend.WebService.Account
             }
         }
 
-        public async Task Logout(string token)
+        public async Task DeleteAccount()
         {
+            var accountId = ValidationService.AccountId;
+            await this._accountRepository.Delete(accountId);
+        }
+
+        public async Task Logout()
+        {
+            string token = ValidationService.Token;
             await this._accountRepository.DeleteToken(token);   
         }
 
