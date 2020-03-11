@@ -19,70 +19,48 @@ private IPAddress _serverIPAddress;
         private readonly ComputerDiagnostic _computerDiagnostic;
         private readonly ClientConfigurationReader _configurationReader;
         private readonly CancelService _cancelService;
+        private readonly CycleStorageService _cycleStorageService;
 
-        public MeasurementService(ILogger<MeasurementService> logger, ComputerDiagnostic computerDiagnostic, ClientConfigurationReader configurationReader, CancelService cancelService)
+        public MeasurementService(ILogger<MeasurementService> logger, ComputerDiagnostic computerDiagnostic, ClientConfigurationReader configurationReader, CancelService cancelService, CycleStorageService cycleStorageService)
         {
             this._cancelService = cancelService;
             this._configurationReader = configurationReader;
-
-            this._serverMeasurementPort = this._configurationReader.Configuration.ServerMeasurementPort;
+            this._cycleStorageService = cycleStorageService;
+            try
+            {
+                this._serverMeasurementPort = this._configurationReader.Configuration.ServerMeasurementPort;
+            }
+            catch (Exception)
+            {
+                this._logger.LogError("Invalid port number!");
+            }
+            
             this._logger = logger;
             this._computerDiagnostic = computerDiagnostic;
             try
             {
                 this._serverIPAddress = IPAddress.Parse(this._configurationReader.Configuration.ServerIPAddress);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                this._logger.LogError("Invalid server IP address in the client_configuration.json file!");
+                this._logger.LogError("Invalid server IP address format in the client_configuration.json file!");
                 this._configurationReader.Configuration.ServerIPAddress = "127.0.0.1";
             }
         }
 
-        private void SendCPUDataPacket(object state)
+        public async Task SendMeasurementPacket()
         {
-            var packet = this._computerDiagnostic.Update().CPUDataPacket;
+            var packet = this._computerDiagnostic.Update().MeasurementPacket;
+            this._cycleStorageService.AddToLogs(packet.MeasurementDate, packet);
+
             try
             {
-                string message = JObject.FromObject(packet).ToString();
                 TcpClient client = new TcpClient(this._serverIPAddress.ToString(), this._serverMeasurementPort);
                 NetworkStream stream = client.GetStream();
-
-                Byte[] data = Encoding.ASCII.GetBytes(message);
-                stream.Write(data, 0, data.Length);
-
-                byte[] responseData = new byte[256];
-                int responseBytes = stream.Read(responseData, 0, responseData.Length);
                 
-                string responseMessage = Encoding.ASCII.GetString(responseData, 0, responseData.Length);
-                ResponseStatusCode responseStatusCode = ResponseStatus.GetReponseStatusCode(responseMessage);
-                switch (responseStatusCode)
-                {
-                    case ResponseStatusCode.REPONSEFORMATERROR: this._logger.LogError("Unknown response code!"); break;
-                    case ResponseStatusCode.ERROR: this._logger.LogError("Error occured!"); break;
-                }
-                client.Dispose();
-            }
-            catch (Exception)
-            {
-                this._logger.LogError($"Connection failed. Host: {_serverIPAddress}:{_serverMeasurementPort}");
-            }
-            
-        }
-
-        public async Task SendCPUDataPacketAsync()
-        {
-            var packet = this._computerDiagnostic.Update().CPUDataPacket;
-            packet.MeasurementIntervalInSeconds = this._configurationReader.Configuration.MeasurementIntervalInSeconds;
-            packet.MeasurementDate = DateTime.UtcNow;
-            try
-            {
-                string message = JObject.FromObject(packet).ToString();
-                TcpClient client = new TcpClient(this._serverIPAddress.ToString(), this._serverMeasurementPort);
-                NetworkStream stream = client.GetStream();
-
-                Byte[] data = Encoding.ASCII.GetBytes(message);
-                stream.Write(data, 0, data.Length);
+                string data = JObject.FromObject(packet).ToString();
+                Byte[] dataBuffer = Encoding.ASCII.GetBytes(data);
+                stream.Write(dataBuffer, 0, dataBuffer.Length);
 
                 
                 byte[] responseBuffer = new byte[1024];
@@ -90,8 +68,8 @@ private IPAddress _serverIPAddress;
 
                 byte[] filteredBytes = responseBuffer[0..responseBytes];
 
-                string responseMessage = Encoding.ASCII.GetString(filteredBytes);
-                ResponseStatusCode responseStatusCode = ResponseStatus.GetReponseStatusCode(responseMessage);
+                string response = Encoding.ASCII.GetString(filteredBytes);
+                ResponseStatusCode responseStatusCode = ResponseStatus.GetReponseStatusCode(response);
                 switch (responseStatusCode)
                 {
                     case ResponseStatusCode.REPONSEFORMATERROR: this._logger.LogError("Unknown response code!"); break;
@@ -111,11 +89,15 @@ private IPAddress _serverIPAddress;
         {
             while (true)
             {
-                await this.SendCPUDataPacketAsync();
+                await this.SendMeasurementPacket();
                 await Task.Delay(this._configurationReader.Configuration.MeasurementIntervalInSeconds*1000, this._cancelService.CancelationToken);
                 this._cancelService.Renew();
-                
             }
+        }
+
+        public async override Task StopAsync(CancellationToken cancellationToken)
+        {
+            this._cycleStorageService.WriteLogsToFile();
         }
     }
 }

@@ -58,8 +58,8 @@ namespace CPUMeasurementBackend.HostedService
                         try
                         {
                             var jobject = JObject.Parse(message);
-                            ClientPacket clientPacket = jobject.ToObject<ClientPacket>();
-                            ClientData clientData = new ClientData
+                            ManagementPacket clientPacket = jobject.ToObject<ManagementPacket>();
+                            var clientData = new ManagementData
                             {
                                 IPv4Address = clientIPAddress.ToString(),
                                 CPUName = clientPacket.CPUName,

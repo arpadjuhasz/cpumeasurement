@@ -19,9 +19,9 @@ namespace CPUMeasurementFrontend.Data
             this._httpClient = httpClient;
         }
 
-        public async Task<List<ClientData>> GetConnectedClients()
+        public async Task<List<ManagementData>> GetConnectedClients()
         {
-            return await this._httpClient.GetJsonAsync<List<ClientData>>(APIPATH);
+            return await this._httpClient.GetJsonAsync<List<ManagementData>>(APIPATH);
         }
 
         public async Task UpdateMeasurementInterval(string clientIPAddress, int measurementInterval)

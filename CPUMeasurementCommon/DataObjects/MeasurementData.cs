@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CPUMeasurementCommon.DataObjects
 {
-    public class CPUData
+    public class MeasurementData
     {
         [JsonProperty("id")]
         public int Id { get; set; }
@@ -27,9 +27,9 @@ namespace CPUMeasurementCommon.DataObjects
 
         public int MeasurementIntervalInSeconds { get; set; }
 
-        public static CPUData Create(MeasurementPacket packet, IPAddress ipAddress)
+        public static MeasurementData Create(MeasurementPacket packet, IPAddress ipAddress)
         {
-            return new CPUData
+            return new MeasurementData
             {
                 AverageLoad = packet.AverageLoad,
                 IPAddress = ipAddress.ToString(),

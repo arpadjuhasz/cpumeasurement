@@ -11,17 +11,17 @@ namespace CPUMeasurementBackend.WebService
 {
     public class ManagementService
     {
-        private readonly Management _management;
+        private readonly HostedService.Management _management;
 
-        public ManagementService(Management management)
+        public ManagementService(HostedService.Management management)
         {
             this._management = management;
         }
 
-        public async Task<List<ClientData>> GetConnectedClients()
+        public async Task<List<ManagementData>> GetConnectedClients()
         {
             this._management.RemoveNotRespondingClients();
-            List<ClientData> result = this._management.ConnectedClients.Values.ToList();
+            List<ManagementData> result = this._management.ConnectedClients.Values.ToList();
             return result;
         }
 

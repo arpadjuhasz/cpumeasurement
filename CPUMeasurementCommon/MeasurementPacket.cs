@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,6 +13,7 @@ namespace CPUMeasurementCommon
 
         public int MeasurementIntervalInSeconds { get; set; }
 
+        [JsonIgnore]
         public DateTime MeasurementDate { get; set; }
     }
 }

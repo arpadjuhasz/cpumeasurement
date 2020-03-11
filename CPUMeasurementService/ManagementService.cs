@@ -41,7 +41,7 @@ namespace CPUMeasurementService
 
         private void SendClientPacket(object state)
         {
-            ClientPacket packet = this._computerDiagnostic.ClientPacket;
+            ManagementPacket packet = this._computerDiagnostic.ClientPacket;
             packet.MeasurementIntervalInSeconds = this._configuratoinReader.Configuration.MeasurementIntervalInSeconds;
 
             try
@@ -73,7 +73,7 @@ namespace CPUMeasurementService
             }
             catch (Exception)
             {
-                this._logger.LogError($"Connection failed. Host: {_serverIPAddress.ToString()}:{_serverManagementPort}");
+                //this._logger.LogError($"Connection failed. Host: {_serverIPAddress.ToString()}:{_serverManagementPort}");
             }
         }
 

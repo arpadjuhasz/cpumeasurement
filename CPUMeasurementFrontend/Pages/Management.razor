@@ -1,29 +1,30 @@
-﻿@using CPUMeasurementFrontend.Data
+﻿@page "/management"
+
+@using CPUMeasurementFrontend.Data
 @using CPUMeasurementCommon.DataObjects
-@inject ManagementService service
-@inject NavigationManager navigationManager
-@inject HttpClient  httpClient
-@page "/management"
+@inject ManagementService _managementService
+@inject NavigationManager _navigationManager
+@inject AccountService  _accountService
 
 @code {
-    private List<ClientData> _result;
+    private List<ManagementData> _result;
     private int _measurementInterval;
 
     private async Task UpdateMeasurementInterval(string clientIPAddress, int measurementInterval)
     {
 
-        await service.UpdateMeasurementInterval(clientIPAddress, measurementInterval);
+        await _managementService.UpdateMeasurementInterval(clientIPAddress, measurementInterval);
     }
 
     protected override async Task OnInitializedAsync()
     {
-        if (httpClient.DefaultRequestHeaders.Authorization == null || string.IsNullOrEmpty(httpClient.DefaultRequestHeaders.Authorization.Parameter))
+        if (_accountService.IsLoggedIn())
         {
-            navigationManager.NavigateTo("login", true);
+            _result = await _managementService.GetConnectedClients();
         }
         else
         {
-            _result = await service.GetConnectedClients();
+            _navigationManager.NavigateTo("login", true);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace CPUMeasurementBackend
 
             services.AddCors();
             services.AddControllers();
-            services.AddScoped<CPUDataRepository>();
+            services.AddScoped<MeasurementRepository>();
             services.AddScoped<MeasurementService>();
             services.AddScoped<ManagementService>();
             services.AddScoped<AccountService>();

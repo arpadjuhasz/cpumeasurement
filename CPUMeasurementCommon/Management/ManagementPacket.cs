@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CPUMeasurementCommon.Management
 {
-    public class ClientPacket
+    public class ManagementPacket
     {
         public string ComputerName { get; set; }
 

@@ -13,17 +13,17 @@ namespace CPUMeasurementBackend.Controllers
     [Authorize]
     public class MeasurementController : ControllerBase
     {
-        private readonly MeasurementService _cpuDataService;
+        private readonly MeasurementService _measurementService;
 
         public MeasurementController(MeasurementService cpuDataService)
         {
-            this._cpuDataService = cpuDataService;
+            this._measurementService = cpuDataService;
         }
 
         [HttpGet()]
-        public async Task<IActionResult> GetCPUData([FromQuery]DateTime? date, [FromQuery]string ipAddress = null)
+        public async Task<IActionResult> GetMeasurements([FromQuery]DateTime? date, [FromQuery]string ipAddress = null)
         {
-            return  Ok(await this._cpuDataService.GetList(date, ipAddress));
+            return  Ok(await this._measurementService.GetMeasurements(date, ipAddress));
         }
     }
 }

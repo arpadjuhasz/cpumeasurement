@@ -11,7 +11,7 @@ namespace CPUMeasurementBackend.HostedService
 {
     public class Management
     {
-        public ConcurrentDictionary<IPAddress, ClientData> ConnectedClients = new ConcurrentDictionary<IPAddress, ClientData>();
+        public ConcurrentDictionary<IPAddress, ManagementData> ConnectedClients = new ConcurrentDictionary<IPAddress, ManagementData>();
 
         public Management()
         {
@@ -24,14 +24,14 @@ namespace CPUMeasurementBackend.HostedService
             {
                 if (item.Value.LastUpdate.AddSeconds(5) < DateTime.UtcNow)
                 {
-                    this.ConnectedClients.TryRemove(item.Key, out ClientData value);
+                    this.ConnectedClients.TryRemove(item.Key, out ManagementData value);
                 }
             }
         }
 
         public  void UpdateMeasurementInterval(IPAddress clientAddress, int measurementIntervalInSeconds)
         {
-            ClientData clientData = new ClientData();
+            ManagementData clientData = new ManagementData();
             clientData = this.ConnectedClients.GetValueOrDefault(clientAddress);
             clientData.UpdateRequested = true;
             if (clientData != null)
@@ -41,12 +41,12 @@ namespace CPUMeasurementBackend.HostedService
             }
         }
 
-        public void AddClientData(IPAddress key, ClientData value)
+        public void AddManagementData(IPAddress key, ManagementData value)
         {
             this.ConnectedClients.TryAdd(key, value);
         }
 
-        internal MeasurementIntervalUpdatePacket UpdateClientData(IPAddress clientIPAddress, ClientData clientData)
+        public MeasurementIntervalUpdatePacket UpdateClientData(IPAddress clientIPAddress, ManagementData clientData)
         {
             var exists = !this.ConnectedClients.TryAdd(clientIPAddress, clientData);
             MeasurementIntervalUpdatePacket packet = null;

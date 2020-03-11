@@ -8,17 +8,16 @@ namespace CPUMeasurementBackend.WebService
 {
     public class MeasurementService
     {
-        private readonly CPUDataRepository _cpuDataRepository;
+        private readonly MeasurementRepository _measurementRepository;
 
-        public MeasurementService(CPUDataRepository cpuDataRepository)
+        public MeasurementService(MeasurementRepository cpuDataRepository)
         {
-            this._cpuDataRepository = cpuDataRepository;
+            this._measurementRepository = cpuDataRepository;
         }
 
-        public async  Task<List<CPUData>> GetList(DateTime? date, string ipAddress)
+        public async  Task<List<MeasurementData>> GetMeasurements(DateTime? date, string ipAddress)
         {
-            return (await this._cpuDataRepository.GetCPUData(date, ipAddress));
-            
+            return await this._measurementRepository.GetMeasurementData(date, ipAddress);
         }
     }
 }

@@ -10,14 +10,14 @@ namespace CPUMeasurementService
 {
     public class ComputerDiagnostic
     {
-        public ClientPacket ClientPacket { get; set; }
+        public ManagementPacket ClientPacket { get; set; }
 
-        public MeasurementPacket CPUDataPacket { get; set; }
+        public MeasurementPacket MeasurementPacket { get; set; }
         
         public ComputerDiagnostic()
         {
-            this.CPUDataPacket = new MeasurementPacket();
-            this.ClientPacket = new ClientPacket();
+            this.MeasurementPacket = new MeasurementPacket();
+            this.ClientPacket = new ManagementPacket();
             this.Update();
         }
 
@@ -43,11 +43,11 @@ namespace CPUMeasurementService
                         case SensorType.Temperature: temperatureValues.Add(sensor.Value); break;
                     }
                 }
-                CPUDataPacket.Temperature = new Temperature(temperatureValues.Average(), MeasurementUnit.FAHRENHEIT).InCelsius();
-                CPUDataPacket.AverageLoad = loadValues.Average();
-                CPUDataPacket.MeasurementDate = DateTime.UtcNow;
+                MeasurementPacket.Temperature = new Temperature(temperatureValues.Average(), MeasurementUnit.FAHRENHEIT).InCelsius();
+                MeasurementPacket.AverageLoad = loadValues.Average();
+                MeasurementPacket.MeasurementDate = DateTime.UtcNow;
+                MeasurementPacket.MeasurementIntervalInSeconds = this.ClientPacket.MeasurementIntervalInSeconds;
                 
-
                 this.ClientPacket.CPUName = cpu.Name;
                 this.ClientPacket.ComputerName = Environment.MachineName;
             }

@@ -5,7 +5,7 @@
 @inject NavigationManager _navigationManager
 @inject AccountService  _accountService
 @code {
-    private List<CPUData> _result;
+    private List<MeasurementData> _result;
     private DateTime? _date = DateTime.Now;
     private string _ipAddress;
     private bool _isDateChecked = false;
@@ -15,7 +15,7 @@
     {
         if (_accountService.IsLoggedIn())
         {
-            _result = await _measurementService.GetCPUData();
+            _result = await _measurementService.GetMeasurementData(null, null);
         }
         else
         {
@@ -29,7 +29,7 @@
         { _date = null; }
         if (!_isIPAddressChecked)
         { _ipAddress = null; }
-        _result = await _measurementService.GetCPUDataByDate(_date, _ipAddress);
+        _result = await _measurementService.GetMeasurementData(_date, _ipAddress);
     }
 }
 
@@ -60,7 +60,7 @@
                 <td>@item.Temperature.Value @item.Temperature.MeasurementUnit.ToString()[0]</td>
                 <td>@item.AverageLoad %</td>
                 <td>@item.MeasurementIntervalInSeconds</td>
-                <td>@item.MeasurementDate</td>
+                <td>@item.MeasurementDate.ToLocalTime()</td>
             </tr>
             }
         </tbody>

@@ -2,5 +2,5 @@
   "ServerIPAddress": "192.168.0.80",
   "ServerManagementPort": 6765,
   "ServerMeasurementPort": 6764,
-  "MeasurementIntervalInSeconds": 5
+  "MeasurementIntervalInSeconds": 1
 }

@@ -34,7 +34,7 @@ namespace CPUMeasurementBackend.HostedService
             this._logger = logger;
         }
 
-        public async Task ReceiveCPUDataPacket()
+        public async Task ReceiveMeasurementPacket()
         {
             
             this._tcpListener.Start();
@@ -57,8 +57,8 @@ namespace CPUMeasurementBackend.HostedService
                             {
                                 MeasurementPacket cpuPacket = jsonObject.ToObject<MeasurementPacket>();
 
-                                var repository = new CPUDataRepository(this._configuration);
-                                await repository.SaveCPUPacket(CPUData.Create(cpuPacket, clientIPAddress));
+                                var repository = new MeasurementRepository(this._configuration);
+                                await repository.SaveMeasurementData(MeasurementData.Create(cpuPacket, clientIPAddress));
 
                                 var bytes = Encoding.ASCII.GetBytes(((int)ResponseStatusCode.SUCCESS).ToString());
                                 await clientTask.Result.GetStream().WriteAsync(bytes, 0, bytes.Length);
@@ -87,7 +87,7 @@ namespace CPUMeasurementBackend.HostedService
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (true)
-            await Task.Run(() => { this.ReceiveCPUDataPacket(); });
+            await Task.Run(() => { this.ReceiveMeasurementPacket(); });
         }
 
         

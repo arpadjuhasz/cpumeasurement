@@ -33,12 +33,12 @@ namespace CPUMeasurementBackend
                     services.AddLogging(builder =>
                     {
                         builder.AddConfiguration(configuration.GetSection("Logging"))
-                          .AddSerilog(new LoggerConfiguration().WriteTo.File("cpumeasurementlistener.log").CreateLogger());
+                          .AddSerilog(new LoggerConfiguration().WriteTo.File("CPUMeasurementBackend.log").CreateLogger());
                     });
                     services.AddHostedService<MeasurementListener>();
                     services.AddSingleton<Management>();
                     services.AddHostedService<ManagementListener>();
-                    services.AddScoped<CPUDataRepository>();
+                    services.AddScoped<MeasurementRepository>();
             });
 
                 

@@ -18,17 +18,23 @@ namespace CPUMeasurementService
             .UseWindowsService()
             .ConfigureServices((hostContext, services) =>
             {
-                services.AddSingleton<CancelService>();
+                
                 IConfiguration configuration = hostContext.Configuration;
                 services.AddLogging(builder =>
                 {
                     builder.AddConfiguration(configuration.GetSection("Logging"))
-                    .AddSerilog(new LoggerConfiguration().WriteTo.File("cpumeasurementservice.log").CreateLogger());
+                    .AddSerilog(new LoggerConfiguration().WriteTo.File("CPUMeasurementService.log").CreateLogger());
                 });
-                services.AddHostedService<MeasurementService>();
-                services.AddHostedService<ManagementService>();
+
+                services.AddSingleton<CancelService>();
+                services.AddSingleton<CycleStorageService>();
                 services.AddSingleton<ComputerDiagnostic>();
                 services.AddSingleton<ClientConfigurationReader>();
+
+                services.AddHostedService<MeasurementService>();
+                services.AddHostedService<ManagementService>();
+                
+                
                 
             });
         

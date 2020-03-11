@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CPUMeasurementCommon.DataObjects
 {
-    public class ClientData
+    public class ManagementData
     {
         public string ComputerName { get; set; }
 
