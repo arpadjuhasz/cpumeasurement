@@ -65,8 +65,6 @@ namespace CPUMeasurementBackend.Controllers
             {
                 return BadRequest(new { error = "Username already exists!" });
             }
-
-
         }
     }
 }

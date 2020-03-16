@@ -13,7 +13,6 @@ namespace CPUMeasurementCommon
 
         public int MeasurementIntervalInSeconds { get; set; }
 
-        [JsonIgnore]
         public DateTime MeasurementDate { get; set; }
     }
 }

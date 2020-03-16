@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "AverageLoad": 20.833333235520584,
+    "Temperature": {
+      "value": -17.77777777777778,
+      "measurementUnit": 1
+    },
+    "MeasurementIntervalInSeconds": 1
+  },
+  {
+    "AverageLoad": 20.833333235520584,
+    "Temperature": {
+      "value": -17.77777777777778,
+      "measurementUnit": 1
+    },
+    "MeasurementIntervalInSeconds": 1
+  }
+]
