@@ -44,43 +44,8 @@ namespace CPUMeasurementBackend
             services.AddScoped<AccountService>();
             services.AddScoped<AccountRepository>();
             services.AddJwtValidation(this.Configuration);
-            //var key = Encoding.ASCII.GetBytes(this.Configuration.GetValue<string>("Salt"));
-            //services.AddAuthentication(x =>
-            //    {
-            //        x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //        x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    })
-            //    .AddJwtBearer(x =>
-            //    {
-            //        x.Events = new JwtBearerEvents
-            //        {
-            //            OnTokenValidated = context =>
-            //            {
-            //                var accountService = context.HttpContext.RequestServices.GetRequiredService<AccountService>();
-            //                var accountId = int.Parse(context.Principal.Identity.Name);
-            //                var account = accountService.GetAccountById(accountId);
-            //                StringValues authorization = string.Empty;
-            //                context.HttpContext.Request.Headers.TryGetValue("Authorization", out authorization);
-            //                var storedToken = accountService.GetTokenByUserId(accountId);
-            //                if (account == null || $"Bearer {storedToken}" != authorization.ToString())
-            //                {
-            //                    accountService.DeleteAccessToken(accountId);
-            //                // return unauthorized if user no longer exists
-            //                context.Fail("Unauthorized");
-            //                }
-            //                return Task.CompletedTask;
-            //            }
-            //        };
-            //        x.RequireHttpsMetadata = false;
-            //        x.SaveToken = true;
-            //        x.TokenValidationParameters = new TokenValidationParameters
-            //        {
-            //            ValidateIssuerSigningKey = true,
-            //            IssuerSigningKey = new SymmetricSecurityKey(key),
-            //            ValidateIssuer = false,
-            //            ValidateAudience = false
-            //        };
-            //    });
+            
+            
             
         }
 
@@ -88,7 +53,7 @@ namespace CPUMeasurementBackend
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseRouting();
-
+            
             // global cors policy
             app.UseCors(x => x
                 .AllowAnyOrigin()

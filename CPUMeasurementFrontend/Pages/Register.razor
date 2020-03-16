@@ -17,10 +17,67 @@ private AccountGet _account;
     
 }
 
-<form>
-    <label>Username</label><input type="text" maxlength="256" @bind="@_username" />
-    <label>Password</label><input type="password" maxlength="256" @bind="@_password" />
-    <label>Password again</label><input maxlength="256" type="password"  @bind="@_passwordAgain" />
-    <label>Name</label><input type="text" maxlength="256" @bind="@_name" />
-    <button @onclick="@AddAccount">Register</button>
-</form>
+    <form>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" maxlength="256" @bind="@_username" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="password" maxlength="256" @bind="@_password" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="password" maxlength="256" @bind="@_password" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <label>Password again</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input maxlength="256" type="password" @bind="@_passwordAgain" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <label>Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" maxlength="256" @bind="@_name" />
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-md-12">
+            <button @onclick="@AddAccount">Register</button>
+        </div>
+        </div>
+
+
+
+
+        
+    </form>

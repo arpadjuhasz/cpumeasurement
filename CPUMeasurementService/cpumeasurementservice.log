@@ -511,3 +511,8 @@
 2020-03-05 18:04:20.021 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
 2020-03-05 18:04:21.015 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6765
 2020-03-05 18:04:21.275 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-03-15 10:23:52.713 +01:00 [ERR] Connection failed. Host: 192.168.0.80:6764
+2020-03-15 10:23:52.731 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-03-15 10:23:52.734 +01:00 [INF] Hosting environment: Development
+2020-03-15 10:23:52.736 +01:00 [INF] Content root path: I:\github\cpumeasurement\CPUMeasurementService
+2020-03-15 10:23:55.945 +01:00 [INF] Application is shutting down...
