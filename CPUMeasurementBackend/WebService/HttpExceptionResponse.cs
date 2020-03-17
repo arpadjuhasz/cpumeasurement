@@ -12,36 +12,26 @@ namespace CPUMeasurementBackend.WebService
 {
     public static class ExceptionHandling
     {
-        internal static HttpContext ResponseContext;
+        internal static IHttpContextAccessor ResponseContext;
 
         public static void AddErrorHandling(this IServiceCollection services)
         {
             services.AddHttpContextAccessor();
-            services.AddScoped<Handler>();
+            services.AddScoped<HttpExceptionResponse>();
+            
         }
     }
 
-    public class Handler
-    {
-        private readonly RequestDelegate _next;
-        public Handler(IHttpContextAccessor httpContext)
-        {
-            ExceptionHandling.ResponseContext = (HttpContext)httpContext;
-        }
-
-        
-
-    }
-
-
-    public class HttpExceptionResponse : Exception
+    ic class HttpExceptionResponse : Exception
     {
         public HttpStatusCode StatusCode {get; set; }
         public string Value { get; set; }
         public string Field { get; set; }
+        public readonly IHttpContextAccessor _httpContext;
 
-        public HttpExceptionResponse(string message, HttpStatusCode statusCode) : base(message)
+        public HttpExceptionResponse(string message, HttpStatusCode statusCode, HttpConfig httpContext) : base(message)
         {
+            this._httpContext = httpContext;
             this.StatusCode = statusCode;
             ExceptionHandling.ResponseContext.Response.StatusCode = (int)statusCode;
         }
