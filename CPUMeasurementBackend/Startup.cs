@@ -44,6 +44,7 @@ namespace CPUMeasurementBackend
             services.AddScoped<AccountService>();
             services.AddScoped<AccountRepository>();
             services.AddJwtValidation(this.Configuration);
+            services.AddErrorHandling();
             
             
             
@@ -53,7 +54,7 @@ namespace CPUMeasurementBackend
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseRouting();
-            
+
             // global cors policy
             app.UseCors(x => x
                 .AllowAnyOrigin()
