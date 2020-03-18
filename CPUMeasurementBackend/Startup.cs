@@ -44,7 +44,7 @@ namespace CPUMeasurementBackend
             services.AddScoped<AccountService>();
             services.AddScoped<AccountRepository>();
             services.AddJwtValidation(this.Configuration);
-            services.AddErrorHandling();
+            //services.AddErrorHandling();
             
             
             

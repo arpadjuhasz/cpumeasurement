@@ -73,10 +73,7 @@ namespace CPUMeasurementBackend.WebService.Account
             }
         }
 
-        public Task ThrowException()
-        {
-            throw new NotFoundException("asdasd", "foo", "bar");
-        }
+        
 
         public Account GetAccountById(int id)
         {
