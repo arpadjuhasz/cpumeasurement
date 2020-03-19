@@ -2,6 +2,7 @@
 using CPUMeasurementCommon.DataObjects;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -44,7 +45,7 @@ namespace CPUMeasurementBackend.Repository
                 var command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("Username", account.Username);
                 command.Parameters.AddWithValue("Password", account.Password);
-                command.Parameters.AddWithValue("Name", account.Name);
+                command.Parameters.AddWithValue("Name", (string.IsNullOrEmpty(account.Name) ? DBNull.Value : (object)account.Name));
                 command.Parameters.AddWithValue("Deleted", false);
                 connection.Open();
                 id = await command.ExecuteNonQueryAsync();
@@ -130,13 +131,13 @@ namespace CPUMeasurementBackend.Repository
                 var reader = await command.ExecuteReaderAsync();
                 if (reader.HasRows)
                 {
-                    while (await reader.ReadAsync())
-                    {
+                    await reader.ReadAsync();
+                    
                         account.Id = reader.GetInt32(0);
                         account.Username = reader.GetString(1);
                         account.Password = reader.GetString(2);
-                        account.Name = reader.GetString(3);
-                    }
+                    account.Name = reader.GetNullableFieldValue<string>(3);
+                    
                 }
                 else
                 {
@@ -165,7 +166,7 @@ namespace CPUMeasurementBackend.Repository
                         account.Id = reader.GetInt32(0);
                         account.Username = reader.GetString(1);
                         account.Password = reader.GetString(2);
-                        account.Name = reader.GetString(3);
+                        account.Name = reader.GetNullableFieldValue<string>(3);
                     }
                 }
                 else
@@ -218,10 +219,10 @@ namespace CPUMeasurementBackend.Repository
             }
         }
 
-            public string GetTokenByAccountId(int id)
+            public List<string> GetTokensByAccountId(int id)
         {
             var sql = @"SELECT Token FROM [dbo].[Token] WHERE AccountId = @AccountId";
-            var token = string.Empty;
+            var tokens = new List<string>();
             using (var connection = new SqlConnection(this.ConnectionString))
             {
                 var command = new SqlCommand(sql, connection);
@@ -232,13 +233,13 @@ namespace CPUMeasurementBackend.Repository
                 {
                     while (reader.Read())
                     {
-                        token = reader.GetString(0);  
+                        tokens.Add(reader.GetString(0));  
                     }
                 }
                 reader.Close();
                 command.Clone();
             }
-            return token;
+            return tokens;
         }
     }
 }

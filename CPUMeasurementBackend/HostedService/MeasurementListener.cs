@@ -20,18 +20,19 @@ namespace CPUMeasurementBackend.HostedService
     {
         private readonly IPAddress _ipAddress;
         private readonly TcpListener _tcpListener;
-        private readonly short _port;
+        private readonly short _measurementPort;
         private IConfiguration _configuration;
         private ILogger _logger;
         
         public MeasurementListener(IConfiguration configuration, ILogger<MeasurementListener> logger)
         {
             
-            this._port = configuration.GetValue<short>("MeasurementPort");
+            this._measurementPort = configuration.GetValue<short>("MeasurementPort");
             this._ipAddress = IPAddress.Parse(configuration.GetValue<string>("IPAddress"));
-            this._tcpListener = new TcpListener(_ipAddress, this._port);
+            this._tcpListener = new TcpListener(_ipAddress, this._measurementPort);
             this._configuration = configuration;
             this._logger = logger;
+            this._logger.LogInformation($"Measurement listener is waiting for packets on {_ipAddress}:{_measurementPort}");
         }
 
         public async Task ReceiveMeasurementPacket()
@@ -59,10 +60,10 @@ namespace CPUMeasurementBackend.HostedService
 
                                 var repository = new MeasurementRepository(this._configuration);
                                 await repository.SaveMeasurementData(MeasurementData.Create(cpuPacket, clientIPAddress));
+                                this._logger.LogInformation($"Measurement saved to database from {clientIPAddress}");
 
                                 var bytes = Encoding.ASCII.GetBytes(((int)ResponseStatusCode.SUCCESS).ToString());
                                 await clientTask.Result.GetStream().WriteAsync(bytes, 0, bytes.Length);
-
                             }
                             else
                             {

@@ -1,5 +1,7 @@
 ﻿using CPUMeasurementCommon.DataObjects;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +27,12 @@ namespace CPUMeasurementFrontend.Data
                 + (date.HasValue ? $"date={date.Value.ToString("yyyy-MM-dd")}" : string.Empty)
                 + (date.HasValue && !string.IsNullOrWhiteSpace(ipAddress) ? $"&" : string.Empty)
                 + (!string.IsNullOrWhiteSpace(ipAddress) ? $"ipAddress={ipAddress}" : string.Empty);
-            return await this._httpClient.GetJsonAsync<List<MeasurementData>>(request);
+            var result = await this._httpClient.GetAsync(request);
+            if (result.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<List<MeasurementData>>(await result.Content.ReadAsStringAsync());
+            }
+            return null;
         }
     }
 }

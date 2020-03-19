@@ -34,7 +34,8 @@ namespace CPUMeasurementBackend.HostedService
             this._logger = logger;
             this._management = management;
             this._tcpListener = new TcpListener(this._ipAddress, this._managementPort);
-            
+            this._logger.LogInformation($"Management listener is waiting for packets on {_ipAddress}:{_managementPort}");
+
         }
 
 
@@ -79,9 +80,9 @@ namespace CPUMeasurementBackend.HostedService
                             var messageBytes = Encoding.ASCII.GetBytes(response);
                             await clientTask.Result.GetStream().WriteAsync(messageBytes, 0, messageBytes.Length);
                         }
-                        catch (Exception)
+                        catch (Exception e)
                         {
-
+                            this._logger.LogError($"Failed to digest request! {e.Message}");
                         }
                         clientTask.Result.GetStream().Dispose();
                     }

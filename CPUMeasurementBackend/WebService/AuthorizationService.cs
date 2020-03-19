@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CPUMeasurementBackend.WebService
 {
-    public  static class ValidationService
+    public  static class AuthorizationService
     {
         public static void AddJwtValidation(this IServiceCollection services, IConfiguration configuration)
         {
@@ -34,9 +34,9 @@ namespace CPUMeasurementBackend.WebService
                                 var account = accountService.GetAccountById(accountId);
                                 StringValues authorization = string.Empty;
                                 context.HttpContext.Request.Headers.TryGetValue("Authorization", out authorization);
-                                var storedToken = accountService.GetTokenByUserId(accountId);
+                                var storedTokens = accountService.GetTokensByUserId(accountId);
                                 Token = authorization.ToString().Substring(7);
-                                if (account == null || storedToken != Token)
+                                if (account == null || !storedTokens.Contains(Token))
                                 {
                                     accountService.DeleteAccessToken(accountId);
                                     // return unauthorized if user no longer exists

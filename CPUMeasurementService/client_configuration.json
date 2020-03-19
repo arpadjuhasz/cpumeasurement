@@ -1,6 +1,6 @@
 {
-  "ServerIPAddress": "192.168.0.80",
-  "ServerManagementPort": 6765,
-  "ServerMeasurementPort": 6764,
-  "MeasurementIntervalInSeconds": 1
+  "ServerIPAddress": "127.0.0.1",
+  "ServerManagementPort": 1401,
+  "ServerMeasurementPort": 1400,
+  "MeasurementIntervalInSeconds": 5
 }

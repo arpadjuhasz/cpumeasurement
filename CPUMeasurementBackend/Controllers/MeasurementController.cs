@@ -10,7 +10,7 @@ namespace CPUMeasurementBackend.Controllers
 {
     
     [Route("measurement")]
-    [Authorize]
+    
     public class MeasurementController : ControllerBase
     {
         private readonly MeasurementService _measurementService;
@@ -21,6 +21,7 @@ namespace CPUMeasurementBackend.Controllers
         }
 
         [HttpGet()]
+        [Authorize]
         public async Task<IActionResult> GetMeasurements([FromQuery]DateTime? date, [FromQuery]string ipAddress = null)
         {
             return  Ok(await this._measurementService.GetMeasurements(date, ipAddress));

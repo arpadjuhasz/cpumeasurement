@@ -42,3 +42,7 @@ CPUMeasurementDatabase/CPUMeasurementDatabase.jfm
 .vs/CPUMeasurement/v16/Server/sqlite3/storage.ide
 CPUMeasurementBackend/cpumeasurementlistener.log
 /.vs/CPUMeasurement/v16/Server/sqlite3/db.lock
+CPUMeasurementBackend/CPUMeasurementBackend.log
+CPUMeasurementFrontend/CPUMeasurementFrontend.log
+CPUMeasurementService/CPUMeasurementService.log
+CPUMeasurementService/Measurement.log

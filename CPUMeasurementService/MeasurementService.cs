@@ -75,7 +75,9 @@ private IPAddress _serverIPAddress;
                     case ResponseStatusCode.REPONSEFORMATERROR: this._logger.LogError("Unknown response code!"); break;
                     case ResponseStatusCode.ERROR: this._logger.LogError("Error occured!"); break;
                 }
+                this._logger.LogInformation($"Measurement sent successfully to {_serverIPAddress}:{_serverMeasurementPort} !");
                 client.Dispose();
+                
             }
             catch (Exception)
             {

@@ -24,6 +24,7 @@ namespace CPUMeasurementService
                 {
                     builder.AddConfiguration(configuration.GetSection("Logging"))
                     .AddSerilog(new LoggerConfiguration().WriteTo.File("CPUMeasurementService.log").CreateLogger());
+                    builder.AddSerilog(dispose: true);
                 });
 
                 services.AddSingleton<CancelService>();

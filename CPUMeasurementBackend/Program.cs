@@ -25,7 +25,7 @@ namespace CPUMeasurementBackend
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>()
-                            .UseUrls("http://*:5000");
+                    .UseUrls("http://lcoalhost:5000");
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
@@ -34,6 +34,8 @@ namespace CPUMeasurementBackend
                     {
                         builder.AddConfiguration(configuration.GetSection("Logging"))
                           .AddSerilog(new LoggerConfiguration().WriteTo.File("CPUMeasurementBackend.log").CreateLogger());
+                        builder.AddSerilog(dispose: true);
+                       
                     });
                     services.AddHostedService<MeasurementListener>();
                     services.AddSingleton<Management>();

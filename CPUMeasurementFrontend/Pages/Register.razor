@@ -25,7 +25,7 @@ private AccountGet _account;
         </div>
         <div class="row">
             <div class="col-md-12">
-                <input type="text" maxlength="256" @bind="@_username" />
+                <input type="text" required maxlength="256" @bind="@_username" />
             </div>
         </div>
         <div class="row">
@@ -35,17 +35,7 @@ private AccountGet _account;
         </div>
         <div class="row">
             <div class="col-md-12">
-                <input type="password" maxlength="256" @bind="@_password" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <label>Password</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <input type="password" maxlength="256" @bind="@_password" />
+                <input type="password" required maxlength="256" min="8" @bind="@_password" />
             </div>
         </div>
 
@@ -56,7 +46,7 @@ private AccountGet _account;
         </div>
         <div class="row">
             <div class="col-md-12">
-                <input maxlength="256" type="password" @bind="@_passwordAgain" />
+                <input maxlength="256" required type="password" min="8" @bind="@_passwordAgain" />
             </div>
         </div>
 
