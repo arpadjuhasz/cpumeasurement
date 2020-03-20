@@ -46,3 +46,7 @@ CPUMeasurementBackend/CPUMeasurementBackend.log
 CPUMeasurementFrontend/CPUMeasurementFrontend.log
 CPUMeasurementService/CPUMeasurementService.log
 CPUMeasurementService/Measurement.log
+*.log
+CPUMeasurementService/cpumeasurementservice.log
+CPUMeasurementService/Measurement.log
+CPUMeasurementService/Measurement.log
