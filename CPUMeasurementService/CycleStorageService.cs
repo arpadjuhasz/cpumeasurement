@@ -46,30 +46,27 @@ namespace CPUMeasurementService
         private void ReadLogsFromFile()
         {
             this.CheckFileExists();
-                var logsInStringFormat = string.Empty;
+            var logsInStringFormat = string.Empty;
+            try
+            {
+                logsInStringFormat = File.ReadAllText(LOGFILENAME);
                 try
                 {
-                    logsInStringFormat = File.ReadAllText(LOGFILENAME);
-                    try
+                    var logs = JsonConvert.DeserializeObject<List<MeasurementPacket>>(logsInStringFormat);
+                    foreach (var log in logs)
                     {
-                        var logs = JsonConvert.DeserializeObject<List<MeasurementPacket>>(logsInStringFormat);
-                        foreach (var log in logs)
-                        {
-                            this.AddToLogs(log.MeasurementDate, log);
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        this._logger.LogError($"Unable to parse the content of the {LOGFILENAME}");
+                        this.AddToLogs(log.MeasurementDate, log);
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    this._logger.LogError($"Unable to read from the {LOGFILENAME}. Please check it!");
+                    this._logger.LogError($"Unable to parse the content of the {LOGFILENAME} Exception: \n{e.Message}");
                 }
-                
-                
-            
+            }
+            catch (Exception e)
+            {
+                this._logger.LogError($"Unable to read from the {LOGFILENAME}. Please check it! Exception: \n{e.Message}");
+            }
         }
 
         private bool CheckFileExists()

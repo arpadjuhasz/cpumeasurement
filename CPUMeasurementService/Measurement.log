@@ -1,11 +1,75 @@
 [
   {
-    "AverageLoad": 20.833333235520584,
+    "AverageLoad": 8.33333316216102,
     "Temperature": {
-      "value": -17.77777777777778,
+      "value": 35.27778201633029,
       "measurementUnit": 1
     },
-    "MeasurementIntervalInSeconds": 1
+    "MeasurementIntervalInSeconds": 5,
+    "MeasurementDate": "2020-03-20T17:22:17.1985652Z"
+  },
+  {
+    "AverageLoad": 8.33333316216102,
+    "Temperature": {
+      "value": 35.27778201633029,
+      "measurementUnit": 1
+    },
+    "MeasurementIntervalInSeconds": 5,
+    "MeasurementDate": "2020-03-20T17:22:17.1985652Z"
+  },
+  {
+    "AverageLoad": 8.33333316216102,
+    "Temperature": {
+      "value": 35.27778201633029,
+      "measurementUnit": 1
+    },
+    "MeasurementIntervalInSeconds": 5,
+    "MeasurementDate": "2020-03-20T17:22:17.1985652Z"
+  },
+  {
+    "AverageLoad": 8.33333316216102,
+    "Temperature": {
+      "value": 35.27778201633029,
+      "measurementUnit": 1
+    },
+    "MeasurementIntervalInSeconds": 5,
+    "MeasurementDate": "2020-03-20T17:22:17.1985652Z"
+  },
+  {
+    "AverageLoad": 8.33333316216102,
+    "Temperature": {
+      "value": 35.27778201633029,
+      "measurementUnit": 1
+    },
+    "MeasurementIntervalInSeconds": 5,
+    "MeasurementDate": "2020-03-20T17:22:17.1985652Z"
+  },
+  {
+    "AverageLoad": 8.33333316216102,
+    "Temperature": {
+      "value": 35.27778201633029,
+      "measurementUnit": 1
+    },
+    "MeasurementIntervalInSeconds": 5,
+    "MeasurementDate": "2020-03-20T17:22:17.1985652Z"
+  },
+  {
+    "AverageLoad": 8.33333316216102,
+    "Temperature": {
+      "value": 35.27778201633029,
+      "measurementUnit": 1
+    },
+    "MeasurementIntervalInSeconds": 5,
+    "MeasurementDate": "2020-03-20T17:22:17.1985652Z"
+  },
+  {
+    "AverageLoad": 8.33333316216102,
+    "Temperature": {
+      "value": 35.27778201633029,
+      "measurementUnit": 1
+    },
+    "MeasurementIntervalInSeconds": 5,
+    "MeasurementDate": "2020-03-20T17:22:17.1985652Z"
   },
   {
     "AverageLoad": 20.833333235520584,
@@ -13,6 +77,7 @@
       "value": -17.77777777777778,
       "measurementUnit": 1
     },
-    "MeasurementIntervalInSeconds": 1
+    "MeasurementIntervalInSeconds": 1,
+    "MeasurementDate": "0001-01-01T00:00:00"
   }
 ]

@@ -9,6 +9,18 @@ namespace CPUMeasurementBackend.Repository
     public abstract class Repository : IRepository
     {
         public string ConnectionString { get; set; }
+
+        public object GetNullableObject(object value)
+        {
+            if (value == null)
+            {
+                return (object)DBNull.Value;
+            }
+            else
+            {
+                return value;
+            }
+        }
     }
 
     public static class RepositoryExtensions

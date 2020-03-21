@@ -10,12 +10,12 @@ namespace CPUMeasurementCommon.DataObjects
     {
         [JsonProperty("id")]
         public int Id { get; set; }
-        
+
         [JsonProperty("received")]
         public DateTime Received { get; set; }
 
         [JsonProperty("temperature")]
-        public Temperature Temperature { get; set; }
+        public Temperature Temperature { get; set; } = new Temperature(null, MeasurementUnit.CELSIUS);
 
         [JsonProperty("averageLoad")]
         public double? AverageLoad { get; set; }

@@ -25,17 +25,22 @@ namespace CPUMeasurementService
         public ManagementService(ILogger<ManagementService> logger, ComputerDiagnostic computerDiagnostic, ClientConfigurationReader configurationReader, CancelService cancelService)
         {
             this._cancelService = cancelService;
-            this._logger = logger;this._configuratoinReader = configurationReader;
-            this._serverManagementPort = this._configuratoinReader.Configuration.ServerManagementPort;
+            this._logger = logger;
+            this._configuratoinReader = configurationReader;
+            
             this._computerDiagnostic = computerDiagnostic;
             
             try
             {
                 this._serverIPAddress = IPAddress.Parse(this._configuratoinReader.Configuration.ServerIPAddress);
+                this._serverManagementPort = this._configuratoinReader.Configuration.ServerManagementPort;
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                this._logger.LogError("Invalid server IP address format, port in the client_configuration.json file! IPAddress set to default (127.0.0.1 with port 1400)");
+                var defaultClientConfiguration = new ClientConfiguration();
+                this._serverIPAddress = IPAddress.Parse(defaultClientConfiguration.ServerIPAddress);
+                this._serverManagementPort = defaultClientConfiguration.ServerManagementPort;
             }
         }
 
@@ -63,17 +68,18 @@ namespace CPUMeasurementService
                         MeasurementIntervalUpdatePacket updatePacket = JObject.Parse(responseMessage).ToObject<MeasurementIntervalUpdatePacket>();
                         this._configuratoinReader.SetMeasurementInterval(updatePacket.MeasurementIntervalInSeconds);
                         this._cancelService.CancelationToken.ThrowIfCancellationRequested();
+                        this._logger.LogInformation("Successfully changed client configuration!");
                     }
                     catch (Exception e)
                     {
-                        this._logger.LogError(e.Message);
+                        this._logger.LogError($"Failed to process response! Exception: \n{e.Message}");
                     }
                 }
                 client.Dispose();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                //this._logger.LogError($"Connection failed. Host: {_serverIPAddress.ToString()}:{_serverManagementPort}");
+                this._logger.LogError($"Connection failed to server: {_serverIPAddress.ToString()}:{_serverManagementPort}! Exception: \n{e.Message}");
             }
         }
 

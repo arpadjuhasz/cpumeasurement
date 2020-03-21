@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using CPUMeasurementCommon.Management;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -21,5 +22,18 @@ namespace CPUMeasurementCommon.DataObjects
         public bool UpdateRequested { get; set; } = false;
 
         public int? MeasurementIntervalRequested { get; set; }
+
+        public static ManagementData Create(ManagementPacket packet, IPAddress ipAddress)
+        {
+            return new ManagementData
+            {
+                IPv4Address = ipAddress.ToString(),
+                CPUName = packet.CPUName,
+                MeasurementInterval = packet.MeasurementIntervalInSeconds,
+                ComputerName = packet.ComputerName,
+                LastUpdate = DateTime.UtcNow,
+                UpdateRequested = false
+            };
+        }
     }
 }

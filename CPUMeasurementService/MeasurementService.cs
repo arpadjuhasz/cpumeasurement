@@ -26,25 +26,20 @@ private IPAddress _serverIPAddress;
             this._cancelService = cancelService;
             this._configurationReader = configurationReader;
             this._cycleStorageService = cycleStorageService;
+            this._logger = logger;
+            this._computerDiagnostic = computerDiagnostic;
+            
             try
             {
+                this._serverIPAddress = IPAddress.Parse(this._configurationReader.Configuration.ServerIPAddress);
                 this._serverMeasurementPort = this._configurationReader.Configuration.ServerMeasurementPort;
             }
             catch (Exception)
             {
-                this._logger.LogError("Invalid port number!");
-            }
-            
-            this._logger = logger;
-            this._computerDiagnostic = computerDiagnostic;
-            try
-            {
-                this._serverIPAddress = IPAddress.Parse(this._configurationReader.Configuration.ServerIPAddress);
-            }
-            catch (Exception)
-            {
-                this._logger.LogError("Invalid server IP address format in the client_configuration.json file!");
-                this._configurationReader.Configuration.ServerIPAddress = "127.0.0.1";
+                this._logger.LogError("Invalid server IP address format, port number in the client_configuration.json file! IPAddress set to default (127.0.0.1 with port 1400)");
+                var defaultClientConfiguration = new ClientConfiguration();
+                this._serverIPAddress = IPAddress.Parse(defaultClientConfiguration.ServerIPAddress);
+                this._serverMeasurementPort = defaultClientConfiguration.ServerMeasurementPort;
             }
         }
 
@@ -72,16 +67,16 @@ private IPAddress _serverIPAddress;
                 ResponseStatusCode responseStatusCode = ResponseStatus.GetReponseStatusCode(response);
                 switch (responseStatusCode)
                 {
-                    case ResponseStatusCode.REPONSEFORMATERROR: this._logger.LogError("Unknown response code!"); break;
+                    case ResponseStatusCode.RESPONSEFORMATERROR: this._logger.LogError("Unknown response code!"); break;
                     case ResponseStatusCode.ERROR: this._logger.LogError("Error occured!"); break;
                 }
                 this._logger.LogInformation($"Measurement sent successfully to {_serverIPAddress}:{_serverMeasurementPort} !");
                 client.Dispose();
                 
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                this._logger.LogError($"Connection failed. Host: {_serverIPAddress.ToString()}:{_serverMeasurementPort}");
+                this._logger.LogError($"Connection failed. Host: {_serverIPAddress.ToString()}:{_serverMeasurementPort} Exception: {e.Message}");
             }
             
 

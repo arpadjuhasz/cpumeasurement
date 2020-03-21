@@ -8,7 +8,7 @@ namespace CPUMeasurementCommon
     { 
         ERROR = 400,
         SUCCESS = 200 ,
-        REPONSEFORMATERROR = 501
+        RESPONSEFORMATERROR = 501
     }
 
     public class ResponseStatus
@@ -22,7 +22,7 @@ namespace CPUMeasurementCommon
             }
             else
             { 
-                return ResponseStatusCode.REPONSEFORMATERROR;
+                return ResponseStatusCode.RESPONSEFORMATERROR;
             }
         }
     }

@@ -21,34 +21,44 @@ namespace CPUMeasurementBackend.HostedService
         private readonly IPAddress _ipAddress;
         private readonly TcpListener _tcpListener;
         private readonly short _measurementPort;
-        private IConfiguration _configuration;
-        private ILogger _logger;
+        private readonly IConfiguration _configuration;
+        private readonly ILogger<MeasurementListener> _logger;
         
         public MeasurementListener(IConfiguration configuration, ILogger<MeasurementListener> logger)
         {
-            
-            this._measurementPort = configuration.GetValue<short>("MeasurementPort");
-            this._ipAddress = IPAddress.Parse(configuration.GetValue<string>("IPAddress"));
-            this._tcpListener = new TcpListener(_ipAddress, this._measurementPort);
             this._configuration = configuration;
             this._logger = logger;
-            this._logger.LogInformation($"Measurement listener is waiting for packets on {_ipAddress}:{_measurementPort}");
+            try
+            {
+                this._measurementPort = configuration.GetValue<short>("MeasurementPort");
+                this._ipAddress = IPAddress.Parse(configuration.GetValue<string>("IPAddress"));
+                this._tcpListener = new TcpListener(_ipAddress, this._measurementPort);
+                this._logger.LogInformation($"Listener started for measurements on {_ipAddress}:{_measurementPort}");
+            }
+            catch (Exception e)
+            {
+                this._logger.LogError($"Failed to start listener for measurements! Please check the configuration file (appsettings). Exception: \n{e.Message}");
+            }
+                
+            
+            
         }
 
         public async Task ReceiveMeasurementPacket()
         {
-            
+
             this._tcpListener.Start();
             while (true)
-            { 
-            var clientTask = _tcpListener.AcceptTcpClientAsync();
+            {
+                var clientTask = _tcpListener.AcceptTcpClientAsync();
                 string message = String.Empty;
                 if (clientTask.Result != null)
                 {
+                    NetworkStream stream = clientTask.Result.GetStream();
                     while (message != null)
                     {
                         byte[] buffer = new byte[1024];
-                        int responseBytes = clientTask.Result.GetStream().Read(buffer, 0, buffer.Length);
+                        int responseBytes = stream.Read(buffer, 0, buffer.Length);
                         message = Encoding.ASCII.GetString(buffer);
                         var clientIPAddress = ((IPEndPoint)clientTask.Result.Client.RemoteEndPoint).Address;
                         try
@@ -59,28 +69,27 @@ namespace CPUMeasurementBackend.HostedService
                                 MeasurementPacket cpuPacket = jsonObject.ToObject<MeasurementPacket>();
 
                                 var repository = new MeasurementRepository(this._configuration);
-                                await repository.SaveMeasurementData(MeasurementData.Create(cpuPacket, clientIPAddress));
-                                this._logger.LogInformation($"Measurement saved to database from {clientIPAddress}");
-
-                                var bytes = Encoding.ASCII.GetBytes(((int)ResponseStatusCode.SUCCESS).ToString());
-                                await clientTask.Result.GetStream().WriteAsync(bytes, 0, bytes.Length);
+                                if ((await repository.AddMeasurementData(MeasurementData.Create(cpuPacket, clientIPAddress), this._logger)).HasValue)
+                                {
+                                    await stream.WriteStringAsync(((int)ResponseStatusCode.SUCCESS).ToString());
+                                }
+                                else
+                                {
+                                    await stream.WriteStringAsync(((int)ResponseStatusCode.ERROR).ToString());
+                                }
                             }
                             else
                             {
-                                var bytes = Encoding.ASCII.GetBytes(ResponseStatusCode.ERROR.ToString());
-                                await clientTask.Result.GetStream().WriteAsync(bytes, 0, bytes.Length);
+                                await stream.WriteStringAsync(((int)ResponseStatusCode.RESPONSEFORMATERROR).ToString());
                             }
-
                         }
-                        catch (Exception)
+                        catch (Exception e)
                         {
-                            this._logger.LogError($"Failed to save the data from client! IPAddress: {clientIPAddress.ToString()}, Message: {message}");
-                            var bytes = Encoding.ASCII.GetBytes(ResponseStatusCode.ERROR.ToString());
-                            clientTask.Result.GetStream().Write(bytes, 0, bytes.Length);
+                            this._logger.LogError($"Failed to to digest message from: {clientIPAddress.ToString()}, Message: {message}\nException: {e.Message}");
+                            await stream.WriteStringAsync(((int)ResponseStatusCode.ERROR).ToString());
                         }
                         clientTask.Result.GetStream().Dispose();
                     }
-
                 }
             }
         }
@@ -88,11 +97,11 @@ namespace CPUMeasurementBackend.HostedService
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (true)
-            await Task.Run(() => { this.ReceiveMeasurementPacket(); });
+                await Task.Run(() => { this.ReceiveMeasurementPacket(); });
         }
 
-        
 
-        
+
+
     }
 }
