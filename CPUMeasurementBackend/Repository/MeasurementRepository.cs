@@ -88,9 +88,12 @@ namespace CPUMeasurementBackend.Repository
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("Received", measurementData.Received);
 
-                measurementData.Temperature = null;
+                if (measurementData.Temperature == null)
+                {
+                    measurementData.Temperature = new Temperature(null, MeasurementUnit.CELSIUS);
+                }
                 command.Parameters.AddWithValue("Temperature", base.GetNullableObject(measurementData.Temperature.Value));
-                command.Parameters.AddWithValue("TemperatureMeasurementUnit", base.GetNullableObject((int?)measurementData.Temperature.MeasurementUnit));
+                command.Parameters.AddWithValue("TemperatureMeasurementUnit", base.GetNullableObject((int)measurementData.Temperature.MeasurementUnit));
                 command.Parameters.AddWithValue("AverageLoad", base.GetNullableObject(measurementData.AverageLoad.Value));
                 command.Parameters.AddWithValue("IPAddress", measurementData.IPAddress);
                 command.Parameters.AddWithValue("MeasurementDate", measurementData.MeasurementDate);

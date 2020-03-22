@@ -1,4 +1,5 @@
 ﻿using CPUMeasurementBackend.WebService.Account;
+using CPUMeasurementCommon;
 using CPUMeasurementCommon.DataObjects;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -32,7 +33,7 @@ namespace CPUMeasurementBackend.Controllers
             }
             else
             {
-                return BadRequest(new { error = "Wrong username or password!"  });
+                return BadRequest(new ErrorMessage{ Error = "Wrong username or password!"  });
             }
             
         }

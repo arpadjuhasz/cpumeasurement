@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Mime;
 using System.Threading.Tasks;
 
 namespace CPUMeasurementFrontend.Data
@@ -33,16 +35,16 @@ namespace CPUMeasurementFrontend.Data
             try
             {
                 AccessToken accessToken = await this._httpClient.PostJsonAsync<AccessToken>("/account/login", dto);
-               
                 if (accessToken != null)
                 {
                     this._httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken.Token);
                 }
             }
             catch (Exception)
-            { 
-                
+            {
+
             }
+
         }
 
         public async Task Logout()

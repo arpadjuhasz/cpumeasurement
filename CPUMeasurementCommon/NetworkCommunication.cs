@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Text;
@@ -19,5 +21,18 @@ namespace CPUMeasurementCommon
             var bytes = Encoding.ASCII.GetBytes(message);
             networkStream.Write(bytes, 0, bytes.Length);
         }
+    }
+
+    public class ErrorMessage
+    {
+        public string Error { get; set; }
+
+        public ErrorMessage(string error)
+        {
+            this.Error = error;
+        }
+
+        public ErrorMessage()
+        { }
     }
 }
