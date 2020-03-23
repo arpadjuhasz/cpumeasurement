@@ -28,28 +28,25 @@
         }
     }
 }
-<h2>Management</h2></g2>
-<table>
-    <thead>
-        <tr>
-            <td>IP</td>
-            <td>Last updated</td>
-            <td>CPU</td>
-            <td>Desktop name</td>
-            <td>Measurement interval</td>
-        </tr>
-    </thead>
-    <tbody>
+<h2>Management</h2>
+
+        <div class="row">
+            <div class="col-md-2">IP</div>
+            <div class="col-md-2">Last updated</div>
+            <div class="col-md-2">CPU</div>
+            <div class="col-md-2">Desktop name</div>
+            <div class="col-md-4">Measurement interval</div>
+        </div>
+    
         @if (_result != null)
             @foreach (var item in _result)
             {
-                <tr>
-                    <td>@item.IPv4Address</td>
-                    <td>@item.LastUpdate</td>
-                    <td>@item.CPUName</td>
-                    <td>@item.ComputerName</td>
-                    <td><input type="number" @bind="@item.MeasurementInterval" /><button @onclick="@(e => UpdateMeasurementInterval(item.IPv4Address, item.MeasurementInterval))" class="btn btn-success">Update</button>></td>
-                </tr>
+                <div class="row">
+                    <div class="col-md-2">@item.IPv4Address</div>
+                    <div class="col-md-2">@item.LastUpdate</div>
+                    <div  class="col-md-2">@item.CPUName</div>
+                    <div  class="col-md-2">@item.ComputerName</div>
+                    <div  class="col-md-4"><input type="number" @bind="@item.MeasurementInterval" /><button @onclick="@(e => UpdateMeasurementInterval(item.IPv4Address, item.MeasurementInterval))" class="btn btn-success">Update</button>></div>
+                </div>
             }
-    </tbody>
-</table>
+    
