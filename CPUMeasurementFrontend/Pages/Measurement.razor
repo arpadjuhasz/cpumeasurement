@@ -32,37 +32,36 @@
         _result = await _measurementService.GetMeasurementData(_date, _ipAddress);
     }
 }
-
+<h2>Measurements</h2>
 
 <label>With date </label><input  class="input-lg" type="checkbox" @bind="@_isDateChecked"><input type="date" @bind="@_date" /><br/>
 <label>With IP</label><input type="checkbox" @bind="@_isIPAddressChecked"><input type="text" @bind="@_ipAddress" /><br/>
 <button class="btn btn-info" @onclick="@GetCPUDataByDate">Filter</button>
 
-<table>
-    <thead>
-        <tr>
-            <td>Received</td>
-            <td>IPv4</td>
-            <td>Temperature</td>
-            <td>Avg. Load</td>
-            <td>Meas. Interval (s)</td>
-            <td>Meas. date</td>
-        </tr>
-    </thead>
+
+        <div class="row">
+            <div class="col-md-2">Received</div>
+            <div class="col-md-2">IPv4</div>
+            <div class="col-md-2">Temperature</div>
+            <div class="col-md-2">Avg. Load</div>
+            <div class="col-md-2">Meas. Interval (s)</div>
+            <div class="col-md-2">Meas. date</div>
+        </div>
+    
     @if (_result != null)
     {
-        <tbody>
+        
             @foreach (var item in _result)
             {
-            <tr>
-                <td>@item.Received.ToLocalTime()</td>
-                <td>@item.IPAddress</td>
-                <td>@item.Temperature.Value @item.Temperature.MeasurementUnit.ToString()[0]</td>
-                <td>@item.AverageLoad %</td>
-                <td>@item.MeasurementIntervalInSeconds</td>
-                <td>@item.MeasurementDate.ToLocalTime()</td>
-            </tr>
+            <div class="row">
+                <div class="col-md-2">@item.Received.ToLocalTime()</div>
+                <div class="col-md-2">@item.IPAddress</div>
+                <div class="col-md-2">@(item.Temperature.Value.HasValue ? $"{item.Temperature.Value.Value.ToString("n2")} {item.Temperature.MeasurementUnit.ToString()[0]}" : "n.a")</div>
+                <div class="col-md-2">@(item.AverageLoad.HasValue ? $"{item.AverageLoad} %" : "n.a")</div>
+                <div class="col-md-2">@item.MeasurementIntervalInSeconds</div>
+                <div class="col-md-2">@item.MeasurementDate.ToLocalTime()</div>
+            </div>
             }
-        </tbody>
+       
     }
-</table>
+
