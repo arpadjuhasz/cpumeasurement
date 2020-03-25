@@ -26,7 +26,7 @@ namespace CPUMeasurementBackend.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody]LoginPost login)
         {
-            var token = await this._accountService.Login(login);
+            var token = this._accountService.Login(login);
             if (token != null)
             {
                 return Ok(token);
@@ -47,17 +47,17 @@ namespace CPUMeasurementBackend.Controllers
         }
 
         [HttpDelete()]
-        public async Task<IActionResult> DeleteAccount()
+        public IActionResult DeleteAccount()
         {
-            await this._accountService.DeleteAccount();
+            this._accountService.DeleteAccount();
             return NoContent();
         }
 
         [HttpPost("register")]
         [AllowAnonymous]
-        public async Task<IActionResult> Register([FromBody]AccountPost post)
+        public IActionResult Register([FromBody]AccountPost post)
         {
-            var account = await this._accountService.AddAccount(post);
+            var account = this._accountService.AddAccount(post);
             if (account != null)
             {
                 return Created($"{account.Id}", account);

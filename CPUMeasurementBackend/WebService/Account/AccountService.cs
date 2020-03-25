@@ -25,18 +25,18 @@ namespace CPUMeasurementBackend.WebService.Account
             this._logger = logger;
         }
 
-        public async Task<List<AccountList>> GetAccounts()
+        public List<AccountList> GetAccounts()
         {
-            return await this._accountRepository.GetAccounts();
+            return this._accountRepository.GetAccounts();
         }
 
-        public async Task<AccountGet> AddAccount(AccountPost dto)
+        public AccountGet AddAccount(AccountPost dto)
         {
-            var usernameExists = await this._accountRepository.CheckUsernameExists(dto.Username);
+            var usernameExists = this._accountRepository.CheckUsernameExists(dto.Username);
             if (!usernameExists)
             {
                 var account = Account.Create(dto.Username, dto.Password, dto.Name, this._salt);
-                var id = await this._accountRepository.AddAccount(account);
+                var id = this._accountRepository.AddAccount(account);
                 return new AccountGet { Id = id, Name = account.Name, Username = account.Username };
             }
             else
@@ -45,26 +45,26 @@ namespace CPUMeasurementBackend.WebService.Account
             }
         }
 
-        public async Task DeleteAccount()
+        public void DeleteAccount()
         {
             var accountId = AuthorizationService.AccountId;
-            await this._accountRepository.Delete(accountId);
+            this._accountRepository.Delete(accountId);
         }
 
         public async Task Logout()
         {
             string token = AuthorizationService.Token;
-            await this._accountRepository.DeleteToken(token);   
+            this._accountRepository.DeleteToken(token);   
         }
 
-        public async Task<AccessToken> Login(LoginPost dto)
+        public AccessToken Login(LoginPost dto)
         {
             var saltedPassword = Account.GetSaltedPassword(dto.Password, this._salt);
-            var account = await this._accountRepository.GetAccountByUsername(dto.Username);
+            var account = this._accountRepository.GetAccountByUsername(dto.Username);
             if (account != null && saltedPassword == account.Password)
             {
                 var accessToken = AccessTokenGenerator.Create(account, this._salt);
-                await this._accountRepository.AddToken(accessToken);
+                this._accountRepository.AddToken(accessToken);
                 return accessToken;
             }
             else

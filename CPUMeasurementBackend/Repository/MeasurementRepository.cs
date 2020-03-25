@@ -21,7 +21,7 @@ namespace CPUMeasurementBackend.Repository
             this.ConnectionString = configuration.GetValue<string>("CPUMeasurementConnectionString");
         }
 
-        public async Task<List<MeasurementData>> GetMeasurementData(DateTime? date, string ipAddress)
+        internal List<MeasurementData> GetMeasurementData(DateTime? date, string ipAddress)
         {
             List<MeasurementData> result = new List<MeasurementData>();
             var paramAdded = false;
@@ -37,7 +37,7 @@ namespace CPUMeasurementBackend.Repository
             sqlBuilder.Append("[Id],[Received],[Temperature],[TemperatureMeasurementUnit],[AverageLoad],[IPAddress],[MeasurementIntervalInSeconds],[MeasurementDate] FROM [dbo].[cpu_data] ");
             if (date.HasValue)
             {
-                this.AddAnd(paramAdded, sqlBuilder);
+                sqlBuilder.AddAnd(paramAdded);
                 sqlBuilder.Append(" MeasurementDate BETWEEN @dateFrom AND @dateTo");
                 command.Parameters.AddWithValue("dateFrom", date.Value.ToUniversalTime());
                 command.Parameters.AddWithValue("dateTo", date.Value.AddDays(1).ToUniversalTime());
@@ -46,7 +46,7 @@ namespace CPUMeasurementBackend.Repository
 
             if (!string.IsNullOrWhiteSpace(ipAddress))
             {
-                this.AddAnd(paramAdded, sqlBuilder);
+                sqlBuilder.AddAnd(paramAdded);
                 sqlBuilder.Append(" IPAddress = @IPAddress");
                 command.Parameters.AddWithValue("IPAddress", ipAddress);
                 paramAdded = true;
@@ -56,7 +56,7 @@ namespace CPUMeasurementBackend.Repository
             sqlBuilder.Append(" ORDER BY Received DESC");
             command.CommandText = sqlBuilder.ToString();
             connection.Open();
-            SqlDataReader reader = await command.ExecuteReaderAsync();
+            SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 var item = new MeasurementData
@@ -71,14 +71,18 @@ namespace CPUMeasurementBackend.Repository
                 };
                 result.Add(item);
             }
+            reader.Close();
+            reader.Dispose();
+            command.Dispose();
+            connection.Close();
+            connection.Dispose();
             return result;
         }
 
-        public async Task<int?> AddMeasurementData(MeasurementData measurementData, ILogger<MeasurementListener> logger)
+        internal int? AddMeasurementData(MeasurementData measurementData, ILogger<MeasurementListener> logger)
         {
             try
             {
-
                 using SqlConnection connection = new SqlConnection(ConnectionString);
                 string sql = @"INSERT INTO cpu_data 
                             (Received, Temperature, TemperatureMeasurementUnit, AverageLoad,  IPAddress, MeasurementDate, MeasurementIntervalInSeconds) 
@@ -92,16 +96,19 @@ namespace CPUMeasurementBackend.Repository
                 {
                     measurementData.Temperature = new Temperature(null, MeasurementUnit.CELSIUS);
                 }
-                command.Parameters.AddWithValue("Temperature", base.GetNullableObject(measurementData.Temperature.Value));
-                command.Parameters.AddWithValue("TemperatureMeasurementUnit", base.GetNullableObject((int)measurementData.Temperature.MeasurementUnit));
-                command.Parameters.AddWithValue("AverageLoad", base.GetNullableObject(measurementData.AverageLoad.Value));
+                command.Parameters.AddWithValue("Temperature", measurementData.Temperature.Value.GetNullableDBObject());
+                command.Parameters.AddWithValue("TemperatureMeasurementUnit", ((int)measurementData.Temperature.MeasurementUnit).GetNullableDBObject());
+                command.Parameters.AddWithValue("AverageLoad", measurementData.AverageLoad.Value.GetNullableDBObject());
                 command.Parameters.AddWithValue("IPAddress", measurementData.IPAddress);
                 command.Parameters.AddWithValue("MeasurementDate", measurementData.MeasurementDate);
                 command.Parameters.AddWithValue("MeasurementIntervalInSeconds", measurementData.MeasurementIntervalInSeconds);
 
                 connection.Open();
 
-                int id = await command.ExecuteNonQueryAsync();
+                int id = command.ExecuteNonQuery();
+                command.Dispose();
+                connection.Close();
+                connection.Dispose();
                 logger.LogInformation($"Measurement is successfully saved from {measurementData.IPAddress}.");
                 return id;
             }
@@ -111,18 +118,6 @@ namespace CPUMeasurementBackend.Repository
                 return null;
             }
 
-        }
-
-        private void AddAnd(bool paramAdded, StringBuilder sb)
-        {
-            if (paramAdded)
-            {
-                sb.Append(" AND ");
-            }
-            else
-            {
-                sb.Append(" WHERE");
-            }
         }
     }
 }

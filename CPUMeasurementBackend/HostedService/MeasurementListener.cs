@@ -69,7 +69,7 @@ namespace CPUMeasurementBackend.HostedService
                                 MeasurementPacket cpuPacket = jsonObject.ToObject<MeasurementPacket>();
 
                                 var repository = new MeasurementRepository(this._configuration);
-                                if ((await repository.AddMeasurementData(MeasurementData.Create(cpuPacket, clientIPAddress), this._logger)).HasValue)
+                                if (( repository.AddMeasurementData(MeasurementData.Create(cpuPacket, clientIPAddress), this._logger)).HasValue)
                                 {
                                     await stream.WriteStringAsync(((int)ResponseStatusCode.SUCCESS).ToString());
                                 }

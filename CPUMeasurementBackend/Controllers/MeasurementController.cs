@@ -24,7 +24,7 @@ namespace CPUMeasurementBackend.Controllers
         [Authorize]
         public async Task<IActionResult> GetMeasurements([FromQuery]DateTime? date, [FromQuery]string ipAddress = null)
         {
-            return  Ok(await this._measurementService.GetMeasurements(date, ipAddress));
+            return  Ok(this._measurementService.GetMeasurements(date, ipAddress));
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CPUMeasurementBackend.Repository
@@ -10,21 +11,22 @@ namespace CPUMeasurementBackend.Repository
     {
         public string ConnectionString { get; set; }
 
-        public object GetNullableObject(object value)
-        {
-            if (value == null)
-            {
-                return (object)DBNull.Value;
-            }
-            else
-            {
-                return value;
-            }
-        }
     }
 
     public static class RepositoryExtensions
     {
+        public static void AddAnd(this StringBuilder stringBuilder,bool paramAdded)
+        {
+            if (paramAdded)
+            {
+                stringBuilder.Append(" AND ");
+            }
+            else
+            {
+                stringBuilder.Append(" WHERE");
+            }
+        }
+
         public static T GetNullableFieldValue<T>(this SqlDataReader sqlDataReader, int index)
         {
             var fieldValue = sqlDataReader.GetValue(index);
@@ -35,6 +37,18 @@ namespace CPUMeasurementBackend.Repository
             else
             {
                 return (T)fieldValue;
+            }
+        }
+
+        public static object GetNullableDBObject(this object value)
+        {
+            if (value == null)
+            {
+                return (object)DBNull.Value;
+            }
+            else
+            {
+                return value;
             }
         }
     }

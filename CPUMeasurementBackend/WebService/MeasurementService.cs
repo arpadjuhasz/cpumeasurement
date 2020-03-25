@@ -15,9 +15,9 @@ namespace CPUMeasurementBackend.WebService
             this._measurementRepository = cpuDataRepository;
         }
 
-        public async  Task<List<MeasurementData>> GetMeasurements(DateTime? date, string ipAddress)
+        public List<MeasurementData> GetMeasurements(DateTime? date, string ipAddress)
         {
-            return await this._measurementRepository.GetMeasurementData(date, ipAddress);
+            return this._measurementRepository.GetMeasurementData(date, ipAddress);
         }
     }
 }
