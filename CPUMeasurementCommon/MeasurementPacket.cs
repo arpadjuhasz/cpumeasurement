@@ -14,5 +14,16 @@ namespace CPUMeasurementCommon
         public int MeasurementIntervalInSeconds { get; set; }
 
         public DateTime MeasurementDate { get; set; }
+
+        public MeasurementPacket GetMemberwiseClone()
+        {
+            return new MeasurementPacket
+            {
+                AverageLoad = AverageLoad,
+                MeasurementDate = MeasurementDate,
+                MeasurementIntervalInSeconds = MeasurementIntervalInSeconds,
+                Temperature = Temperature,
+            };
+        }
     }
 }

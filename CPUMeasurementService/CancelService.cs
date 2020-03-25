@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 
 namespace CPUMeasurementService
 {
@@ -11,14 +8,14 @@ namespace CPUMeasurementService
 
         public CancelService()
         {
-            this.CancelationToken = new CancellationToken();
+            CancelationToken = new CancellationToken();
         }
 
         public void Renew()
         {
             if (this.CancelationToken.IsCancellationRequested)
             { 
-                this.CancelationToken = new CancellationToken();
+                CancelationToken = new CancellationToken();
             }
         }
     }

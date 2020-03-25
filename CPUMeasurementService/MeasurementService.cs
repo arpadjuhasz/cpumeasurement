@@ -23,30 +23,30 @@ private IPAddress _serverIPAddress;
 
         public MeasurementService(ILogger<MeasurementService> logger, ComputerDiagnostic computerDiagnostic, ClientConfigurationReader configurationReader, CancelService cancelService, CycleStorageService cycleStorageService)
         {
-            this._cancelService = cancelService;
-            this._configurationReader = configurationReader;
-            this._cycleStorageService = cycleStorageService;
-            this._logger = logger;
-            this._computerDiagnostic = computerDiagnostic;
+            _cancelService = cancelService;
+            _configurationReader = configurationReader;
+            _cycleStorageService = cycleStorageService;
+            _logger = logger;
+            _computerDiagnostic = computerDiagnostic;
             
             try
             {
-                this._serverIPAddress = IPAddress.Parse(this._configurationReader.Configuration.ServerIPAddress);
-                this._serverMeasurementPort = this._configurationReader.Configuration.ServerMeasurementPort;
+                _serverIPAddress = IPAddress.Parse(this._configurationReader.Configuration.ServerIPAddress);
+                _serverMeasurementPort = this._configurationReader.Configuration.ServerMeasurementPort;
             }
             catch (Exception)
             {
-                this._logger.LogError("Invalid server IP address format, port number in the client_configuration.json file! IPAddress set to default (127.0.0.1 with port 1400)");
+                _logger.LogError("Invalid server IP address format, port number in the client_configuration.json file! IPAddress set to default (127.0.0.1 with port 1400)");
                 var defaultClientConfiguration = new ClientConfiguration();
-                this._serverIPAddress = IPAddress.Parse(defaultClientConfiguration.ServerIPAddress);
-                this._serverMeasurementPort = defaultClientConfiguration.ServerMeasurementPort;
+                _serverIPAddress = IPAddress.Parse(defaultClientConfiguration.ServerIPAddress);
+                _serverMeasurementPort = defaultClientConfiguration.ServerMeasurementPort;
             }
         }
 
-        public async Task SendMeasurementPacket()
+        public void SendMeasurementPacket()
         {
             var packet = this._computerDiagnostic.Update().MeasurementPacket;
-            this._cycleStorageService.AddToLogs(packet.MeasurementDate, packet);
+            _cycleStorageService.AddToCycleStorageLogs(packet);
 
             try
             {
@@ -54,7 +54,7 @@ private IPAddress _serverIPAddress;
                 NetworkStream stream = client.GetStream();
                 
                 string data = JObject.FromObject(packet).ToString();
-                Byte[] dataBuffer = Encoding.ASCII.GetBytes(data);
+                byte[] dataBuffer = Encoding.ASCII.GetBytes(data);
                 stream.Write(dataBuffer, 0, dataBuffer.Length);
 
                 
@@ -70,13 +70,13 @@ private IPAddress _serverIPAddress;
                     case ResponseStatusCode.RESPONSEFORMATERROR: this._logger.LogError("Unknown response code!"); break;
                     case ResponseStatusCode.ERROR: this._logger.LogError("Error occured!"); break;
                 }
-                this._logger.LogInformation($"Measurement sent successfully to {_serverIPAddress}:{_serverMeasurementPort} !");
+                _logger.LogInformation($"Measurement sent successfully to {_serverIPAddress}:{_serverMeasurementPort} !");
                 client.Dispose();
                 
             }
             catch (Exception e)
             {
-                this._logger.LogError($"Connection failed. Host: {_serverIPAddress.ToString()}:{_serverMeasurementPort} Exception: {e.Message}");
+                _logger.LogError($"Connection failed. Host: {_serverIPAddress.ToString()}:{_serverMeasurementPort} Exception: {e.Message}");
             }
             
 
@@ -86,9 +86,9 @@ private IPAddress _serverIPAddress;
         {
             while (true)
             {
-                await this.SendMeasurementPacket();
+                this.SendMeasurementPacket();
                 await Task.Delay(this._configurationReader.Configuration.MeasurementIntervalInSeconds*1000, this._cancelService.CancelationToken);
-                this._cancelService.Renew();
+                _cancelService.Renew();
             }
         }
 

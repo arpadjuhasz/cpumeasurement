@@ -32,15 +32,15 @@ namespace CPUMeasurementService
             
             try
             {
-                this._serverIPAddress = IPAddress.Parse(this._configuratoinReader.Configuration.ServerIPAddress);
-                this._serverManagementPort = this._configuratoinReader.Configuration.ServerManagementPort;
+                _serverIPAddress = IPAddress.Parse(this._configuratoinReader.Configuration.ServerIPAddress);
+                _serverManagementPort = this._configuratoinReader.Configuration.ServerManagementPort;
             }
             catch (Exception e)
             {
-                this._logger.LogError("Invalid server IP address format, port in the client_configuration.json file! IPAddress set to default (127.0.0.1 with port 1400)");
+                _logger.LogError("Invalid server IP address format, port in the client_configuration.json file! IPAddress set to default (127.0.0.1 with port 1400)");
                 var defaultClientConfiguration = new ClientConfiguration();
-                this._serverIPAddress = IPAddress.Parse(defaultClientConfiguration.ServerIPAddress);
-                this._serverManagementPort = defaultClientConfiguration.ServerManagementPort;
+                _serverIPAddress = IPAddress.Parse(defaultClientConfiguration.ServerIPAddress);
+                _serverManagementPort = defaultClientConfiguration.ServerManagementPort;
             }
         }
 
@@ -55,7 +55,7 @@ namespace CPUMeasurementService
                 TcpClient client = new TcpClient(this._serverIPAddress.ToString(), this._serverManagementPort);
                 NetworkStream stream = client.GetStream();
 
-                Byte[] data = Encoding.ASCII.GetBytes(message);
+                byte[] data = Encoding.ASCII.GetBytes(message);
                 stream.Write(data, 0, data.Length);
 
                 byte[] responseData = new byte[256];
@@ -66,27 +66,26 @@ namespace CPUMeasurementService
                     try
                     {
                         MeasurementIntervalUpdatePacket updatePacket = JObject.Parse(responseMessage).ToObject<MeasurementIntervalUpdatePacket>();
-                        this._configuratoinReader.SetMeasurementInterval(updatePacket.MeasurementIntervalInSeconds);
-                        this._cancelService.CancelationToken.ThrowIfCancellationRequested();
-                        this._logger.LogInformation("Successfully changed client configuration!");
+                        _configuratoinReader.SetMeasurementInterval(updatePacket.MeasurementIntervalInSeconds);
+                        _cancelService.CancelationToken.ThrowIfCancellationRequested();
+                        _logger.LogInformation("Successfully changed client configuration!");
                     }
                     catch (Exception e)
                     {
-                        this._logger.LogError($"Failed to process response! Exception: \n{e.Message}");
+                        _logger.LogError($"Failed to process response! Exception: \n{e.Message}");
                     }
                 }
                 client.Dispose();
             }
             catch (Exception e)
             {
-                this._logger.LogError($"Connection failed to server: {_serverIPAddress.ToString()}:{_serverManagementPort}! Exception: \n{e.Message}");
+                _logger.LogError($"Connection failed to server: {_serverIPAddress.ToString()}:{_serverManagementPort}! Exception: \n{e.Message}");
             }
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
             _timer = new Timer(SendClientPacket, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
-            await Task.CompletedTask;
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

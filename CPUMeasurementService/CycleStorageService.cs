@@ -1,14 +1,11 @@
 ﻿using CPUMeasurementCommon;
-using CPUMeasurementCommon.DataObjects;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace CPUMeasurementService
 {
@@ -21,24 +18,24 @@ namespace CPUMeasurementService
 
         public CycleStorageService(ILogger<CycleStorageService> logger)
         {
-            this._logger = logger;
-            this.ReadLogsFromFile();
+            _logger = logger;
+            ReadLogsFromFile();
         }
 
-        public void AddToLogs(DateTime key, MeasurementPacket measurement)
+        public void AddToCycleStorageLogs(MeasurementPacket measurement)
         {
             if (Logs.Count >= 100)
             {
                 MeasurementPacket removed = null;
-                this.Logs.TryRemove(this.Logs.Keys.Min(),out removed);
+                Logs.TryRemove(this.Logs.Keys.Min(),out removed);
             }
-            Logs.TryAdd(key, measurement);
+            Logs.TryAdd(measurement.MeasurementDate, measurement.GetMemberwiseClone());
         }
 
         public void WriteLogsToFile()
         {
             var logs = Logs.Values.ToList().OrderByDescending(x => x.MeasurementDate);
-            this.CheckFileExists();
+            CheckFileExists();
             var logsInStringFormat = JsonConvert.SerializeObject(logs, Formatting.Indented);
             File.WriteAllText(LOGFILENAME, logsInStringFormat);
         }
@@ -55,7 +52,7 @@ namespace CPUMeasurementService
                     var logs = JsonConvert.DeserializeObject<List<MeasurementPacket>>(logsInStringFormat);
                     foreach (var log in logs)
                     {
-                        this.AddToLogs(log.MeasurementDate, log);
+                        this.AddToCycleStorageLogs(log);
                     }
                 }
                 catch (Exception e)
