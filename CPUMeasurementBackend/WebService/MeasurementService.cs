@@ -1,4 +1,4 @@
-﻿using CPUMeasurementBackend.Repository;
+﻿using CPUMeasurementBackend.Repositories;
 using CPUMeasurementCommon.DataObjects;
 using System;
 using System.Collections.Generic;
@@ -8,14 +8,14 @@ namespace CPUMeasurementBackend.WebService
 {
     public class MeasurementService
     {
-        private readonly MeasurementRepository _measurementRepository;
+        private readonly CPUMeasurementRepository _measurementRepository;
 
-        public MeasurementService(MeasurementRepository cpuDataRepository)
+        public MeasurementService(CPUMeasurementRepository cpuDataRepository)
         {
             this._measurementRepository = cpuDataRepository;
         }
 
-        public List<MeasurementData> GetMeasurements(DateTime? date, string ipAddress)
+        public List<CPUMeasurement> GetMeasurements(DateTime? date, string ipAddress)
         {
             return this._measurementRepository.GetMeasurementData(date, ipAddress);
         }

@@ -1,4 +1,4 @@
-﻿using CPUMeasurementBackend.Repository;
+﻿using CPUMeasurementBackend.Repositories;
 using CPUMeasurementCommon.DataObjects;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -75,18 +75,18 @@ namespace CPUMeasurementBackend.WebService.Account
 
         
 
-        public Account GetAccountById(int id)
+        public Account GetAccountById(Guid id)
         {
             var account = this._accountRepository.GetAccountById(id);
             return account;
         }
 
-        public  List<string> GetTokensByUserId(int accountId)
+        public  List<string> GetTokensByUserId(Guid accountId)
         {
             return this._accountRepository.GetTokensByAccountId(accountId);
         }
 
-        internal void DeleteAccessToken(int accountId)
+        internal void DeleteAccessToken(Guid accountId)
         {
             this._accountRepository.DeleteTokenByAccountId(accountId);
         }

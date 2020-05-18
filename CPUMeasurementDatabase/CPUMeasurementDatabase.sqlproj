@@ -60,9 +60,8 @@
     <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\measurement_unit.sql" />
-    <Build Include="dbo\Tables\cpu_data.sql" />
-    <Build Include="dbo\Tables\account.sql" />
-    <Build Include="dbo\Tables\Token.sql" />
+    <Build Include="dbo\Tables\CPUDatas.sql" />
+    <Build Include="dbo\Tables\Accounts.sql" />
+    <Build Include="dbo\Tables\AccessTokens.sql" />
   </ItemGroup>
 </Project>

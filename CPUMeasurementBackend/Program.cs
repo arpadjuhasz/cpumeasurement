@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CPUMeasurementBackend.Repository;
+using CPUMeasurementBackend.Repositories;
 using CPUMeasurementBackend.HostedService;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -33,14 +33,14 @@ namespace CPUMeasurementBackend
                     services.AddLogging(builder =>
                     {
                         builder.AddConfiguration(configuration.GetSection("Logging"))
-                          .AddSerilog(new LoggerConfiguration().WriteTo.File("CPUMeasurementBackend.log").CreateLogger());
+                          .AddSerilog(new LoggerConfiguration().WriteTo.File(@"CPUMeasurementBackend.log").CreateLogger());
                         builder.AddSerilog(dispose: true);
                        
                     });
                     services.AddHostedService<MeasurementListener>();
                     services.AddSingleton<Management>();
                     services.AddHostedService<ManagementListener>();
-                    services.AddScoped<MeasurementRepository>();
+                    services.AddScoped<CPUMeasurementRepository>();
             });
 
                 

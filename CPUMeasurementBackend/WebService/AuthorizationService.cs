@@ -29,7 +29,7 @@ namespace CPUMeasurementBackend.WebService
                             OnTokenValidated = context =>
                             {
                                 var accountService = context.HttpContext.RequestServices.GetRequiredService<AccountService>();
-                                var accountId = int.Parse(context.Principal.Identity.Name);
+                                var accountId = Guid.Parse(context.Principal.Identity.Name);
                                 AccountId = accountId;
                                 var account = accountService.GetAccountById(accountId);
                                 StringValues authorization = string.Empty;
@@ -57,7 +57,7 @@ namespace CPUMeasurementBackend.WebService
                     });
         }
 
-        public static int AccountId = 0;
+        public static Guid AccountId = Guid.NewGuid();
         public static string Token = null;
 
         

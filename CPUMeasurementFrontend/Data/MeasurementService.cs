@@ -20,7 +20,7 @@ namespace CPUMeasurementFrontend.Data
             this._httpClient = httpClient;
         }
 
-        public async Task<List<MeasurementData>> GetMeasurementData(DateTime? date, string ipAddress)
+        public async Task<List<CPUMeasurement>> GetMeasurementData(DateTime? date, string ipAddress)
         {
             string request = $"{ENDPOINT}"
                 + (date.HasValue || !string.IsNullOrWhiteSpace(ipAddress) ? "?" : string.Empty)
@@ -30,7 +30,7 @@ namespace CPUMeasurementFrontend.Data
             var result = await this._httpClient.GetAsync(request);
             if (result.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                return JsonConvert.DeserializeObject<List<MeasurementData>>(await result.Content.ReadAsStringAsync());
+                return JsonConvert.DeserializeObject<List<CPUMeasurement>>(await result.Content.ReadAsStringAsync());
             }
             return null;
         }

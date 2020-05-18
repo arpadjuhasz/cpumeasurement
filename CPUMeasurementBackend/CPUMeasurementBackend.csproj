@@ -22,9 +22,5 @@
     <ProjectReference Include="..\CPUMeasurementCommon\CPUMeasurementCommon.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repository\Poco\" />
-  </ItemGroup>
-
 
 </Project>

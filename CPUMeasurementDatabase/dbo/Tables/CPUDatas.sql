@@ -1,5 +1,5 @@
-﻿CREATE TABLE [dbo].[cpu_data] (
-    [Id]                           INT           IDENTITY (1, 1) NOT NULL,
+﻿CREATE TABLE [dbo].[CPUDatas] (
+    [Id]                           UNIQUEIDENTIFIER NOT NULL,
     [Received]                     DATETIME2 (3) NOT NULL,
     [Temperature]                  FLOAT (53)    NULL,
     [TemperatureMeasurementUnit]   INT           NULL,
@@ -7,8 +7,9 @@
     [IPAddress]                    VARCHAR (15)  NOT NULL,
     [MeasurementIntervalInSeconds] INT           NOT NULL,
     [MeasurementDate]              DATETIME2 (3) NOT NULL,
-    CONSTRAINT [PK_cpu_data] PRIMARY KEY CLUSTERED ([Id] ASC)
+    CONSTRAINT [PK_CPUData] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
 
 
 

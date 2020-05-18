@@ -1,4 +1,4 @@
-﻿using CPUMeasurementBackend.Repository;
+﻿using CPUMeasurementBackend.Repositories;
 using CPUMeasurementCommon;
 using CPUMeasurementCommon.DataObjects;
 using Microsoft.Extensions.Configuration;
@@ -68,8 +68,8 @@ namespace CPUMeasurementBackend.HostedService
                             {
                                 MeasurementPacket cpuPacket = jsonObject.ToObject<MeasurementPacket>();
 
-                                var repository = new MeasurementRepository(this._configuration);
-                                if (( repository.AddMeasurementData(MeasurementData.Create(cpuPacket, clientIPAddress), this._logger)).HasValue)
+                                var repository = new CPUMeasurementRepository(this._configuration);
+                                if (( repository.AddMeasurementData(CPUMeasurement.Create(cpuPacket, clientIPAddress), this._logger)).HasValue)
                                 {
                                     await stream.WriteStringAsync(((int)ResponseStatusCode.SUCCESS).ToString());
                                 }

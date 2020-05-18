@@ -6,10 +6,10 @@ using System.Text;
 
 namespace CPUMeasurementCommon.DataObjects
 {
-    public class MeasurementData
+    public class CPUMeasurement
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [JsonProperty("received")]
         public DateTime Received { get; set; }
@@ -27,10 +27,11 @@ namespace CPUMeasurementCommon.DataObjects
 
         public int MeasurementIntervalInSeconds { get; set; }
 
-        public static MeasurementData Create(MeasurementPacket packet, IPAddress ipAddress)
+        public static CPUMeasurement Create(MeasurementPacket packet, IPAddress ipAddress)
         {
-            return new MeasurementData
+            return new CPUMeasurement
             {
+                Id = Guid.NewGuid(),
                 AverageLoad = packet.AverageLoad,
                 IPAddress = ipAddress.ToString(),
                 Received = DateTime.UtcNow,

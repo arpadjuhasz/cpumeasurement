@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CPUMeasurementBackend.Repository;
+using CPUMeasurementBackend.Repositories;
 using CPUMeasurementBackend.HostedService;
 using CPUMeasurementBackend.WebService;
 using Microsoft.AspNetCore.Builder;
@@ -35,10 +35,10 @@ namespace CPUMeasurementBackend
         public void ConfigureServices(IServiceCollection services)
         {
 
-
+            RepositoryInitializer.InitializeDatabase(Configuration.GetValue<string>("InitializeConnectionString"));
             services.AddCors();
             services.AddControllers();
-            services.AddScoped<MeasurementRepository>();
+            services.AddScoped<CPUMeasurementRepository>();
             services.AddScoped<MeasurementService>();
             services.AddScoped<ManagementService>();
             services.AddScoped<AccountService>();

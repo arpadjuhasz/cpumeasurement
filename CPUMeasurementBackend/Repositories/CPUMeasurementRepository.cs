@@ -12,18 +12,18 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CPUMeasurementBackend.Repository
+namespace CPUMeasurementBackend.Repositories
 {
-    public class MeasurementRepository : Repository
+    public class CPUMeasurementRepository : Repository
     {
-        public MeasurementRepository(IConfiguration configuration)
+        public CPUMeasurementRepository(IConfiguration configuration)
         {
             this.ConnectionString = configuration.GetValue<string>("CPUMeasurementConnectionString");
         }
 
-        internal List<MeasurementData> GetMeasurementData(DateTime? date, string ipAddress)
+        internal List<CPUMeasurement> GetMeasurementData(DateTime? date, string ipAddress)
         {
-            List<MeasurementData> result = new List<MeasurementData>();
+            List<CPUMeasurement> result = new List<CPUMeasurement>();
             var paramAdded = false;
             using var connection = new SqlConnection(this.ConnectionString);
             SqlCommand command = new SqlCommand();
@@ -34,7 +34,7 @@ namespace CPUMeasurementBackend.Repository
             {
                 sqlBuilder.Append(" TOP (100) ");
             }
-            sqlBuilder.Append("[Id],[Received],[Temperature],[TemperatureMeasurementUnit],[AverageLoad],[IPAddress],[MeasurementIntervalInSeconds],[MeasurementDate] FROM [dbo].[cpu_data] ");
+            sqlBuilder.Append("[Id],[Received],[Temperature],[TemperatureMeasurementUnit],[AverageLoad],[IPAddress],[MeasurementIntervalInSeconds],[MeasurementDate] FROM [dbo].[CPUMeasurements] ");
             if (date.HasValue)
             {
                 sqlBuilder.AddAnd(paramAdded);
@@ -59,9 +59,9 @@ namespace CPUMeasurementBackend.Repository
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                var item = new MeasurementData
+                var item = new CPUMeasurement
                 {
-                    Id = reader.GetInt32(0),
+                    Id = reader.GetGuid(0),
                     Received = reader.GetDateTime(1),
                     Temperature = new Temperature(reader.GetNullableFieldValue<double?>(2), (MeasurementUnit)reader.GetInt32(3)),
                     AverageLoad = reader.GetNullableFieldValue<double?>(4),
@@ -79,29 +79,30 @@ namespace CPUMeasurementBackend.Repository
             return result;
         }
 
-        internal int? AddMeasurementData(MeasurementData measurementData, ILogger<MeasurementListener> logger)
+        internal int? AddMeasurementData(CPUMeasurement cpuMeasurement, ILogger<MeasurementListener> logger)
         {
             try
             {
                 using SqlConnection connection = new SqlConnection(ConnectionString);
-                string sql = @"INSERT INTO cpu_data 
-                            (Received, Temperature, TemperatureMeasurementUnit, AverageLoad,  IPAddress, MeasurementDate, MeasurementIntervalInSeconds) 
+                string sql = @"INSERT INTO CPUMeasurements 
+                            (Id, Received, Temperature, TemperatureMeasurementUnit, AverageLoad,  IPAddress, MeasurementDate, MeasurementIntervalInSeconds) 
                             VALUES 
-                            (@Received, @Temperature, @TemperatureMeasurementUnit, @AverageLoad, @IPAddress, @MeasurementDate, @MeasurementIntervalInSeconds)";
+                            (@Id, @Received, @Temperature, @TemperatureMeasurementUnit, @AverageLoad, @IPAddress, @MeasurementDate, @MeasurementIntervalInSeconds)";
 
                 SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("Received", measurementData.Received);
+                command.Parameters.AddWithValue("Received", cpuMeasurement.Received);
 
-                if (measurementData.Temperature == null)
+                if (cpuMeasurement.Temperature == null)
                 {
-                    measurementData.Temperature = new Temperature(null, MeasurementUnit.CELSIUS);
+                    cpuMeasurement.Temperature = new Temperature(null, MeasurementUnit.CELSIUS);
                 }
-                command.Parameters.AddWithValue("Temperature", measurementData.Temperature.Value.GetNullableDBObject());
-                command.Parameters.AddWithValue("TemperatureMeasurementUnit", ((int)measurementData.Temperature.MeasurementUnit).GetNullableDBObject());
-                command.Parameters.AddWithValue("AverageLoad", measurementData.AverageLoad.Value.GetNullableDBObject());
-                command.Parameters.AddWithValue("IPAddress", measurementData.IPAddress);
-                command.Parameters.AddWithValue("MeasurementDate", measurementData.MeasurementDate);
-                command.Parameters.AddWithValue("MeasurementIntervalInSeconds", measurementData.MeasurementIntervalInSeconds);
+                command.Parameters.AddWithValue("Id", cpuMeasurement.Id);
+                command.Parameters.AddWithValue("Temperature", cpuMeasurement.Temperature.Value.GetNullableDBObject());
+                command.Parameters.AddWithValue("TemperatureMeasurementUnit", ((int)cpuMeasurement.Temperature.MeasurementUnit).GetNullableDBObject());
+                command.Parameters.AddWithValue("AverageLoad", cpuMeasurement.AverageLoad.Value.GetNullableDBObject());
+                command.Parameters.AddWithValue("IPAddress", cpuMeasurement.IPAddress);
+                command.Parameters.AddWithValue("MeasurementDate", cpuMeasurement.MeasurementDate);
+                command.Parameters.AddWithValue("MeasurementIntervalInSeconds", cpuMeasurement.MeasurementIntervalInSeconds);
 
                 connection.Open();
 
@@ -109,12 +110,12 @@ namespace CPUMeasurementBackend.Repository
                 command.Dispose();
                 connection.Close();
                 connection.Dispose();
-                logger.LogInformation($"Measurement is successfully saved from {measurementData.IPAddress}.");
+                logger.LogInformation($"Measurement is successfully saved from {cpuMeasurement.IPAddress}.");
                 return id;
             }
             catch (Exception e)
             {
-                logger.LogError($"Failed to save data! {measurementData.IPAddress}. Error: \n{e.Message}");
+                logger.LogError($"Failed to save data! {cpuMeasurement.IPAddress}. Error: \n{e.Message}");
                 return null;
             }
 

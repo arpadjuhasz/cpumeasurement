@@ -7,7 +7,7 @@ namespace CPUMeasurementBackend.WebService.Account
 {
     public class Account
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
@@ -19,7 +19,7 @@ namespace CPUMeasurementBackend.WebService.Account
         
             byte[] bytes = provider.ComputeHash(Encoding.ASCII.GetBytes(salt + rawPassword));
             string computedHash = BitConverter.ToString(bytes);
-            return new Account { Deleted = false, Name = name, Password = computedHash, Username = username };
+            return new Account { Id = Guid.NewGuid(), Deleted = false, Name = name, Password = computedHash, Username = username };
                 
         }
 

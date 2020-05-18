@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace CPUMeasurementBackend.Repository
+namespace CPUMeasurementBackend.Repositories
 {
     public class AccountRepository : IRepository
     {
@@ -20,15 +20,15 @@ namespace CPUMeasurementBackend.Repository
             this.ConnectionString = configuration.GetValue<string>("CPUMeasurementConnectionString");
         }
 
-        internal void Delete(int id)
+        internal void Delete(Guid accountId)
         {
             string sql = @"BEGIN TRAN Tr1;
-                        UPDATE account SET Deleted = 1 WHERE Id = @Id;
-                        DELETE FROM Token WHERE AccountId = @Id;
+                        UPDATE Accounts SET Deleted = 1 WHERE Id = @Id;
+                        DELETE FROM AccessTokens WHERE AccountId = @Id;
                         COMMIT TRAN Tr1;";
             using var connection = new SqlConnection(this.ConnectionString);
             var command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@Id", id);
+            command.Parameters.AddWithValue("@Id", accountId);
             connection.Open();
             command.ExecuteNonQuery();
             command.Dispose();
@@ -38,11 +38,12 @@ namespace CPUMeasurementBackend.Repository
 
         internal int AddAccount(Account account)
         {
-            string sql = "INSERT INTO account (Username, Password, Name, Deleted) VALUES (@Username, @Password, @Name, @Deleted)";
+            string sql = "INSERT INTO Accounts (Id, Username, Password, Name, Deleted) VALUES (@Id, @Username, @Password, @Name, @Deleted)";
             var id = 0;
             using var connection = new SqlConnection(this.ConnectionString);
             
             var command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("Id", account.Id);
             command.Parameters.AddWithValue("Username", account.Username);
             command.Parameters.AddWithValue("Password", account.Password);
             command.Parameters.AddWithValue("Name", (string.IsNullOrEmpty(account.Name) ? DBNull.Value : (object)account.Name));
@@ -54,7 +55,7 @@ namespace CPUMeasurementBackend.Repository
 
         internal void UpdatePassword(Account account)
         {
-            var sql = "UPDATE account SET Password = @Password WHERE Id = @Id";
+            var sql = "UPDATE Accounts SET Password = @Password WHERE Id = @Id";
             using var connection = new SqlConnection(ConnectionString);
             var command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("Password", account.Password);
@@ -68,7 +69,7 @@ namespace CPUMeasurementBackend.Repository
 
         internal void UpdateName(Account account)
         {
-            var sql = "UPDATE [account] SET Name = @Name SET Id = @Id";
+            var sql = "UPDATE Accounts SET Name = @Name SET Id = @Id";
             var connection = new SqlConnection(this.ConnectionString);
             var command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("Name", account.Name);
@@ -82,7 +83,7 @@ namespace CPUMeasurementBackend.Repository
 
         internal List<AccountList> GetAccounts()
         {
-            var sql = @"SELECT Id, Username, Name FROM account WHERE Deleted = 0 ORDER BY Name";
+            var sql = @"SELECT Id, Username, Name FROM Accounts WHERE Deleted = 0 ORDER BY Name";
             var accounts = new List<AccountList>();
 
             using var connection = new SqlConnection(this.ConnectionString);
@@ -101,7 +102,7 @@ namespace CPUMeasurementBackend.Repository
 
         internal bool CheckUsernameExists(string username)
         {
-            var sql = @"SELECT TOP(1) Id FROM account Where Username = @Username AND Deleted = 0";
+            var sql = @"SELECT TOP(1) Id FROM Accounts Where Username = @Username AND Deleted = 0";
             var exists = false;
             using var connection = new SqlConnection(this.ConnectionString);
             var command = new SqlCommand(sql, connection);
@@ -122,7 +123,7 @@ namespace CPUMeasurementBackend.Repository
 
         internal Account GetAccountByUsername(string username)
         {
-            var sql = @"SELECT TOP(1) Id, Username, Password, Name FROM account WHERE Username = @Username AND Deleted = 0";
+            var sql = @"SELECT TOP(1) Id, Username, Password, Name FROM Accounts WHERE Username = @Username AND Deleted = 0";
             var account = new Account();
             using var connection = new SqlConnection(ConnectionString);
             SqlCommand command = new SqlCommand(sql, connection);
@@ -133,7 +134,7 @@ namespace CPUMeasurementBackend.Repository
             {
                 reader.Read();
 
-                account.Id = reader.GetInt32(0);
+                account.Id = reader.GetGuid(0);
                 account.Username = reader.GetString(1);
                 account.Password = reader.GetString(2);
                 account.Name = reader.GetNullableFieldValue<string>(3);
@@ -149,9 +150,9 @@ namespace CPUMeasurementBackend.Repository
             return account;
         }
 
-        internal Account GetAccountById(int id)
+        internal Account GetAccountById(Guid id)
         {
-            var sql = @"SELECT Id, Username, Password, Name FROM account WHERE Id = @Id AND Deleted = 0";
+            var sql = @"SELECT Id, Username, Password, Name FROM Accounts WHERE Id = @Id AND Deleted = 0";
             var account = new Account();
             using var connection = new SqlConnection(this.ConnectionString);
             SqlCommand command = new SqlCommand(sql, connection);
@@ -162,7 +163,7 @@ namespace CPUMeasurementBackend.Repository
             {
                 while (reader.Read())
                 {
-                    account.Id = reader.GetInt32(0);
+                    account.Id = reader.GetGuid(0);
                     account.Username = reader.GetString(1);
                     account.Password = reader.GetString(2);
                     account.Name = reader.GetNullableFieldValue<string>(3);
@@ -182,9 +183,10 @@ namespace CPUMeasurementBackend.Repository
 
         internal void AddToken(AccessToken accessToken)
         {
-            var sql = "INSERT INTO Token (Token, AccountId) VALUES (@Token, @AccountId)";
+            var sql = "INSERT INTO AccessTokens (Id, Token, AccountId) VALUES (@Id, @Token, @AccountId)";
             using var connection = new SqlConnection(this.ConnectionString);
             var command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("Id", accessToken.Id);
             command.Parameters.AddWithValue("Token", accessToken.Token);
             command.Parameters.AddWithValue("AccountId", accessToken.Id);
             connection.Open();
@@ -196,7 +198,7 @@ namespace CPUMeasurementBackend.Repository
 
         internal void DeleteToken(string token)
         {
-            var sql = @"DELETE FROM Token WHERE Token = @Token";
+            var sql = @"DELETE FROM AccessTokens WHERE Token = @Token";
             using var connection = new SqlConnection(this.ConnectionString);
             var command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("Token", token);
@@ -207,9 +209,9 @@ namespace CPUMeasurementBackend.Repository
             connection.Dispose();
         }
 
-        internal void DeleteTokenByAccountId(int accountId)
+        internal void DeleteTokenByAccountId(Guid accountId)
         {
-            var sql = @"DELETE FROM Token WHERE AccountId = @AccountId";
+            var sql = @"DELETE FROM AccessTokens WHERE AccountId = @AccountId";
             using var connection = new SqlConnection(this.ConnectionString);
             var command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("AccountId", accountId);
@@ -220,9 +222,9 @@ namespace CPUMeasurementBackend.Repository
             connection.Dispose();
         }
 
-        internal List<string> GetTokensByAccountId(int id)
+        internal List<string> GetTokensByAccountId(Guid id)
         {
-            var sql = @"SELECT Token FROM [dbo].[Token] WHERE AccountId = @AccountId";
+            var sql = @"SELECT Token FROM [dbo].[AccessTokens] WHERE AccountId = @AccountId";
             var tokens = new List<string>();
             using var connection = new SqlConnection(ConnectionString);
             var command = new SqlCommand(sql, connection);

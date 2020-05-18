@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CPUMeasurementBackend.Repository
+namespace CPUMeasurementBackend.Repositories
 {
-    public abstract class Repository : IRepository
+   public abstract class Repository : IRepository
     {
         public string ConnectionString { get; set; }
 
