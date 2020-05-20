@@ -6,15 +6,26 @@
 @inject AccountService  _accountService
 
 @code {
-    
+
+    private string _name;
     private DateTime _date = DateTime.Now;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         if (!_accountService.IsLoggedIn())
-        { 
+        {
             navigationManager.NavigateTo("login", true);
         }
     }
+
+    private async Task UpdateName()
+    {
+        await _accountService.UpdateName(_name);
+    }
 }
 <h1>Account</h1>
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12"><strong>Change name</strong></div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12"><input type="text" @bind="@_name" placeholder="new name" /></div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12"><button class="btn btn-lg btn-info" @onclick="UpdateName">Update name</button></div>
+</div>

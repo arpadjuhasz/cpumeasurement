@@ -64,5 +64,10 @@ namespace CPUMeasurementFrontend.Data
                 return false;
             }
         }
+
+        public async Task UpdateName(string name)
+        {
+            await _httpClient.PutJsonAsync("/account/name", new AccountPutName{ Name = name });
+        }
     }
 }

@@ -2,9 +2,8 @@
 using CPUMeasurementCommon.DataObjects;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace CPUMeasurementBackend.WebService
+namespace CPUMeasurementBackend.WebServices
 {
     public class MeasurementService
     {

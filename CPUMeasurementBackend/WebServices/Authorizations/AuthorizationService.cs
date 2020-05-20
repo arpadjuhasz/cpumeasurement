@@ -1,4 +1,4 @@
-﻿using CPUMeasurementBackend.WebService.Account;
+﻿using CPUMeasurementBackend.WebServices.Accounts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CPUMeasurementBackend.WebService
+namespace CPUMeasurementBackend.WebServices.Authorizations
 {
     public  static class AuthorizationService
     {
@@ -57,7 +57,7 @@ namespace CPUMeasurementBackend.WebService
                     });
         }
 
-        public static Guid AccountId = Guid.NewGuid();
+        public static Guid AccountId = Guid.Empty;
         public static string Token = null;
 
         

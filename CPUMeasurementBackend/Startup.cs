@@ -1,24 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CPUMeasurementBackend.Repositories;
-using CPUMeasurementBackend.HostedService;
-using CPUMeasurementBackend.WebService;
+using CPUMeasurementBackend.WebServices;
+using CPUMeasurementBackend.WebServices.Accounts;
+using CPUMeasurementBackend.WebServices.Authorizations;
+using CPUMeasurementBackend.WebServices.Managements;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Serilog;
-using CPUMeasurementBackend.WebService.Account;
-using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.Extensions.Primitives;
 
 namespace CPUMeasurementBackend
 {

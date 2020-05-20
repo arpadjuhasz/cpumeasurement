@@ -1,4 +1,4 @@
-﻿using CPUMeasurementBackend.WebService.Account;
+﻿using CPUMeasurementBackend.WebServices.Accounts;
 using CPUMeasurementCommon;
 using CPUMeasurementCommon.DataObjects;
 using Microsoft.AspNetCore.Authorization;
@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 namespace CPUMeasurementBackend.Controllers
 {
     [Route("account")]
+    [ApiController]
     public class AccountController : Controller
     {
         private readonly AccountService _accountService;
@@ -47,9 +48,17 @@ namespace CPUMeasurementBackend.Controllers
         }
 
         [HttpDelete()]
+        [Authorize]
         public IActionResult DeleteAccount()
         {
             this._accountService.DeleteAccount();
+            return NoContent();
+        }
+
+        [HttpPut("name")]
+        public IActionResult UpdateName([FromBody]AccountPutName dto)
+        {
+            _accountService.UpdateName(dto);
             return NoContent();
         }
 

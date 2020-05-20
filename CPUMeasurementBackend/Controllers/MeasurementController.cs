@@ -1,4 +1,4 @@
-﻿using CPUMeasurementBackend.WebService;
+﻿using CPUMeasurementBackend.WebServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,7 +10,8 @@ namespace CPUMeasurementBackend.Controllers
 {
     
     [Route("measurement")]
-    
+    [ApiController]
+    [Authorize]
     public class MeasurementController : ControllerBase
     {
         private readonly MeasurementService _measurementService;
@@ -21,8 +22,7 @@ namespace CPUMeasurementBackend.Controllers
         }
 
         [HttpGet()]
-        [Authorize]
-        public async Task<IActionResult> GetMeasurements([FromQuery]DateTime? date, [FromQuery]string ipAddress = null)
+        public IActionResult GetMeasurements([FromQuery]DateTime? date, [FromQuery]string ipAddress = null)
         {
             return  Ok(this._measurementService.GetMeasurements(date, ipAddress));
         }

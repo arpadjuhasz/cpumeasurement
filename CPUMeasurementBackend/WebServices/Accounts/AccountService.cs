@@ -1,14 +1,13 @@
 ﻿using CPUMeasurementBackend.Repositories;
+using CPUMeasurementBackend.WebServices.Authorizations;
 using CPUMeasurementCommon.DataObjects;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace CPUMeasurementBackend.WebService.Account
+namespace CPUMeasurementBackend.WebServices.Accounts
 {
     public class AccountService
     {
@@ -49,6 +48,12 @@ namespace CPUMeasurementBackend.WebService.Account
         {
             var accountId = AuthorizationService.AccountId;
             this._accountRepository.Delete(accountId);
+        }
+
+        public void UpdateName(AccountPutName dto)
+        {
+
+            throw new NotImplementedException();
         }
 
         public async Task Logout()

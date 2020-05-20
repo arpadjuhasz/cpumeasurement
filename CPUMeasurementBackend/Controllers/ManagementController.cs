@@ -1,4 +1,5 @@
-﻿using CPUMeasurementBackend.WebService;
+﻿using CPUMeasurementBackend.WebServices;
+using CPUMeasurementBackend.WebServices.Managements;
 using CPUMeasurementCommon.DataObjects;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 namespace CPUMeasurementBackend.Controllers
 {
     [Route("management")]
+    [ApiController]
     [Authorize]
     public class ManagementController : Controller
     {

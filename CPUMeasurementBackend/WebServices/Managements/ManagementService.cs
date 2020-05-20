@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace CPUMeasurementBackend.WebService
+namespace CPUMeasurementBackend.WebServices.Managements
 {
     public class ManagementService
     {

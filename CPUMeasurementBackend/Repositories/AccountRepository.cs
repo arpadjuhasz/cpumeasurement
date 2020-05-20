@@ -1,4 +1,4 @@
-﻿using CPUMeasurementBackend.WebService.Account;
+﻿using CPUMeasurementBackend.WebServices.Accounts;
 using CPUMeasurementCommon.DataObjects;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;

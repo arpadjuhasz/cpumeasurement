@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace CPUMeasurementBackend.WebService.Account
+namespace CPUMeasurementBackend.WebServices.Accounts
 {
     public class Account
     {
