@@ -25,7 +25,7 @@ namespace CPUMeasurementBackend.Controllers
 
         [HttpPost("login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login([FromBody]LoginPost login)
+        public async Task<IActionResult> Login([FromBody]AccountPostLogin login)
         {
             var token = this._accountService.Login(login);
             if (token != null)
@@ -43,7 +43,7 @@ namespace CPUMeasurementBackend.Controllers
         [Authorize]
         public async Task<IActionResult> Logout()
         {
-            await this._accountService.Logout();
+            this._accountService.Logout();
             return NoContent();
         }
 
@@ -64,7 +64,7 @@ namespace CPUMeasurementBackend.Controllers
 
         [HttpPost("register")]
         [AllowAnonymous]
-        public IActionResult Register([FromBody]AccountPost post)
+        public IActionResult Register([FromBody]AccountPostRegister post)
         {
             var account = this._accountService.AddAccount(post);
             if (account != null)

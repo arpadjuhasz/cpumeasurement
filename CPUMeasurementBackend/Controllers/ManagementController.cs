@@ -29,9 +29,9 @@ namespace CPUMeasurementBackend.Controllers
         }
 
         [HttpPut("client/{ip}")]
-        public async Task<IActionResult> UpdateMeasurementIntervalInSeconds(string ip,[FromBody]MeasurementIntervalUpdate dto)
+        public async Task<IActionResult> UpdateMeasurementIntervalInSeconds(string ip,[FromBody]ManagementPut dto)
         {
-            this._managementService.UpdateMeasurementInterval(ip, new MeasurementIntervalUpdate { MeasurementIntervalInSeconds = dto.MeasurementIntervalInSeconds });
+            this._managementService.UpdateMeasurementInterval(ip, new ManagementPut { MeasurementIntervalInSeconds = dto.MeasurementIntervalInSeconds });
             return NoContent(); 
         }
     }

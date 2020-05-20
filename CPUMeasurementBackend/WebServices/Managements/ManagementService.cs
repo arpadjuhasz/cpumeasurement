@@ -25,7 +25,7 @@ namespace CPUMeasurementBackend.WebServices.Managements
             return result;
         }
 
-        public void UpdateMeasurementInterval(string ip, MeasurementIntervalUpdate dto)
+        public void UpdateMeasurementInterval(string ip, ManagementPut dto)
         {
             try
             {

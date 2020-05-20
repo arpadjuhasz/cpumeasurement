@@ -36,7 +36,7 @@ namespace CPUMeasurementBackend.Repositories
             connection.Dispose();
         }
 
-        internal int AddAccount(Account account)
+        internal Account AddAccount(Account account)
         {
             string sql = "INSERT INTO Accounts (Id, Username, Password, Name, Deleted) VALUES (@Id, @Username, @Password, @Name, @Deleted)";
             var id = 0;
@@ -50,7 +50,7 @@ namespace CPUMeasurementBackend.Repositories
             command.Parameters.AddWithValue("Deleted", false);
             connection.Open();
             id = command.ExecuteNonQuery();
-            return id;
+            return account;
         }
 
         internal void UpdatePassword(Account account)
@@ -69,7 +69,7 @@ namespace CPUMeasurementBackend.Repositories
 
         internal void UpdateName(Account account)
         {
-            var sql = "UPDATE Accounts SET Name = @Name SET Id = @Id";
+            var sql = "UPDATE Accounts SET Name = @Name WHERE Id = @Id";
             var connection = new SqlConnection(this.ConnectionString);
             var command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("Name", account.Name);

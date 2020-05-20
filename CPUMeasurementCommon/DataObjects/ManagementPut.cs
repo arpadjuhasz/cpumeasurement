@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CPUMeasurementCommon.DataObjects
 {
-    public class MeasurementIntervalUpdate
+    public class ManagementPut
     {
         [Required]
         public string IPv4Address { get; set; }

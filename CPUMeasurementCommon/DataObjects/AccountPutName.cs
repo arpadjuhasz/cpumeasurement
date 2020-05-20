@@ -7,7 +7,7 @@ namespace CPUMeasurementCommon.DataObjects
 {
     public class AccountPutName
     {
-        [Required(ErrorMessage = "Name is required!")]
+        [MaxLength(256, ErrorMessage = "Name is too long! Maximum 256 letters.")]
         public string Name { get; set; }
     }
 }

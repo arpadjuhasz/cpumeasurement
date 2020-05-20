@@ -23,7 +23,7 @@ namespace CPUMeasurementFrontend.Data
 
         public async Task<AccountGet> AddAccount(string username, string password, string passwordAgain, string name)
         {
-            var account = new AccountPost { Name = name, Username = username, Password = password, PasswordAgain = passwordAgain };
+            var account = new AccountPostRegister { Name = name, Username = username, Password = password, PasswordAgain = passwordAgain };
             var createdAccount = await this._httpClient.PostJsonAsync<AccountGet>("/account/register", account);
             return createdAccount;
         }
@@ -31,7 +31,7 @@ namespace CPUMeasurementFrontend.Data
         public async Task Login(string username, string password)
         {
             
-            LoginPost dto = new LoginPost { Password = password, Username = username };
+            AccountPostLogin dto = new AccountPostLogin { Password = password, Username = username };
             try
             {
                 AccessToken accessToken = await this._httpClient.PostJsonAsync<AccessToken>("/account/login", dto);

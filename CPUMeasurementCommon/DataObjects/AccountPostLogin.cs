@@ -5,14 +5,14 @@ using System.Text;
 
 namespace CPUMeasurementCommon.DataObjects
 {
-    public class LoginPost
+    public class AccountPostLogin
     {
         [Required]
-        [Range(8, 256)]
+        [MaxLength(256)]
         public string Username { get; set; }
 
         [Required]
-        [Range(0,256)]
+        [MaxLength(256)]
         public string Password { get; set; }
     }
 }

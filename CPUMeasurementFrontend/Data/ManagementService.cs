@@ -26,7 +26,7 @@ namespace CPUMeasurementFrontend.Data
 
         public async Task UpdateMeasurementInterval(string clientIPAddress, int measurementInterval)
         {
-            var dto = new MeasurementIntervalUpdate { MeasurementIntervalInSeconds = measurementInterval };
+            var dto = new ManagementPut { MeasurementIntervalInSeconds = measurementInterval };
             await this._httpClient.PutJsonAsync($"{APIPATH}/client/{clientIPAddress}", dto);
         }
     }
