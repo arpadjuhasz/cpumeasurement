@@ -28,5 +28,15 @@ namespace CPUMeasurementBackend.WebServices.Accounts
             byte[] bytes = provider.ComputeHash(Encoding.ASCII.GetBytes(salt + rawPassword));
             return BitConverter.ToString(bytes);
         }
+
+        public void ChangeName(string name)
+        {
+            Name = name;
+        }
+
+        public void ChangePassword(string rawPassword)
+        { 
+            
+        }
     }
 }

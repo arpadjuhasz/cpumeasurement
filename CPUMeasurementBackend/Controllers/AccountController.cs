@@ -62,6 +62,13 @@ namespace CPUMeasurementBackend.Controllers
             return NoContent();
         }
 
+        [HttpPut("change-password")]
+        public IActionResult ChangePassword([FromBody]AccountPutPassword dto)
+        {
+            _accountService.ChangePassword(dto);
+            return NoContent();
+        }
+
         [HttpPost("register")]
         [AllowAnonymous]
         public IActionResult Register([FromBody]AccountPostRegister post)
